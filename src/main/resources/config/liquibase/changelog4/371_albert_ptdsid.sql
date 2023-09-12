@@ -1,0 +1,1 @@
+ALTER TABLE "cashiering"."collection_detail" ADD COLUMN "ptd_ids" varchar;

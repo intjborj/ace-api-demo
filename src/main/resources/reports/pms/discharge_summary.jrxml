@@ -1,0 +1,1086 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.11.0.final using JasperReports Library version 6.11.0-0c4056ccaa4d25a5a8c45672d2f764ea3498bebb  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="DischargeIns" pageWidth="602" pageHeight="792" columnWidth="562" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" isFloatColumnFooter="true" uuid="89121c36-7130-4d3a-a5ed-5e87657c3577">
+	<subDataset name="dischargeSummary" uuid="54451ea8-a0ee-44ab-ad8f-455a097ed5bf">
+		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+		<queryString>
+			<![CDATA[]]>
+		</queryString>
+		<field name="medication" class="java.lang.String"/>
+		<field name="dosage" class="java.lang.String"/>
+		<field name="instructions" class="java.lang.String"/>
+		<field name="qty" class="java.lang.String"/>
+		<field name="breakfast" class="java.lang.String"/>
+		<field name="lunch" class="java.lang.String"/>
+		<field name="supper" class="java.lang.String"/>
+		<field name="bedtime" class="java.lang.String"/>
+		<field name="breakfast_instructions" class="java.lang.String"/>
+		<field name="lunch_instructions" class="java.lang.String"/>
+		<field name="supper_instructions" class="java.lang.String"/>
+	</subDataset>
+	<subDataset name="takeHomeMedList1" uuid="6dddd35d-fa70-4da5-9f31-eebc91b1d53d">
+		<queryString>
+			<![CDATA[]]>
+		</queryString>
+		<field name="desclong" class="java.lang.String"/>
+	</subDataset>
+	<subDataset name="takeHomeMedList2" uuid="51d05254-161f-4332-825c-837961258ea3">
+		<queryString>
+			<![CDATA[]]>
+		</queryString>
+		<field name="desclong" class="java.lang.String"/>
+	</subDataset>
+	<subDataset name="takeHomeMedList3" uuid="dab4fb57-8293-46a1-8bc7-55df2e79faa4">
+		<queryString>
+			<![CDATA[]]>
+		</queryString>
+		<field name="desclong" class="java.lang.String"/>
+	</subDataset>
+	<subDataset name="takeHomeMedList4" uuid="519c46bf-163f-4c88-8ed3-3c0f73d9c512">
+		<queryString>
+			<![CDATA[]]>
+		</queryString>
+		<field name="desclong" class="java.lang.String"/>
+	</subDataset>
+	<parameter name="logo" class="java.io.InputStream"/>
+	<parameter name="medications" class="net.sf.jasperreports.engine.data.JRBeanCollectionDataSource"/>
+	<parameter name="admittingDiagnosis" class="java.lang.String"/>
+	<parameter name="dischargeDiagnosis" class="java.lang.String"/>
+	<parameter name="courseInTheWard" class="java.lang.String"/>
+	<parameter name="dischargeDisposition" class="java.lang.String"/>
+	<parameter name="specialInstructions" class="java.lang.String"/>
+	<parameter name="attendingPhysician" class="java.lang.String"/>
+	<parameter name="address" class="java.lang.String"/>
+	<parameter name="followupDatetime" class="java.lang.String"/>
+	<parameter name="medication" class="java.lang.String"/>
+	<parameter name="takehomemedlist" class="net.sf.jasperreports.engine.data.JRBeanCollectionDataSource"/>
+	<parameter name="takehomemedlist2" class="net.sf.jasperreports.engine.data.JRBeanCollectionDataSource"/>
+	<parameter name="takehomemedlist3" class="net.sf.jasperreports.engine.data.JRBeanCollectionDataSource"/>
+	<parameter name="takehomemedlist4" class="net.sf.jasperreports.engine.data.JRBeanCollectionDataSource"/>
+	<parameter name="date" class="java.lang.String"/>
+	<parameter name="aog" class="java.lang.Integer"/>
+	<parameter name="edc" class="java.lang.String"/>
+	<parameter name="o2sat" class="java.lang.String"/>
+	<parameter name="abort" class="java.lang.Integer"/>
+	<parameter name="lmp" class="java.lang.String"/>
+	<parameter name="temperature" class="java.lang.String"/>
+	<parameter name="rr" class="java.lang.String"/>
+	<parameter name="hr" class="java.lang.String"/>
+	<parameter name="abdomen" class="java.lang.String"/>
+	<parameter name="cvs" class="java.lang.String"/>
+	<parameter name="gu" class="java.lang.String"/>
+	<parameter name="followUpSched" class="java.lang.String"/>
+	<parameter name="disposition" class="java.lang.String"/>
+	<parameter name="pertinentSymptoms" class="java.lang.String"/>
+	<parameter name="neuroExam" class="java.lang.String"/>
+	<parameter name="skin" class="java.lang.String"/>
+	<parameter name="chestLungs" class="java.lang.String"/>
+	<parameter name="heent" class="java.lang.String"/>
+	<parameter name="generalSurvery" class="java.lang.String"/>
+	<parameter name="bp" class="java.lang.String"/>
+	<parameter name="g" class="java.lang.String"/>
+	<parameter name="p" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="patientFullName" class="java.lang.String"/>
+	<field name="address" class="java.lang.String"/>
+	<field name="date" class="java.lang.String"/>
+	<field name="caseNo" class="java.lang.String"/>
+	<field name="roomNo" class="java.lang.String"/>
+	<field name="age" class="java.lang.String"/>
+	<field name="gender" class="java.lang.String"/>
+	<field name="civilStatus" class="java.lang.String"/>
+	<field name="dob" class="java.lang.String"/>
+	<field name="attendingPhysician" class="java.lang.String"/>
+	<field name="licenseNo" class="java.lang.String"/>
+	<field name="dateAdmitted" class="java.lang.String"/>
+	<field name="dateDischarged" class="java.lang.String"/>
+	<field name="nurseName" class="java.lang.String"/>
+	<field name="pin" class="java.lang.String"/>
+	<field name="followUpDate" class="java.lang.String"/>
+	<field name="specialInstructions" class="java.lang.String"/>
+	<field name="admittingDiagnosis" class="java.lang.String"/>
+	<field name="dischargeDiagnosis" class="java.lang.String"/>
+	<field name="procedurePerformed" class="java.lang.String"/>
+	<field name="courseInTheWard" class="java.lang.String"/>
+	<field name="dischargeDisposition" class="java.lang.String"/>
+	<field name="medication" class="java.lang.String"/>
+	<field name="aog" class="java.lang.String"/>
+	<field name="g" class="java.lang.String"/>
+	<field name="p" class="java.lang.String"/>
+	<field name="abort" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="226" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="90" width="300" height="30" uuid="33ee49fb-6327-4808-8c38-9ceca759e715"/>
+				<box topPadding="2" leftPadding="3">
+					<pen lineWidth="1.0" lineStyle="Solid"/>
+				</box>
+				<textElement>
+					<font fontName="DejaVu Sans" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Patient Name (Last, First, Middle)]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement x="0" y="100" width="300" height="20" uuid="8259e643-3c7e-4e8f-ac20-78fab95eec4b">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box topPadding="2" leftPadding="3"/>
+				<textElement>
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{patientFullName}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="48" width="561" height="22" uuid="6e0c6d1a-1338-4b4a-827a-4412d6a31bab"/>
+				<box>
+					<pen lineWidth="1.0" lineStyle="Solid"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="DejaVu Sans" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[DISCHARGE SUMMARY / CLINICAL ABSTRACT]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="70" width="170" height="20" uuid="8a0e873c-db72-4dd0-8461-fccbdcd399d6"/>
+				<box topPadding="0" leftPadding="3">
+					<pen lineWidth="1.0" lineStyle="Solid"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="DejaVu Sans" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Date/Time:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="170" y="70" width="130" height="20" uuid="40a2baae-cfb3-4cb9-95d6-376a881d9d96"/>
+				<box topPadding="0" leftPadding="3">
+					<pen lineWidth="1.0" lineStyle="Solid"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="DejaVu Sans" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[PIN No:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="300" y="70" width="130" height="20" uuid="fbd11f54-2a7d-447c-9598-11677d1a1385"/>
+				<box topPadding="0" leftPadding="3">
+					<pen lineWidth="1.0" lineStyle="Solid"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="DejaVu Sans" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Case No:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="430" y="70" width="131" height="20" uuid="c58e4fe0-7857-42ac-9e98-c4ab10f49d9e"/>
+				<box topPadding="0" leftPadding="3">
+					<pen lineWidth="1.0" lineStyle="Solid"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="DejaVu Sans" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Room No:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="430" y="90" width="60" height="30" uuid="4999327a-e212-4110-ac26-2df146882758"/>
+				<box topPadding="2" leftPadding="3">
+					<pen lineWidth="1.0" lineStyle="Solid"/>
+				</box>
+				<textElement>
+					<font fontName="DejaVu Sans" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Age:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="300" y="90" width="60" height="30" uuid="4c1e95ac-d350-47f5-9352-a56c578151b1"/>
+				<box topPadding="2" leftPadding="3">
+					<pen lineWidth="1.0" lineStyle="Solid"/>
+				</box>
+				<textElement>
+					<font fontName="DejaVu Sans" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Gender: ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="490" y="90" width="71" height="30" uuid="9b7fa45b-0df9-4bdf-9092-e1332a7afc34"/>
+				<box topPadding="2" leftPadding="3">
+					<pen lineWidth="1.0" lineStyle="Solid"/>
+				</box>
+				<textElement>
+					<font fontName="DejaVu Sans" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Civil Status:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="360" y="90" width="70" height="30" uuid="a8ae9684-8b20-49db-ae58-d193105bbd2a"/>
+				<box topPadding="2" leftPadding="3">
+					<pen lineWidth="1.0" lineStyle="Solid"/>
+				</box>
+				<textElement>
+					<font fontName="DejaVu Sans" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Birthday: ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="120" width="561" height="20" uuid="e1b4ea30-3209-402d-9611-8ff119725a74"/>
+				<box topPadding="0" leftPadding="3">
+					<pen lineWidth="1.0" lineStyle="Solid"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="DejaVu Sans" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Address: ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="140" width="280" height="30" uuid="ffaa5a10-3fe4-4ba8-a151-94fad4da8f7d"/>
+				<box topPadding="2" leftPadding="3">
+					<pen lineWidth="1.0" lineStyle="Solid"/>
+				</box>
+				<textElement>
+					<font fontName="DejaVu Sans" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Admission Date/Time]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="280" y="140" width="281" height="30" uuid="c1fddcba-c898-4d1b-96b7-be8a03906f2a"/>
+				<box topPadding="2" leftPadding="3">
+					<pen lineWidth="1.0" lineStyle="Solid"/>
+				</box>
+				<textElement>
+					<font fontName="DejaVu Sans" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Discharge Date/Time]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement x="61" y="70" width="109" height="20" uuid="6de924b9-f369-413f-8c74-c9b2c4028177">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box topPadding="0" leftPadding="3"/>
+				<textElement verticalAlignment="Middle">
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{date}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="220" y="70" width="80" height="20" uuid="47fa082f-08aa-4477-8032-cf35a6b4931a">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{pin}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="360" y="70" width="70" height="20" uuid="5e7cb65b-c83f-4641-ba29-e2d02c068ad0">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{caseNo}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="490" y="70" width="71" height="20" uuid="b2a70a73-f020-4a44-9255-8e43ded41796">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{roomNo}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="430" y="100" width="60" height="20" uuid="25fc58ef-1c3b-45b1-847e-356b2c8307e1">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box topPadding="2" leftPadding="3"/>
+				<textElement>
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{age}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="300" y="100" width="60" height="20" uuid="8e1d3f9a-adc1-4ec5-a2d0-ea1d86b214c3">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box topPadding="2" leftPadding="3"/>
+				<textElement>
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{gender}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="490" y="100" width="70" height="20" uuid="bfbb60a7-8b1a-43e0-82ee-23f2af5a71c0">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box topPadding="2" leftPadding="3"/>
+				<textElement>
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{civilStatus}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="360" y="100" width="70" height="20" uuid="d494b185-ccdd-4285-9310-888585dd3ad2">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box topPadding="2" leftPadding="3"/>
+				<textElement>
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{dob}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="0" y="149" width="280" height="20" uuid="97aafeba-e5e0-47dc-b5b8-a2e7c956d67e">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box topPadding="4" leftPadding="3"/>
+				<textElement>
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{dateAdmitted}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="280" y="150" width="279" height="20" uuid="31f8e34e-f6bc-4ed4-9afd-86c0b6e8eb3a">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box topPadding="4" leftPadding="3"/>
+				<textElement>
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{dateDischarged}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="1" width="410" height="47" uuid="b6b9aa11-7254-4ebf-9881-8f3ace42bb60">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<box>
+					<pen lineWidth="1.0" lineStyle="Solid"/>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement>
+					<font fontName="DejaVu Sans"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="61" y="10" width="340" height="20" uuid="bfdf0596-87cc-422a-834e-beb614bcfbf9"/>
+				<textElement textAlignment="Center">
+					<font fontName="DejaVu Sans" size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ALLIED CARE EXPERTS MEDICAL CENTER-BOHOL]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="410" y="1" width="151" height="47" uuid="ee683c3f-8396-4ada-9afe-b4986a6b01a7"/>
+				<box>
+					<pen lineWidth="1.0" lineStyle="Solid"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font fontName="DejaVu Sans" isBold="true"/>
+				</textElement>
+				<text><![CDATA[
+DOCUMENT NO.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="61" y="22" width="340" height="26" uuid="7600b0a7-70e7-4657-97fa-746b843ea6b2"/>
+				<textElement textAlignment="Center">
+					<font fontName="DejaVu Sans" size="8"/>
+				</textElement>
+				<text><![CDATA[0368 Carlos P. Garcia East Avenue, Corner A.S. Bioco Street,
+Mansasa District, Tagbilaran City, Bohol]]></text>
+			</staticText>
+			<image>
+				<reportElement x="36" y="5" width="40" height="40" uuid="d51cd9ca-b88a-4dff-ba28-fced26281577"/>
+				<imageExpression><![CDATA[$P{logo}]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="410" y="21" width="150" height="24" uuid="5069c066-6c79-4507-8b6b-6ae8f5a75117"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="DejaVu Sans"/>
+				</textElement>
+				<text><![CDATA[ACEMCB-NSD-FORM-079]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement x="60" y="120" width="300" height="20" uuid="c593c5dd-91b1-4ebd-b5cc-68b5a5d22bcd">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box topPadding="2" leftPadding="3"/>
+				<textElement>
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{address}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<detail>
+		<band height="63">
+			<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.FreeLayout"/>
+			<staticText>
+				<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="0" y="-56" width="561" height="56" isPrintWhenDetailOverflows="true" uuid="b6400841-52f4-4ff9-bf8e-9b1c461396c8"/>
+				<box topPadding="2" leftPadding="3">
+					<pen lineWidth="1.0" lineStyle="Solid"/>
+				</box>
+				<textElement>
+					<font fontName="DejaVu Sans" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ADMITTING DIAGNOSIS : ]]></text>
+			</staticText>
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+				<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="5" y="-43" width="553" height="40" uuid="5a6a917a-10a9-4e52-9d95-42005bae1302"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{admittingDiagnosis}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="0" y="0" width="561" height="63" isPrintWhenDetailOverflows="true" uuid="870eb1e8-65d7-46a3-b349-aa0e004f1b04"/>
+				<box topPadding="2" leftPadding="3">
+					<pen lineWidth="1.0" lineStyle="Solid"/>
+				</box>
+				<textElement>
+					<font fontName="DejaVu Sans" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Discharge Diagnosis :]]></text>
+			</staticText>
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+				<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="5" y="14" width="552" height="43" isPrintWhenDetailOverflows="true" uuid="ddbaa9bd-3537-431c-9c36-c304a69e6a8a">
+					<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
+				</reportElement>
+				<box topPadding="0" leftPadding="0">
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement>
+					<font size="8"/>
+					<paragraph leftIndent="0"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{dischargeDiagnosis}]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="66">
+			<staticText>
+				<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="0" y="0" width="561" height="66" isPrintWhenDetailOverflows="true" uuid="6f453b99-2a7f-40e8-90a3-9df8692ddb2a"/>
+				<box topPadding="2" leftPadding="3">
+					<pen lineWidth="1.0" lineStyle="Solid"/>
+				</box>
+				<textElement>
+					<font fontName="DejaVu Sans" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[OPERATIONS(S) / PROCEDURE(S) PERFORMED :]]></text>
+			</staticText>
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+				<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="7" y="17" width="550" height="43" isPrintWhenDetailOverflows="true" uuid="7fe0b43c-69d8-4863-8d4d-fc4795e3cac4">
+					<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
+				</reportElement>
+				<box topPadding="0" leftPadding="0">
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement>
+					<font size="8"/>
+					<paragraph leftIndent="0"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{procedurePerformed}]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="63">
+			<staticText>
+				<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="0" y="0" width="561" height="63" isPrintWhenDetailOverflows="true" uuid="af63b81c-2704-4e8e-82eb-c583a94b4250"/>
+				<box topPadding="2" leftPadding="3">
+					<pen lineWidth="1.0" lineStyle="Solid"/>
+				</box>
+				<textElement>
+					<font fontName="DejaVu Sans" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[BRIEF CLINICAL HISTORY AND COURSE IN THE WARD :]]></text>
+			</staticText>
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToTallestObject" x="6" y="20" width="550" height="37" isPrintWhenDetailOverflows="true" uuid="1b77c6a2-ddd3-40b9-a693-dcf6c7fe5d20"/>
+				<textElement>
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{courseInTheWard}]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="138">
+			<staticText>
+				<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="280" y="0" width="281" height="138" isPrintWhenDetailOverflows="true" uuid="f4ccf6e2-bc69-4fa5-8d15-83d523ea6488"/>
+				<box topPadding="2" leftPadding="3">
+					<pen lineWidth="1.0" lineStyle="Solid"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font fontName="DejaVu Sans" size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[OB DATA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="0" y="0" width="280" height="138" isPrintWhenDetailOverflows="true" uuid="3208b3e2-e329-4c4c-a3f6-9b4f9ae7b03f"/>
+				<box topPadding="2" leftPadding="3">
+					<pen lineWidth="1.0" lineStyle="Solid"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font fontName="DejaVu Sans" size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[PERTINENT P.E]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="10" y="10" width="40" height="20" uuid="77812700-e928-4275-bf24-dc2bebf9158e"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[B.P :]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="60" y="10" width="200" height="20" uuid="954a6746-81e3-41c4-9573-07e094a2ce88"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$P{bp}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="10" y="35" width="40" height="20" uuid="31084703-7086-4757-86aa-9898d0fb7a83"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[H.R :]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="60" y="35" width="200" height="20" uuid="55682169-0c2b-421d-ba7d-2e3bfe23be02"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$P{hr}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="10" y="61" width="40" height="20" uuid="9baa3897-2b6d-4133-8125-e2243021312c"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[R.R :]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="60" y="61" width="200" height="20" uuid="7901a014-83dd-48ba-9c53-0e7760a1e808"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$P{rr}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="10" y="87" width="40" height="20" uuid="39fd6713-7145-4422-90c6-185dad88c012"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[TEMP :]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="60" y="87" width="200" height="20" uuid="48852014-bae4-45e5-bbd7-0e4700503077"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$P{temperature}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="60" y="112" width="200" height="20" uuid="956e64d6-6d74-4e6e-8679-a9ac9a409355"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$P{o2sat}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="10" y="112" width="40" height="20" uuid="347cd74d-7a56-4e68-baa6-9da925acc464"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[O2SAT :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="293" y="10" width="40" height="20" uuid="969e7131-e99e-4dda-a655-52f6289db112"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[EDC :]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="340" y="10" width="90" height="20" uuid="28d31875-e6fe-423a-8be5-99884afa3566"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$P{edc}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="293" y="35" width="40" height="20" uuid="21b3e2b1-b28f-4ea6-b2ad-860a774df4d9"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[AOG :]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="340" y="35" width="90" height="20" uuid="b8ec8e82-f3e9-47ce-bbd8-046f69c307c3"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{aog}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="293" y="61" width="40" height="20" uuid="da0f6edf-e6c8-43a3-a927-a3e2881bb64e"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[G :]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="340" y="60" width="90" height="20" uuid="28085da5-4d1c-4bb9-a4eb-86d390cf2288"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{g}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="293" y="87" width="40" height="20" uuid="32f8c759-89a0-4523-9279-be9a196d1e2c"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[P :]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="340" y="87" width="90" height="20" uuid="45185067-4c06-439e-8cbf-8eb5ab0104d7"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{p}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="293" y="112" width="40" height="20" uuid="b6d322d9-37fb-443e-9c51-1a8e1ebc0343"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[LMP :]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="340" y="112" width="90" height="20" uuid="9488b613-1dca-4b7d-aa87-365404d9c57d"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$P{lmp}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="450" y="10" width="40" height="20" uuid="ce1913c2-fa3e-4b46-bef9-335f6525943b"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ABORT :]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="490" y="10" width="70" height="20" uuid="5551dac2-80f2-466a-92fa-d5f1a8e1768b"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{abort}]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="32">
+			<staticText>
+				<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="0" y="0" width="561" height="32" isPrintWhenDetailOverflows="true" uuid="30a0a81a-523e-42cb-aa79-dbd207f310e7"/>
+				<box topPadding="0" leftPadding="0">
+					<pen lineWidth="1.0" lineStyle="Solid"/>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="DejaVu Sans" size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ GENERAL SURVEY :]]></text>
+			</staticText>
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+				<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="91" y="2" width="466" height="28" isPrintWhenDetailOverflows="true" uuid="2d1e4300-b28c-4c69-b98e-f6d70f4caec2"/>
+				<box padding="0"/>
+				<textElement verticalAlignment="Middle">
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{generalSurvery}]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="32">
+			<staticText>
+				<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="0" y="0" width="561" height="32" isPrintWhenDetailOverflows="true" uuid="0267ba8e-9087-4f9d-a3d9-ec694c313d7d"/>
+				<box topPadding="0" leftPadding="0">
+					<pen lineWidth="1.0" lineStyle="Solid"/>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="DejaVu Sans" size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ HEENT : ]]></text>
+			</staticText>
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+				<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="91" y="1" width="466" height="30" isPrintWhenDetailOverflows="true" uuid="31a377a3-a6d0-4428-a7c7-47b348ef9575"/>
+				<box padding="0"/>
+				<textElement verticalAlignment="Middle">
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{heent}]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="32">
+			<staticText>
+				<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="0" y="0" width="561" height="32" isPrintWhenDetailOverflows="true" uuid="6ab6d424-9ca4-4a11-a658-8b74dbf4cdcb"/>
+				<box topPadding="0" leftPadding="0">
+					<pen lineWidth="1.0" lineStyle="Solid"/>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="DejaVu Sans" size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ CHEST / LUNGS : ]]></text>
+			</staticText>
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+				<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="91" y="2" width="467" height="28" isPrintWhenDetailOverflows="true" uuid="5230c26a-b0d4-4a40-82c8-2be53160877a"/>
+				<box padding="0"/>
+				<textElement verticalAlignment="Middle">
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{chestLungs}]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="34">
+			<staticText>
+				<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="0" y="0" width="561" height="34" isPrintWhenDetailOverflows="true" uuid="24c94450-7ce5-4e6b-a793-84e2f7cf81ba"/>
+				<box topPadding="0" leftPadding="0">
+					<pen lineWidth="1.0" lineStyle="Solid"/>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="DejaVu Sans" size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ CVS :]]></text>
+			</staticText>
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+				<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="91" y="2" width="467" height="28" isPrintWhenDetailOverflows="true" uuid="34b8e21c-81a6-4d29-9e30-55a2ae834ae0"/>
+				<box padding="0"/>
+				<textElement verticalAlignment="Middle">
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{cvs}]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="31">
+			<staticText>
+				<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="0" y="0" width="561" height="31" isPrintWhenDetailOverflows="true" uuid="00349751-7232-4071-99e9-90cf2107f98e"/>
+				<box topPadding="0" leftPadding="0">
+					<pen lineWidth="1.0" lineStyle="Solid"/>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="DejaVu Sans" size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ ABDOMEN :]]></text>
+			</staticText>
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+				<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="91" y="1" width="469" height="28" isPrintWhenDetailOverflows="true" uuid="c97197d9-aa48-4d8c-aee8-706a0cb7802f"/>
+				<box padding="0"/>
+				<textElement verticalAlignment="Middle">
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{abdomen}]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="30">
+			<staticText>
+				<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="0" y="0" width="561" height="30" isPrintWhenDetailOverflows="true" uuid="8bb8d0d8-8e72-4478-b4c7-08fe556a96db"/>
+				<box topPadding="0" leftPadding="0">
+					<pen lineWidth="1.0" lineStyle="Solid"/>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="DejaVu Sans" size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ GU (ie) :]]></text>
+			</staticText>
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+				<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="91" y="1" width="468" height="28" isPrintWhenDetailOverflows="true" uuid="52125aa3-60fb-465b-90d4-ad1554c68a0a"/>
+				<box padding="0"/>
+				<textElement verticalAlignment="Middle">
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{gu}]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="31">
+			<staticText>
+				<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="0" y="0" width="561" height="31" isPrintWhenDetailOverflows="true" uuid="812d0337-986e-47ee-bd8f-b25cb9ac79c2"/>
+				<box topPadding="0" leftPadding="0">
+					<pen lineWidth="1.0" lineStyle="Solid"/>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="DejaVu Sans" size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ SKIN (EXTREMITS) :]]></text>
+			</staticText>
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+				<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="91" y="2" width="468" height="28" isPrintWhenDetailOverflows="true" uuid="ee93ea4a-bb24-43bb-8e38-79e72a5a811e"/>
+				<box padding="0"/>
+				<textElement verticalAlignment="Middle">
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{skin}]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="33">
+			<staticText>
+				<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="0" y="0" width="561" height="33" isPrintWhenDetailOverflows="true" uuid="070eb59b-90fc-4817-9df4-67b7f262f326"/>
+				<box topPadding="0" leftPadding="0">
+					<pen lineWidth="1.0" lineStyle="Solid"/>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="DejaVu Sans" size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ NEURO-EXAM :]]></text>
+			</staticText>
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+				<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="91" y="2" width="468" height="28" isPrintWhenDetailOverflows="true" uuid="ad06690d-c5c3-4218-8790-b3b184ef842d"/>
+				<box padding="0"/>
+				<textElement verticalAlignment="Middle">
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{neuroExam}]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="30">
+			<staticText>
+				<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="0" y="0" width="561" height="30" isPrintWhenDetailOverflows="true" uuid="79048bcc-2cf7-422f-b1a6-5882bcf7a865"/>
+				<box topPadding="0" leftPadding="0">
+					<pen lineWidth="1.0" lineStyle="Solid"/>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="DejaVu Sans" size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ PERTINENT SYMPTOMS :]]></text>
+			</staticText>
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+				<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="120" y="1" width="440" height="28" isPrintWhenDetailOverflows="true" uuid="6893b7a3-edf4-4b3a-8620-e1dbe4acc9fb"/>
+				<box padding="0"/>
+				<textElement verticalAlignment="Middle">
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{pertinentSymptoms}]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="30">
+			<staticText>
+				<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="0" y="0" width="561" height="30" isPrintWhenDetailOverflows="true" uuid="4b5c8902-ab94-4ec9-81ab-973fe0c7a239"/>
+				<box topPadding="0" leftPadding="0">
+					<pen lineWidth="1.0" lineStyle="Solid"/>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="DejaVu Sans" size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ LABORATORY AND FINDINGS (SEE ATTACHED RESULT)]]></text>
+			</staticText>
+		</band>
+		<band height="30">
+			<staticText>
+				<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="0" y="0" width="561" height="30" isPrintWhenDetailOverflows="true" uuid="05999cf6-0a4b-458c-b44d-f247eaef071a"/>
+				<box topPadding="0" leftPadding="0">
+					<pen lineWidth="1.0" lineStyle="Solid"/>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="DejaVu Sans" size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ MEDICATION (SEE ATTACHED DISCHARGE SCHEDULE OF MEDICATION)]]></text>
+			</staticText>
+		</band>
+		<band height="30">
+			<staticText>
+				<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="0" y="0" width="561" height="30" isPrintWhenDetailOverflows="true" uuid="a70bdc9b-0365-4f9a-8ccc-b039af3f4d6e"/>
+				<box topPadding="0" leftPadding="0">
+					<pen lineWidth="1.0" lineStyle="Solid"/>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="DejaVu Sans" size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ MEDICATION (SEE ATTACHED DISCHARGE SCHEDULE OF MEDICATION)]]></text>
+			</staticText>
+		</band>
+		<band height="31">
+			<staticText>
+				<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="0" y="0" width="561" height="31" isPrintWhenDetailOverflows="true" uuid="f55d1092-0d8b-4aeb-8130-267122ebf93e"/>
+				<box topPadding="0" leftPadding="0">
+					<pen lineWidth="1.0" lineStyle="Solid"/>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="DejaVu Sans" size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ DISPOSITION :]]></text>
+			</staticText>
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+				<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="79" y="6" width="482" height="19" isPrintWhenDetailOverflows="true" uuid="ca161fad-e732-49bf-8d6b-5342d8640f9f"/>
+				<box padding="0"/>
+				<textElement verticalAlignment="Middle">
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{disposition}]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="30">
+			<staticText>
+				<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="0" y="0" width="561" height="30" isPrintWhenDetailOverflows="true" uuid="5a8108ea-e07c-429b-9ec2-866b76fe0164"/>
+				<box topPadding="0" leftPadding="0">
+					<pen lineWidth="1.0" lineStyle="Solid"/>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="DejaVu Sans" size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ SPECIAL INSTRUCTION :]]></text>
+			</staticText>
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+				<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="110" y="6" width="444" height="19" isPrintWhenDetailOverflows="true" uuid="4e4ae30c-fe78-4f35-8854-fdcad9d54ef3"/>
+				<box padding="0"/>
+				<textElement verticalAlignment="Middle">
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{specialInstructions}]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="30">
+			<staticText>
+				<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="0" y="0" width="561" height="30" isPrintWhenDetailOverflows="true" uuid="71c44a70-a9be-4d0d-a2a4-01376880e97d"/>
+				<box topPadding="0" leftPadding="0">
+					<pen lineWidth="1.0" lineStyle="Solid"/>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="DejaVu Sans" size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ FOLLOW-UP SCHEDULE :]]></text>
+			</staticText>
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+				<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="115" y="1" width="442" height="28" isPrintWhenDetailOverflows="true" uuid="64577529-efb0-4434-a402-591199edf550"/>
+				<box padding="0"/>
+				<textElement verticalAlignment="Middle">
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{followUpSched}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<lastPageFooter>
+		<band height="148">
+			<staticText>
+				<reportElement x="20" y="27" width="130" height="20" uuid="936507bc-17f8-4d47-a1ba-69dcac7622c4"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="DejaVu Sans" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ATTENDING PHYSICIAN:]]></text>
+			</staticText>
+			<line>
+				<reportElement x="155" y="43" width="351" height="1" uuid="b64cbc6b-6c6e-42a4-8655-08afefaef577"/>
+			</line>
+			<textField isBlankWhenNull="true">
+				<reportElement x="190" y="19" width="240" height="24" uuid="94cca925-ddd5-4d21-a81e-da2982c24304"/>
+				<box padding="0"/>
+				<textElement textAlignment="Center" verticalAlignment="Bottom">
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{attendingPhysician}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="228" y="44" width="171" height="17" uuid="228259f3-8e98-4abf-a3ac-627ad2884562"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Signature over Printed Name]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="21" y="60" width="70" height="20" uuid="bb8f9017-3fec-488a-a136-0bac65630678"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="DejaVu Sans" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Prepared by:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="110" y="63" width="200" height="12" uuid="eecc57ad-256b-450c-930c-7af00cc04e8f">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center">
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nurseName}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="313" y="63" width="200" height="12" uuid="71a3030b-5078-4187-86de-58f289659da3">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center">
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{date}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="107" y="76" width="409" height="1" uuid="9c7eda2f-4583-4ba2-af9f-279f7ce11004"/>
+			</line>
+			<staticText>
+				<reportElement x="135" y="78" width="150" height="16" uuid="d67a98d0-a267-400c-adae-a9c55769dc1e"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Signature over Printed Name]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="340" y="78" width="150" height="16" uuid="955ee3a5-d069-4e12-84ee-bbece5728bab"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Date Accomplished]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="1" y="95" width="560" height="30" uuid="8135bd62-cb56-4cb7-bc70-62608b3e47f0"/>
+				<textElement textAlignment="Center">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[This document is a property of Allied Care Experts (ACE) Medical Center-Bohol and the contents are treated confidential. Therefore,
+unauthorize reproduction is strictly unless otherwise permitted by the ACE Medical Center - Bohol Management.
+]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="1" y="115" width="560" height="21" uuid="4b52d61d-ef11-478d-8b44-3a4b79e5f435"/>
+				<textElement textAlignment="Center">
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA["But seek first his kingdom and his righteousness, and all these things will be given to you as well." - Matthew 633]]></text>
+			</staticText>
+		</band>
+	</lastPageFooter>
+</jasperReport>

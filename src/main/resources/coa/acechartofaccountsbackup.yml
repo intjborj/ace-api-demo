@@ -1,0 +1,886 @@
+# TAGS REFERENCE
+#
+# com.acemc.hisd3.service.financials.AccountingTags
+#
+#
+---
+items:
+    - code       : '01'
+      description: ASSETS
+      tags       : [ASSETS]
+      subledger:
+             - code       : '01'
+               description: CURRENT ASSETS
+               tags       : [FS_FINPOS_CURRENT_ASSETS]
+               subledger  :
+                       - code       : '01'
+                         description: CASH AND EQUIVALENTS
+                         subledger:
+                           - code       : '001'
+                             description: CASH ON HAND  # with sub ledger used by Cashier Terminals
+                             tags       : [CASHIER_TERMINALS,CASH_ON_HAND]
+                           - code       : '002'
+                             description: CHECK ON HAND # with sub ledger used by Cashier Terminals
+                             tags       : [CASHIER_TERMINALS,CHECK_ON_HAND]
+                           - code       : '003'
+                             description: CASH IN BANK  # with sub ledger used by Bank Accounts
+                             tags       : [BANK_ACCOUNTS,CASH_IN_BANK]
+                           - code       : '004'
+                             description: PETTY CASH FUND
+                           - code       : '005'
+                             description: REVOLVING FUND
+                           - code       : '006'
+                             description: CHANGE FUND # Loose change
+#                           - code       : '007'
+#                             description: CASH EQUIVALENTS
+#                           - code       : '008'
+#                             description: OTHER CASH ACCOUNTS
+                       - code       : '02'
+                         description: INVESTMENTS
+                         subledger:
+                           - code       : '001'
+                             description: SHORT-TERM INVESTMENTS
+                           - code       : '002'
+                             description: OTHER CURRENT INVESTMENTS
+                       - code       : '03'
+                         description: ACCOUNTS RECEIVABLES
+                         subledger:
+                           - code       : '001'
+                             description: INPATIENT INDIVIDUAL ACCOUNT RECEIVABLES
+                             tags       : [AR_DEBIT_INPATIENT]
+                           - code       : '002'
+                             description: OUTPATIENT INDIVIDUAL ACCOUNT RECEIVABLES
+                             tags       : [AR_DEBIT_OUTPATIENT]
+                           - code       : '003'
+                             description: DUE FROM PHILHEALTH
+                             subledger  :
+                                   - code       : '001'
+                                     description: PHIC-HCI
+                                     tags       : [PHIC_HCI]
+                                   - code       : '002'
+                                     description: PHIC-PF
+                                     tags       : [PHIC_PF]
+                           - code       : '004'
+                             description: DUE FROM HMO/GOV''T/CORP/INST RECEIVABLES # with sub ledger used by Company Accounts
+                             tags       : [COMPANY_ACCOUNT]
+                           - code       : '005'
+                             description: OTHER ACCOUNT RECEIVABLES
+#                           - code       : '006'
+#                             description: DUE FROM CASHIERS
+#                             tags       : [DUE_CASHIERS]
+                       - code       : '04'
+                         description: ALLOWANCE FOR BAD DEBTS
+                         subledger:
+                           - code       : '001'
+                             description: INPATIENT INDIVIDUAL ACCOUNT RECEIVABLES
+                             tags       : [AR_DEBIT_INPATIENT]
+                           - code       : '002'
+                             description: OUTPATIENT INDIVIDUAL ACCOUNT RECEIVABLES
+                             tags       : [AR_DEBIT_OUTPATIENT]
+                           - code       : '003'
+                             description: DUE FROM PHILHEALTH
+                             subledger  :
+                                   - code       : '001'
+                                     description: PHIC-HCI
+                                     tags       : [PHIC_HCI]
+                                   - code       : '002'
+                                     description: PHIC-PF
+                                     tags       : [PHIC_PF]
+                           - code       : '004'
+                             description: DUE FROM HMO/GOV''T/CORP/INST RECEIVABLES # with sub ledger used by Company Accounts
+                             tags       : [COMPANY_ACCOUNT]
+                           - code       : '005'
+                             description: OTHER ACCOUNT RECEIVABLES
+                       - code       : '05'
+                         description: OTHER RECEIVABLES
+                         subledger:
+                           - code       : '001'
+                             description: ADVANCES TO EMPLOYEES (LIQUIDATION)
+                           - code       : '002'
+                             description: ADVANCES TO ADMIN & MANAGEMENT (LIQUIDATION)
+                           - code       : '003'
+                             description: ADVANCES TO SUPPLIERS
+                           - code       : '004'
+                             description: ADVANCES TO CONTRACTORS
+                           - code       : '005'
+                             description: OTHER RECEIVABLES
+                       - code       : '06'
+                         description: NOTES RECEIVABLES
+                         subledger:
+                           - code       : '001'
+                             description: PROMISSORY NOTE FROM PATIENTS
+                             tags       : [PROMISSORY_NOTES]
+                       - code       : '07'
+                         description: SUBSCRIPTION RECEIVABLES
+                       - code       : '08'
+                         description: INVENTORY  # with sub ledger used by Ancillary Center
+                         tags       : [COST_CENTER,INVENTORY]
+                       - code       : '09'
+                         description: PREPAID EXPENSES AND OTHER CURRENT ASSETS
+                         subledger:
+                           - code       : '001'
+                             description: PREPAID INSURANCE
+                           - code       : '002'
+                             description: PREPAID INTEREST
+                           - code       : '003'
+                             description: PREPAID RENT
+                           - code       : '004'
+                             description: PREPAID TAXES
+                           - code       : '005'
+                             description: PREPAID SERVICE CONTRACTS
+                           - code       : '006'
+                             description: PREPAID PENSION PLAN EXPENSE
+                           - code       : '007'
+                             description: OTHER PREPAID EXPENSES
+                           - code       : '008'
+                             description: INPUT TAX
+                             tags       : [INPUT_TAX]
+                           - code       : '009'
+                             description: OTHER CURRENT ASSETS
+                           - code       : '009'
+                             description: PREPAID SUPPLIES
+                             tags       : [COST_CENTER]
+                       - code       : '10'
+                         description: ACCRUED INTEREST
+                         subledger:
+                           - code       : '001'
+                             description: ACCRUED INTEREST
+                             tags       : [ACCRUED_INTEREST]
+             - code       : '02'
+               description: NON-CURRENT ASSETS
+               tags       : [FS_FINPOS_NONCURRENT]
+               subledger:
+                       - code       : '01'
+                         description: LAND
+                       - code       : '02'
+                         description: LAND IMPROVEMENTS
+                         subledger:
+                           - code       : '001'
+                             description: PARKING LOTS
+                           - code       : '002'
+                             description: ACCUMULATED DEPRECIATION-PARKING LOT IMPROVEMENTS
+                           - code       : '003'
+                             description: OTHER LAND IMPROVEMENTS
+                           - code       : '004'
+                             description: ACCUMULATED DEPRECIATION-OTHER LAND IMPROVEMENTS
+                       - code       : '03'
+                         description: BUILDINGS
+                         subledger:
+                           - code       : '001'
+                             description: HOSPITAL
+                           - code       : '002'
+                             description: ACCUMULATED DEPRECIATION-HOSPITAL
+                           - code       : '003'
+                             description: ELEVATORS
+                           - code       : '004'
+                             description: ACCUMULATED DEPRECIATION-ELEVATORS
+                           - code       : '005'
+                             description: POWERHOUSE
+                           - code       : '006'
+                             description: ACCUMULATED DEPRECIATION-POWERHOUSE
+                       - code       : '04'
+                         description: LEASEHOLD IMPROVEMENTS
+                       - code       : '05'
+                         description: MAJOR MOVABLE EQUIPMENTS
+                         tags       : [FIXED_ASSETS]
+                         subledger:
+                           - code       : '001'
+                             description: TRANSPORTATION/ MOBILE EQUIPMENT
+                             tags       : [COST_CENTER]
+                           - code       : '002'
+                             description: ACCUMULATED DEPRECIATION -TRANSPORTATION/ MOBILE EQUIPMENT
+                             tags       : [COST_CENTER]
+                           - code       : '003'
+                             description: MEDICAL EQUIPMENTS
+                             tags       : [COST_CENTER]
+                           - code       : '004'
+                             description: ACCUMULATED DEPRECIATION -MEDICAL EQUIPMENTS
+                             tags       : [COST_CENTER]
+                           - code       : '005'
+                             description: HOSPITAL FURNITURE AND FIXTURES
+                             tags       : [COST_CENTER]
+                           - code       : '006'
+                             description: ACCUMULATED DEPRECIATION -HOSPITAL FURNITURE AND FIXTURES
+                             tags       : [COST_CENTER]
+                           - code       : '007'
+                             description: HOSPITAL EQUIPMENT
+                             tags       : [COST_CENTER]
+                           - code       : '008'
+                             description: ACCUMULATED DEPRECIATION -HOSPITAL EQUIPMENT
+                             tags       : [COST_CENTER]
+                           - code       : '009'
+                             description: OFFICE FURNITURES & FIXTURES
+                             tags       : [COST_CENTER]
+                           - code       : '010'
+                             description: ACCUMULATED DEPRECIATION -OFFICE FURNITURES & FIXTURES
+                             tags       : [COST_CENTER]
+                           - code       : '011'
+                             description: OFFICE EQUIPMENT
+                             tags       : [COST_CENTER]
+                           - code       : '012'
+                             description: ACCUMULATED DEPRECIATION -OFFICE EQUIPMENT
+                             tags       : [COST_CENTER]
+                           - code       : '013'
+                             description: ENGINEERING TOOLS AND EQUIPMENT
+                             tags       : [COST_CENTER]
+                           - code       : '014'
+                             description: ACCUMULATED DEPRECIATION -ENGINEERING TOOLS AND EQUIPMENT
+                             tags       : [COST_CENTER]
+                           - code       : '015'
+                             description: GENERAL SERVICE TOOLS AND EQUIPMENT
+                             tags       : [COST_CENTER]
+                           - code       : '016'
+                             description: ACCUMULATED DEPRECIATION -GENERAL SERVICE TOOLS AND EQUIPMENT
+                             tags       : [COST_CENTER]
+                           - code       : '017'
+                             description: DIETARY AND KITCHEN EQUIPMENT
+                             tags       : [COST_CENTER]
+                           - code       : '018'
+                             description: ACCUMULATED DEPRECIATION -DIETARY AND KITCHEN EQUIPMENT
+                             tags       : [COST_CENTER]
+                       - code       : '06'
+                         description: MINOR MOVABLE EQUIPMENTS
+                         tags       : [FIXED_ASSETS]
+                         subledger:
+                           - code       : '001'
+                             description: HOSPITAL MINOR MOVABLE EQUIPMENT
+                             tags       : [COST_CENTER]
+                           - code       : '002'
+                             description: ACCUMULATED DEPRECIATION -HOSPITAL MINOR MOVABLE EQUIPMENT
+                             tags       : [COST_CENTER]
+                           - code       : '003'
+                             description: DIETARY MINOR MOVABLE EQUIPMENT
+                             tags       : [COST_CENTER]
+                           - code       : '004'
+                             description: ACCUMULATED DEPRECIATION -DIETARY MINOR MOVABLE EQUIPMENT
+                             tags       : [COST_CENTER]
+                           - code       : '005'
+                             description: ADMIN & OFFICE MINOR MOVABLE EQUIPMENT
+                             tags       : [COST_CENTER]
+                           - code       : '006'
+                             description:  ACCUMULATED DEPRECIATION - ADMIN & OFFICE MINOR MOVABLE EQUIPMENT
+                             tags       : [COST_CENTER]
+                       - code       : '07'
+                         description: SOFTWARE
+                         subledger:
+                           - code       : '001'
+                             description: Accumulated Amortization
+                       - code       : '08'
+                         description: CONSTRUCTION-IN-PROGRESS
+                         subledger:
+                           - code       : '001'
+                             description: CIP - PARKING LOT IMPROVEMENTS
+                           - code       : '002'
+                             description: CIP - OTHER LAND IMPROVEMENTS
+                           - code       : '003'
+                             description: CIP -  HOSPITAL BUILDING
+                           - code       : '004'
+                             description: CIP -  POWERHOUSE
+                           - code       : '005'
+                             description: CIP -  ELEVATORS
+
+
+
+    - code       : '02'
+      description: LIABILITIES
+      tags       : [LIABILITIES]
+      subledger:
+             - code       : '01'
+               description: CURRENT LIABILITIES
+               tags       : [FS_FINPOS_CURRENT_LIABILITIES]
+               subledger:
+                       - code       : '01'
+                         description: NOTES PAYABLE
+                         subledger:
+                           - code       : '001'
+                             description: NOTES PAYABLE TO VENDOR/ SUPPLIERS
+                             tags       : [NP_VENDOR]
+                           - code       : '002'
+                             description: NOTES PAYABLE TO CONTRACTORS
+                             tags       : [NP_CONTRACTORS]
+                           - code       : '003'
+                             description: NOTES PAYABLE TO BANKS
+                             tags       : [NP_BANKS,BANK_ACCOUNTS]
+                           - code       : '004'
+                             description: OTHER NOTES PAYABLE
+                       - code       : '02'
+                         description: LOANS PAYABLE
+                         subledger:
+                           - code       : '001'
+                             description: LOANS PAYABLE TO BANKS
+                             tags       : [LP_BANKS,BANK_ACCOUNTS]
+                           - code       : '002'
+                             description: OTHER LOANS PAYABLE
+                           - code       : '003'
+                             description: LOANS INTEREST  PAYABLE
+                       - code       : '03'
+                         description: CURRENT PORTION OF LONG TERM DEBT
+                         subledger:
+                           - code       : '001'
+                             description: CURRENT PORTION OF LONG TERM DEBT TO VENDOR/ SUPPLIERS
+                             tags       : [CP_VENDOR]
+                           - code       : '002'
+                             description: CURRENT PORTION OF LONG TERM DEBT TO CONTRACTORS
+                             tags       : [CP_CONTRACTORS]
+                           - code       : '003'
+                             description: CURRENT PORTION OF LONG TERM DEBT TO BANKS
+                             tags       : [CP_BANKS,BANK_ACCOUNTS]
+                       - code       : '04'
+                         description: ACCOUNTS PAYABLE
+                         subledger:
+                           - code       : '001'
+                             description: ACCOUNTS PAYABLE TO VENDORS/ SUPPLIERS
+                             tags       : [AP_VENDOR]
+                           - code       : '002'
+                             description: ACCOUNTS PAYABLE TO CONTRACTORS
+                             tags       : [AP_CONTRACTOR]
+                           - code       : '003'
+                             description: PROVISION FOR PAYABLE TO SUPPLIER
+                             tags       : [AP_PROVISION_VENDOR]
+                           - code       : '004'
+                             description: PROVISION FOR OTHER PAYABLES # com.hisd3.backoffice.view.ap.modules.otherpayables.AddOtherPayables#computePayable
+                             tags       : [OTHER_PAYABLE_TRACKING]
+                           - code       : '005'
+                             description: OTHER ACCOUNTS PAYABLE
+                           - code       : '006'
+                             description: PROVISION FOR PAYABLE TO CONTRACTORS
+                             tags       : [AP_PROVISION_CONTRACTOR]
+                           - code       : '007'
+                             description: SUSPEND ACCOUNT- PHILHEALTH
+                             tags       : [SUSPEND_ACCOUNT_PHIC]
+                           - code       : '008'
+                             description: SUSPEND ACCOUNT- OTHERS
+                             tags       : [DEFERRED_INCOME]
+                       - code       : '05'
+                         description: COMPENSATION AND RELATED LIABILITY
+                         subledger:
+                           - code       : '001'
+                             description: ACCRUED SALARIES AND WAGES
+                             tags       : [BASIC_SALARY]
+                           - code       : '002'
+                             description: ACCRUED VACATION,HOLIDAY AND SICK PAY
+                             tags       : [BASIC_VL]
+                           - code       : '003'
+                             description: WITHHOLDING TAX PAYABLE- COMPENSATION
+                             tags       : [WTX_COMPENSATION]
+                           - code       : '004'
+                             description: PHILHEALTH PREMIUM PAYABLE
+                             tags       : [PHIC_PAYABLE]
+                           - code       : '005'
+                             description: PAG-IBIG/HDMF PREMIUM PAYABLE
+                             tags       : [HDMF_PREMIUM_PAYABLE]
+                           - code       : '006'
+                             description: SSS LOANS PAYABLE
+                             tags       : [SSS_PAYABLE]
+                           - code       : '007'
+                             description: PAG-IBIG/HDMF LOANS PAYABLE
+                             tags       : [HDMF_LOANS_PAYABLE]
+                           - code       : '008'
+                             description: OTHER PAYROLL DEDUCTIONS
+                           - code       : '009'
+                             description: SSS PREMIUM PAYABLE
+                           - code       : '010'
+
+                       - code       : '06'
+                         description: OTHER CURRENT PAYABLES
+                         subledger  :
+                           - code       : '001'
+                             description: OUTPUT TAXES
+                             tags       : [OUTPUT_TAX]
+                           - code       : '002'
+                             description: VAT PAYABLE
+                             tags       : [VAT_PAYABLE]
+                           - code       : '003'
+                             description: WITHHOLDING TAX PAYABLE  EXPANDED - DOCTORS FEE
+                             tags       : [DOCTORS_PF_WTX_EXPANDED]
+                           - code       : '004'
+                             description: WITHHOLDING TAX PAYABLE  EXPANDED - OTHERS
+                             tags       : [OTHERS_WTX_EXPANDED]
+                           - code       : '005'
+                             description: DOCTOR'S PROFESSIONAL FEE LIABILITY
+                             tags       : [DOCTOR_ACCRUED_PF]
+                           - code       : '006'
+                             description: READERS FEE LIABILITY
+                             tags       : [DOCTOR_ACCRUED_PF_READERS]
+                           - code       : '007'
+                             description: PF TO DOCTORS
+                             tags       : [DOCTOR_PF]
+                       - code       : '07'
+                         description: TAX PAYABLE
+                         subledger:
+                           - code       : '001'
+                             description: INCOME TAX PAYABLE
+                           - code       : '002'
+                             description: PROPERTY TAX PAYABLE
+
+
+
+             - code       : '02'
+               description: NONCURRENT LIABILITIES
+               tags       : [FS_FINPOS_NONCURRENT_LIABILITIES]
+               subledger:
+                       - code       : '01'
+                         description: LOANS PAYABLE
+                         subledger:
+                           - code       : '001'
+                             description: LOANS PAYABLE TO BANKS
+                             tags       : [LT_LP_BANKS,BANK_ACCOUNTS]
+                           - code       : '002'
+                             description: OTHER LOANS PAYABLE
+
+                       - code       : '02'
+                         description: LOANS INTEREST PAYABLE
+                         subledger:
+                           - code       : '001'
+                             description: LOANS INTEREST PAYABLE TO BANKS
+                             tags       : [LI_LP_BANKS,BANK_ACCOUNTS]
+                       - code       : '03'
+                         description: CONSTRUCTION RETENTION PAYABLE
+                       - code       : '04'
+                         description: ADVANCES
+                         subledger:
+                           - code       : '001'
+                             description: ADVANCES FROM PATIENTS
+                             tags       : [ADVANCES_PATIENTS]
+                           - code       : '002'
+                             description: ADVANCES FROM OTHERS
+                             tags       : [ADVANCES_OTHERS]
+                       - code       : '05'
+                         description: OTHER NONCURRENT LIABILITIES
+
+    - code       : '03'
+      description: SHAREHOLDER'S EQUITY
+      tags       : [SHAREHOLDERS,FS_FINPOS_SHAREHOLDERS]
+      subledger:
+             - code       : '01'
+               description: SUBSCRIBED CAPITAL STOCK
+             - code       : '02'
+               description: ADDITIONAL PAID-IN CAPITAL
+             - code       : '03'
+               description: RETAINED EARNINGS
+             - code       : '04'
+               description: DEPOSIT FOR FUTURE SUBSCRIPTION
+               subledger  :
+                  - code       : '01'
+                    description:  FUTURE SUBSCRIBERS
+             - code       : '99'
+               description: BEGINNING BALANCING
+               subledger  :
+                  - code       : '01'
+                    description: HISTORICAL BALANCING
+                    tags       : [HISTORICAL_BALANCING]
+
+
+    - code       : '04'
+      description: REVENUE
+      tags       : [REVENUE]
+      subledger:
+             - code       : '01'
+               description: DAILY HOSPITAL AND AMBULATORY SERVICES
+               subledger:
+                       - code       : '01'
+                         description: ROOMS
+                       - code       : '02'
+                         description: PHARMACY
+                       - code       : '03'
+                         description: CSR
+
+#             - code       : '02'
+#               description: ANCILLARY SERVICES REVENUE
+#               tags       : [ANCILLARY]
+
+             - code       : '02'
+               description: SALES
+               subledger:
+                       - code       : '01'
+                         description: IN-PATIENT
+                         tags       : [REVENUESOURCE,REVENUE_INPATIENT,FS_PROFITLOSS_INPATIENT]
+                       - code       : '02'
+                         description: OUT-PATIENT
+                         tags       : [REVENUESOURCE,REVENUE_OUTPATIENT,FS_PROFITLOSS_OUTPATIENT]
+
+
+
+    - code       : '05'
+      description: COST OF SALES
+      tags       : [COSTOFSALES]
+      subledger:
+             - code       : '01'
+               description: DAILY HOSPITAL AND AMBULATORY SERVICES
+               subledger:
+                       - code       : '01'
+                         description: ROOMS
+                       - code       : '02'
+                         description: PHARMACY
+                       - code       : '03'
+                         description: CSR
+
+#             - code       : '02'
+#               description: ANCILLARY SERVICES REVENUE
+#               tags       : [ANCILLARY]
+
+             - code       : '02'
+               description: SALES
+               tags       : [FS_PROFITLOSS_COSTOFSALES]
+               subledger:
+                       - code       : '01'
+                         description: IN-PATIENT
+                         tags       : [REVENUESOURCE,COST_INPATIENT]
+                       - code       : '02'
+                         description: OUT-PATIENT
+                         tags       : [REVENUESOURCE,COST_OUTPATIENT]
+                       - code       : '03'
+                         description: INVENTORY COST
+                         tags       : [COST_CENTER,COST_INVENTORY]
+                       - code       : '04'
+                         description: 'TRANSCRIPTION/READER''S FEE'
+                         tags       : [COST_CENTER,READERS_FEE]
+
+
+
+    - code       : '06'
+      description: EXPENSES
+      tags       : [EXPENSES]
+      subledger:
+             - code       : '01'
+               description: OPERATING EXPENSES
+               tags       : [FS_PROFITLOSS_OPEX]
+               subledger:
+                       - code       : '01'
+                         description: SALARIES AND WAGES
+                         subledger:
+                           - code       : '001'
+                             description: MANAGEMENT & SUPERVISION
+                             tags       : [COST_CENTER]
+                           - code       : '002'
+                             description: REGISTERED NURSES
+                             tags       : [COST_CENTER]
+                           - code       : '003'
+                             description: AIDES, ORDERLIES AND ATTENDANTS
+                             tags       : [COST_CENTER]
+                           - code       : '004'
+                             description: OTHER EMPLOYEE CLASSIFICATIONS
+                             tags       : [COST_CENTER]
+                       - code       : '02'
+                         description: EMPLOYEE BENEFITS
+                         subledger:
+                           - code       : '001'
+                             description: 13TH MONTH PAY
+                             tags       : [COST_CENTER]
+                           - code       : '002'
+                             description: INCENTIVES & BONUSES
+                             tags       : [COST_CENTER]
+                           - code       : '003'
+                             description: DI-MINIMIS BENEFITS
+                             tags       : [COST_CENTER]
+                           - code       : '004'
+                             description: SSS EMPLOYER'S CONTRIBUTIONS
+                             tags       : [COST_CENTER]
+                           - code       : '005'
+                             description: PHILHEALTH EMPLOYER'S CONTRIBUTIONS
+                             tags       : [COST_CENTER]
+                           - code       : '006'
+                             description: HDMF EMPLOYER'S CONTRIBUTIONS
+                             tags       : [COST_CENTER]
+                           - code       : '007'
+                             description: OTHER EMPLOYEE BENEFITS
+                             tags       : [COST_CENTER]
+                       - code       : '03'
+                         description: PROFESSIONAL FEES
+                         tags       : []
+                         subledger:
+                           - code        : '001'
+                             description : MEDICAL PHYSICIANS
+                             tags       : [COST_CENTER]
+                           - code        : '002'
+                             description : THERAPISTS & OTHER NON-PHYSICIANS
+                             tags       : [COST_CENTER]
+                           - code        : '003'
+                             description : CONSULTING & MANAGEMENT FEES
+                             tags       : [COST_CENTER]
+                           - code        : '004'
+                             description : LEGAL FEES
+                             tags       : [COST_CENTER]
+                           - code        : '005'
+                             description : AUDIT FEES
+                             tags       : [COST_CENTER]
+                           - code        : '006'
+                             description : OTHER FEES
+                             tags       : [COST_CENTER]
+                       - code       : '04'
+                         description: NON-MEDICAL AND NON-SURGICAL SUPPLIES
+                         subledger:
+                           - code        : '001'
+                             description : DIETARY -TABLEWARE AND KITCHEN UTENSILS
+                             tags       : [COST_CENTER]
+                           - code        : '002'
+                             description : LINEN AND BEDDINGS
+                             tags       : [COST_CENTER]
+                           - code        : '003'
+                             description : CLEANING SUPPLIES
+                             tags       : [COST_CENTER]
+                           - code        : '004'
+                             description : OFFICE AND ADMINISTRATIVE SUPPLIES
+                             tags       : [COST_CENTER]
+                           - code        : '005'
+                             description : INSTRUMENTS AND MINOR EQUIPMENT
+                             tags       : [COST_CENTER]
+                           - code        : '006'
+                             description : OTHER NON-MEDICAL AND NON-SURGICAL SUPPLIES
+                             tags       : [COST_CENTER]
+                           - code        : '007'
+                             description : UNIFORMS
+                             tags       : [COST_CENTER]
+                       - code       : '05'
+                         description: UTILITIES
+                         tags       : [UTILITIES]
+                         subledger:
+                           - code        : '001'
+                             description : ELECTRICITY
+                             tags       : [COST_CENTER]
+                           - code        : '002'
+                             description : FUEL - GENERATORS
+                             tags       : [COST_CENTER]
+                           - code        : '003'
+                             description : WATER
+                             tags       : [COST_CENTER]
+                           - code        : '004'
+                             description : COMMUNICATION EXPENSE
+                             tags       : [COST_CENTER]
+                           - code        : '005'
+                             description : WASTE DISPOSAL
+                             tags       : [COST_CENTER]
+                           - code        : '006'
+                             description : UTILITIES -OTHER
+                             tags       : [COST_CENTER]
+                       - code       : '06'
+                         description: OUTSIDE SERVICES
+                         subledger:
+                           - code        : '001'
+                             description : COLLECTION AGENCY (ARMOURED CAR)
+                           - code        : '002'
+                             description : JANITORIAL SERVICES
+                           - code        : '003'
+                             description : SECURITY SERVICES
+                           - code        : '004'
+                             description : WASTE MANAGEMENT DISPOSAL
+                           - code        : '005'
+                             description : LAUNDRY AND LINEN  SERVICES
+                           - code        : '006'
+                             description : OTHER OUTSIDE SERVICES
+                       - code       : '07'
+                         description: OTHER ADMINISTRATIVE AND OPERATING EXPENSES
+                         subledger:
+                           - code        : '001'
+                             description : INSURANCE - BUILDING
+                             tags        : [COST_CENTER]
+                           - code        : '002'
+                             description : INSURANCE - CASH
+                             tags        : [COST_CENTER]
+                           - code        : '003'
+                             description : INSURANCE - VEHICLES
+                             tags        : [COST_CENTER]
+                           - code        : '004'
+                             description : INTEREST EXPENSE
+                             tags        : [COST_CENTER]
+                           - code        : '005'
+                             description : MEMBERSHIP, BOOKS AND SUBSCRIPTION
+                             tags        : [COST_CENTER]
+                           - code        : '006'
+                             description : EMPLOYEE DEVELOPMENT
+                             tags        : [COST_CENTER]
+                           - code        : '007'
+                             description : TRANSPORTATION AND TRAVEL - OTHER
+                             tags        : [COST_CENTER]
+                           - code        : '008'
+                             description : MAILING/POSTAGE/COURIER
+                             tags        : [COST_CENTER]
+                           - code        : '009'
+                             description : MAILING/POSTAGE/COURIER
+                             tags        : [COST_CENTER]
+                           - code        : '010'
+                             description : PRINTING AND PHOTOCOPYING
+                             tags        : [COST_CENTER]
+                           - code        : '011'
+                             description : MARKETING EXPENSE
+                             tags        : [COST_CENTER]
+                           - code        : '012'
+                             description : BANK CHARGES
+                             tags        : [COST_CENTER]
+                           - code        : '013'
+                             description : COMMISSION FEES - CARD TRANSACTIONS
+                             tags        : [COST_CENTER]
+                           - code        : '014'
+                             description : REPRESENTATION AND ENTERTAINMENT EXPENSE
+                             tags        : [COST_CENTER]
+                           - code        : '015'
+                             description : COMMUNITY OUTREACH EXPENSES
+                             tags        : [COST_CENTER]
+                           - code        : '016'
+                             description : DONATIONS AND CONTRIBUTIONS
+                             tags        : [COST_CENTER]
+                           - code        : '017'
+                             description : REPAIRS & MAINTENANCE-VEHICLE
+                             tags        : [COST_CENTER]
+                           - code        : '018'
+                             description : REPAIRS & MAINTENANCE -IT
+                             tags        : [COST_CENTER]
+                           - code        : '019'
+                             description : REPAIRS & MAINTENANCE -ENGINEERING
+                             tags        : [COST_CENTER]
+                           - code        : '020'
+                             description : REPAIRS & MAINTENANCE - AIRCON
+                             tags        : [COST_CENTER]
+                           - code        : '021'
+                             description : VEHICLE ADMIN - FUEL AND GASOLINE
+                             tags        : [COST_CENTER]
+                           - code        : '022'
+                             description : VEHICLE AMBULANCE -FUEL AND GASOLINE
+                             tags        : [COST_CENTER]
+                           - code        : '023'
+                             description : TAXES AND LICENSES
+                             tags        : [COST_CENTER]
+                           - code        : '024'
+                             description : PENALTIES
+                             tags        : [COST_CENTER]
+
+                       - code       : '08'
+                         description: DEPRECIATION EXPENSE
+                         tags       : [FS_CASHFLOW_EXPENSE_DEPRECIATION]
+                         subledger:
+                           - code        : '001'
+                             description : DEPRECIATION - BUILDING
+                             tags       : [COST_CENTER]
+                           - code        : '002'
+                             description : DEPRECIATION - VEHICLE
+                           - code        : '003'
+                             description : DEPRECIATION - FIXED EQUIPMENT
+                           - code        : '004'
+                             description : DEPRECIATION - FURNITURE AND FIXTURES
+                           - code        : '005'
+                             description : DEPRECIATION - LINENS
+                             tags       : [COST_CENTER]
+                       - code       : '09'
+                         description: DIRECTOR'S FEE AND ALLOWANCES
+                       - code       : '10'
+                         description: RENTAL EXPENSE
+                         tags       : [COST_CENTER]
+                       - code       : '11'
+                         description: PROVISION FOR INCOME TAX
+                         tags       : [FS_PROFITLOSS_OPEX_PROVISION_INCOME]
+
+             - code       : '02'
+               description: NON-OPERATING EXPENSES
+             - code       : '03'
+               description: PRE-OPERATING EXPENSES
+               tags       : [DUPLICATE_EXPENSES,PREOPEXPENSES]
+
+
+    - code       : '07'
+      description: DEDUCTIONS FROM REVENUE
+      tags       : [DEDREVENUE,FS_PROFITLOSS_DEADREVENUE]
+      subledger:
+             - code       : '01'
+               description: DEDUCTIONS
+               subledger  :
+                       - code       : '01'
+                         description: PERSONAL DEDUCTIONS DISCOUNTS
+                         subledger  :
+                                 - code       : '001'
+                                   description: IN-PATIENT
+                                   tags       : [COST_CENTER,DEDUCT_INPATIENT_SPECIFIC]
+                                 - code       : '002'
+                                   description: OUT-PATIENT
+                                   tags       : [COST_CENTER,DEDUCT_OUTPATIENT_SPECIFIC]
+                       - code       : '02'
+                         description: SENIOR/PWD DISCOUNTS
+                         subledger  :
+                                 - code       : '001'
+                                   description: IN-PATIENT
+                                   tags       : [COST_CENTER,DEDUCT_INPATIENT_SENIOR_PWD]
+                                 - code       : '002'
+                                   description: OUT-PATIENT
+                                   tags       : [COST_CENTER,DEDUCT_OUTPATIENT_SENIOR_PWD]
+                       - code       : '03'
+                         description: EMPLOYEES DISCOUNTS
+                         subledger  :
+                                 - code       : '001'
+                                   description: IN-PATIENT
+                                   tags       : [COST_CENTER,DEDUCT_INPATIENT_EMP]
+                                 - code       : '002'
+                                   description: OUT-PATIENT
+                                   tags       : [COST_CENTER,DEDUCT_OUTPATIENT_EMP]
+                       - code       : '04'
+                         description: INVESTORS DISCOUNTS
+                         subledger  :
+                                 - code       : '001'
+                                   description: IN-PATIENT
+                                   tags       : [COST_CENTER,DEDUCT_INPATIENT_INVESTORS]
+                                 - code       : '002'
+                                   description: OUT-PATIENT
+                                   tags       : [COST_CENTER,DEDUCT_OUTPATIENT_INVESTORS]
+                       - code       : '05'
+                         description: VAT DEDUCTIONS
+                         subledger  :
+                           - code       : '001'
+                             description: IN-PATIENT
+                             tags       : [COST_CENTER,DEDUCT_INPATIENT_VAT]
+                           - code       : '002'
+                             description: OUT-PATIENT
+                             tags       : [COST_CENTER,DEDUCT_OUTPATIENT_VAT]
+
+
+
+
+    - code       : '08'
+      description: OTHER INCOME
+      tags       : [OTHER_REVENUE,FS_PROFITLOSS_OTHERINCOME]
+      subledger:
+             - code       : '01'
+               description: RENTAL INCOME
+               subledger:
+                       - code       : '01'
+                         description: DOCTOR'S CLINICS
+                         subledger:
+                           - code       : '001'
+                             description: RENTAL
+                       - code       : '02'
+                         description: COMMERCIAL SPACE
+                         subledger:
+                           - code       : '001'
+                             description: RENTAL
+             - code       : '02'
+               description: OTHER INCOME
+               subledger:
+                       - code       : '01'
+                         description: ROOMS
+                         subledger:
+                           - code       : '001'
+                             description: ROOM DAMAGES
+                             tags       : [ROOM_DAMAGES]
+                       - code       : '02'
+                         description: CASHIERS
+                         subledger:
+                           - code       : '001'
+                             description: OVERAGE
+                             tags       : [OVERAGE_CASHIERS]
+                       - code       : '02'
+                         description: INTEREST INCOME
+                         tags       : [FS_CASHFLOW_INTEREST_INCOME]
+                         subledger:
+                           - code       : '001'
+                             description: BANK INTEREST
+
+#    - code       : '09'
+#      description: OTHER EXPENSES
+#      tags       : [OTHER_EXPENSES]
+
+
+
+
+
+
+### =============END==========================
+
+
+

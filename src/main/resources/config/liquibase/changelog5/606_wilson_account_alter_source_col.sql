@@ -1,0 +1,1 @@
+ALTER TABLE inventory.accounting_categories ADD COLUMN source_column varchar default null;

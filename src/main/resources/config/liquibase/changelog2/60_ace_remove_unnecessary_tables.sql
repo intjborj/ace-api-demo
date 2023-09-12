@@ -1,0 +1,17 @@
+drop table if exists hospital_configuration.hosp_operation_hai;
+drop table if exists hospital_configuration.hosp_operations_minor_opt;
+drop table if exists hospital_configuration.hosp_operations_mortality_deaths;
+drop table if exists hospital_configuration.hosp_opt_descharges_morbidity;
+drop table if exists hospital_configuration.hosp_opt_descharges_specialty;
+drop table if exists hospital_configuration.hosp_opt_descharges_specialty_others;
+
+drop table if exists hospital_configuration.hosp_opt_discharges_er;
+drop table if exists hospital_configuration.hosp_opt_discharges_ev;
+drop table if exists hospital_configuration.hosp_opt_discharges_number_deliveries;
+drop table if exists hospital_configuration.hosp_opt_discharges_opd;
+drop table if exists hospital_configuration.hosp_opt_discharges_opv;
+drop table if exists hospital_configuration.hosp_opt_discharges_testing;
+drop table if exists hospital_configuration.hosp_opt_summary_of_patient;
+
+
+

@@ -1,0 +1,403 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.11.0.final using JasperReports Library version 6.11.0-0c4056ccaa4d25a5a8c45672d2f764ea3498bebb  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Clinical abstract" pageWidth="602" pageHeight="792" columnWidth="562" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="290277b9-e85c-4bf0-a009-09928584d427">
+	<property name="com.jaspersoft.studio.unit." value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageHeight" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.topMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.bottomMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.leftMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.rightMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnSpacing" value="pixel"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="752" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="562" height="48" uuid="f1b0325e-790f-4b85-b850-cc261266e536">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<box>
+					<pen lineWidth="1.0" lineStyle="Solid"/>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="40" y="12" width="280" height="20" uuid="d71c7808-f08d-4122-85a0-427e416bc6d9"/>
+				<textElement textAlignment="Center">
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ALLIED CARE EXPERTS MEDICAL CENTER-BOHOL]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="76" y="23" width="180" height="26" uuid="4d9adcd9-c999-4d9c-9c04-a7e648944940"/>
+				<textElement textAlignment="Center">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[0368 Carlos P. Garcia East Avenue,
+Mansasa District, Tagbilaran City, Bohol]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="330" y="0" width="106" height="48" uuid="a743225f-4018-424e-8be4-4703e35c0a5c"/>
+				<box>
+					<pen lineWidth="1.0" lineStyle="Solid"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[
+DOCUMENT NO.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="436" y="0" width="126" height="48" uuid="d5be130e-8881-4113-b804-88d18627e762"/>
+				<box>
+					<pen lineWidth="1.0" lineStyle="Solid"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="9"/>
+				</textElement>
+				<text><![CDATA[  ACEMCB-NSD-FORM-0128]]></text>
+			</staticText>
+			<image>
+				<reportElement x="-5" y="7" width="54" height="40" uuid="8ee35ceb-e5a9-4e5a-9c23-3fd9ee6c38fa"/>
+				<imageExpression><![CDATA["C:/Users/hairej/Downloads/82609561_782468018941240_4099637607921614848_n.png"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="0" y="48" width="562" height="30" uuid="7fa038ce-4b25-4ea5-b8ab-b5fdb60a2ea3"/>
+				<box>
+					<pen lineWidth="1.0" lineStyle="Solid"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[CLINICAL ABSTRACT]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="78" width="140" height="22" uuid="a6c0c2e4-f3a5-43b7-8031-f898a19e5ea2"/>
+				<box>
+					<pen lineWidth="1.0" lineStyle="Solid"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font size="9"/>
+				</textElement>
+				<text><![CDATA[ Date/Time]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="140" y="78" width="116" height="22" uuid="2ece4745-ac5d-4b4d-b065-53839e366d8b"/>
+				<box>
+					<pen lineWidth="1.0" lineStyle="Solid"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font size="9"/>
+				</textElement>
+				<text><![CDATA[ PIN No.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="256" y="78" width="164" height="22" uuid="821bd9ba-1150-4d8c-8d11-94db5df86a9a"/>
+				<box>
+					<pen lineWidth="1.0" lineStyle="Solid"/>
+				</box>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[  Case No.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="420" y="78" width="142" height="22" uuid="86d5ed8c-ba14-4808-adc2-f4859eeeff2e"/>
+				<box>
+					<pen lineWidth="1.0" lineStyle="Solid"/>
+				</box>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[ Room-Bed No.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="100" width="200" height="30" uuid="f21070cb-b61e-4aef-a47e-95a8a2e423de"/>
+				<box>
+					<pen lineWidth="1.0" lineStyle="Solid"/>
+				</box>
+				<textElement>
+					<font size="9"/>
+				</textElement>
+				<text><![CDATA[ Patient Name ( Last, First, Middle )]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="200" y="100" width="56" height="30" uuid="d6bf2df0-dbf7-4a39-96a0-58e7f1168c88"/>
+				<box>
+					<pen lineWidth="1.0" lineStyle="Solid"/>
+				</box>
+				<textElement>
+					<font size="9"/>
+				</textElement>
+				<text><![CDATA[ Age]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="256" y="100" width="114" height="30" uuid="cb30fb37-2f03-4c0a-ac79-804cd01e8d99"/>
+				<box>
+					<pen lineWidth="1.0" lineStyle="Solid"/>
+				</box>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[ Gender]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="300" y="109" width="20" height="14" uuid="625ab3d7-8921-4fe8-bb9e-e5285abc0e94"/>
+				<text><![CDATA[M]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement x="311" y="111" width="10" height="10" uuid="3e3e5d1d-171c-4b85-86ca-9bebdd6510de"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="330" y="109" width="20" height="14" uuid="fad5200f-0f62-4076-a845-0e7f935d2fce"/>
+				<text><![CDATA[F]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement x="339" y="111" width="10" height="10" uuid="19af4684-5a9c-40eb-9bd7-8f512b68ab5a"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="370" y="100" width="90" height="30" uuid="27302598-88ac-474b-b4d1-f738a16478be"/>
+				<box>
+					<pen lineWidth="1.0" lineStyle="Solid"/>
+				</box>
+				<textElement>
+					<font size="9"/>
+				</textElement>
+				<text><![CDATA[ Civil Status:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="460" y="100" width="102" height="30" uuid="4f2d43b6-4179-4424-9340-0939f7da41f8"/>
+				<box>
+					<pen lineWidth="1.0" lineStyle="Solid"/>
+				</box>
+				<textElement>
+					<font size="9"/>
+				</textElement>
+				<text><![CDATA[ Birthday :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="130" width="562" height="30" uuid="09b430b8-b439-46c0-867f-01f5b33051ca"/>
+				<box>
+					<pen lineWidth="1.0" lineStyle="Solid"/>
+				</box>
+				<textElement>
+					<font size="9"/>
+				</textElement>
+				<text><![CDATA[ Address]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="160" width="300" height="40" uuid="843e29e6-94c0-44a6-a4fb-948aa73623b7"/>
+				<box>
+					<pen lineWidth="1.0" lineStyle="Solid"/>
+				</box>
+				<textElement>
+					<font size="9"/>
+				</textElement>
+				<text><![CDATA[ Attending Physician ( Last, First, Middle )]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="300" y="160" width="130" height="40" uuid="796ba526-906b-4e5b-9fa1-65fcac12e4b9"/>
+				<box>
+					<pen lineWidth="1.0" lineStyle="Solid"/>
+				</box>
+				<textElement>
+					<font size="9"/>
+				</textElement>
+				<text><![CDATA[ License No.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="430" y="160" width="132" height="40" uuid="ad556d70-330a-4f32-8cae-12ce99cf2e4d"/>
+				<box>
+					<pen lineWidth="1.0" lineStyle="Solid"/>
+				</box>
+				<textElement verticalAlignment="Top">
+					<font size="9"/>
+				</textElement>
+				<text><![CDATA[  Date & Time admitted]]></text>
+			</staticText>
+			<line>
+				<reportElement x="430" y="175" width="132" height="1" uuid="c9283cee-2676-45a0-a21d-b02bae557596"/>
+			</line>
+			<staticText>
+				<reportElement x="0" y="200" width="562" height="39" uuid="6a7efb2f-52db-48d1-880f-eeafb18eeaa4"/>
+				<box>
+					<pen lineWidth="1.0" lineStyle="Solid"/>
+				</box>
+				<textElement>
+					<font size="9"/>
+				</textElement>
+				<text><![CDATA[ Admitting Diagnosis]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="239" width="562" height="40" uuid="4a92886f-2d7a-4549-9757-5798467cc9e9"/>
+				<box>
+					<pen lineWidth="1.0" lineStyle="Solid"/>
+				</box>
+				<textElement>
+					<font size="9"/>
+				</textElement>
+				<text><![CDATA[ Final Diagnosis]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="279" width="562" height="41" uuid="62bc4c13-9595-45a7-8123-941eb2e61859"/>
+				<box>
+					<pen lineWidth="1.0" lineStyle="Solid"/>
+				</box>
+				<textElement>
+					<font size="9"/>
+				</textElement>
+				<text><![CDATA[  Chief Complaints]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="320" width="562" height="210" uuid="c24a7e88-3072-4367-98fc-06a70f907b8d"/>
+				<box>
+					<pen lineWidth="1.0" lineStyle="Solid"/>
+				</box>
+				<textElement>
+					<font size="9"/>
+				</textElement>
+				<text><![CDATA[  Clinical History]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="530" width="562" height="213" uuid="fe842173-7e03-462a-9f7e-b30bd37f5397"/>
+				<box>
+					<pen lineWidth="1.0" lineStyle="Solid"/>
+				</box>
+				<textElement>
+					<font size="9"/>
+				</textElement>
+				<text><![CDATA[  Dispositions: (indicate home medications and follow up)]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="0" y="110" width="200" height="20" uuid="e8c7a3e9-8b4e-489b-b8d8-7cae4f798e48"/>
+				<textElement verticalAlignment="Middle">
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA["     Weck Jonathan"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="370" y="110" width="90" height="20" uuid="60301519-80c6-48e4-97fd-154509b424a8"/>
+				<textElement verticalAlignment="Middle">
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA["  Filipino"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="460" y="110" width="100" height="20" uuid="48286bd5-6c9f-4a12-b7f3-ac8b5081f661"/>
+				<textElement verticalAlignment="Middle">
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA["    January 26 1996"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="200" y="110" width="56" height="20" uuid="bbefb235-75ab-471a-be1f-861a0a38601f"/>
+				<textElement verticalAlignment="Middle">
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA["   20"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="50" y="78" width="90" height="22" uuid="895d0419-8b0f-498d-b587-e3a9d16bef9c"/>
+				<textElement verticalAlignment="Middle">
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA["   09/02/2020"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="180" y="78" width="76" height="22" uuid="2e34ca19-c929-425d-988c-35263561a929"/>
+				<textElement verticalAlignment="Middle">
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA["   40"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="311" y="78" width="108" height="22" uuid="7f92b947-f304-4d38-bd9e-28fb2efde149"/>
+				<textElement verticalAlignment="Middle">
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA["  115"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="490" y="78" width="72" height="22" uuid="2d8af26e-376f-42d6-858c-2e1d05f5d2c6"/>
+				<textElement verticalAlignment="Middle">
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA["   30"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="10" y="140" width="552" height="20" uuid="b9a2cb5c-f4f1-4ca4-bd3d-735a8b95632c"/>
+				<textElement verticalAlignment="Middle">
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA["  Rizal Talibon Bohol"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="170" width="300" height="30" uuid="8c038af3-6c9b-4994-8313-7d167df2c57d"/>
+				<textElement verticalAlignment="Middle">
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA["     Text Field"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="300" y="170" width="130" height="30" uuid="d9ad480d-4d94-4a6a-944d-0cd0a438678c"/>
+				<textElement verticalAlignment="Middle">
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA["      Text Field"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="430" y="176" width="132" height="24" uuid="0c8d3b95-d6a4-4866-b859-9594a730f6de"/>
+				<textElement verticalAlignment="Middle">
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA["    Text Field"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="209" width="562" height="30" uuid="5989887c-200e-44a1-b8d8-ed28d6f821d8"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA["     Text Field"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="250" width="562" height="28" uuid="b1c1454c-b0bb-4ab8-b1a5-6ef56c5e3efa"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA["     Text Field"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="290" width="562" height="30" uuid="951f05ed-1eb7-4aa8-a706-26a071b5dbc6"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA["     Text Field"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="330" width="562" height="200" uuid="47a80ce1-a63e-4010-802e-91cab3b97fb8"/>
+				<textElement>
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA["    Text Field"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="540" width="562" height="202" uuid="9b5d2a72-ee74-41d1-bd69-89b0f1f0db21"/>
+				<textElement>
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA["   Text Field"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="330" y="23" width="104" height="24" uuid="66b0475f-b34e-45f1-b69e-14968248d846"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Text Field"]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+</jasperReport>

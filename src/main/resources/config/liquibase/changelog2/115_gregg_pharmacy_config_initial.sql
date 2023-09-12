@@ -1,0 +1,1 @@
+insert into "hospital_configuration"."pharmacy_configuration" ( "id", "sticker_printer_location") values ( '35d987c7-88bf-4711-ae5e-0020fd28bae4', 'http://172.16.12.116:4567/printondefault') RETURNING *;

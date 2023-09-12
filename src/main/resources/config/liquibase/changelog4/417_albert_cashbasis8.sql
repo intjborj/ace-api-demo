@@ -1,0 +1,1 @@
+ALTER TABLE "billing"."billing_item" ADD COLUMN "cash_basis_user" varchar;

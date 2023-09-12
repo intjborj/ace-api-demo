@@ -1,0 +1,1 @@
+ALTER TABLE "accounting"."financial_report" ADD COLUMN "show_all" bool;

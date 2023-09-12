@@ -1,0 +1,1 @@
+ALTER TABLE accounting.payables ADD COLUMN due_date date default null;

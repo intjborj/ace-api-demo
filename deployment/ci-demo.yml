@@ -1,0 +1,91 @@
+apiVersion: v1
+kind: Template
+labels:
+  template: hisd3mk2srv-demo-template
+  group: hisd3mk2srv
+metadata:
+  annotations:
+    iconClass: icon-spring
+    tags: oasisanalytics
+  name: hismk2-api-demo
+message: "Welcome to HISD3MK2 Backend Demo Server Setup Configuration"
+objects:
+
+  - apiVersion: v1
+    kind: Service
+    metadata:
+      name: hismk2-demo-service
+    spec:
+      type: ClusterIP
+      ports:
+        - name: http
+          port: 80
+          targetPort: 8080
+          protocol: TCP
+      selector:
+        app: hismk2-api-demo
+
+  - apiVersion: v1
+    kind: DeploymentConfig
+    metadata:
+      name: hismk2-api-demo
+      labels:
+        app: hismk2-api-demo
+    spec:
+      replicas: 1
+      selector:
+        app: hismk2-api-demo
+      triggers:
+        - type: "ConfigChange"
+        - imageChangeParams:
+            automatic: true
+            containerNames:
+              - "hismk2-api-demo"
+            from:
+              kind: "ImageStreamTag"
+              name: "hisd3mk2srv-demo:latest"
+          type: "ImageChange"
+
+      template:
+        metadata:
+          labels:
+            app: hismk2-api-demo
+        spec:
+          containers:
+            - name: hismk2-api-demo
+              image: hisd3mk2srv-demo:latest
+              ports:
+                - containerPort: 8080
+              args:
+                - --spring.profiles.active=prod
+                - --spring.datasource.databaseName=hismk2
+                - --spring.datasource.serverName=172.16.10.11
+                - --spring.datasource.username=postgres
+                - --spring.datasource.password=6fJ1plLmH0kLKkD4LClOd
+                - --redis.deployment=openshift
+                - --redis.host=redis
+                - --redis.port=6379
+                - --mq.host=openshift-activemq
+              readinessProbe:
+                httpGet:
+                  path: /ping
+                  port: 8080
+                  httpHeaders:
+                    - name: X-Custom-Header
+                      value: Awesome
+                initialDelaySeconds: 15
+                periodSeconds: 15
+                successThreshold: 1
+                timeoutSeconds: 20
+              livenessProbe:
+                httpGet:
+                  path: /ping
+                  port: 8080
+                  httpHeaders:
+                    - name: X-Custom-Header
+                      value: Awesome
+                initialDelaySeconds: 15
+                periodSeconds: 15
+                successThreshold: 1
+                timeoutSeconds: 20
+

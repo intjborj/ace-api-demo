@@ -1,0 +1,1 @@
+ALTER TABLE accounting.subaccount_setup ADD COLUMN department_includes varchar(5000) default null;

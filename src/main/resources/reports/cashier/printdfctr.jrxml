@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.6.0.final using JasperReports Library version 6.6.0  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="printdfctr" pageWidth="612" pageHeight="792" whenNoDataType="AllSectionsNoDetail" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="2487e3f5-f756-4ad0-8229-f979dd0ac8e9">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<parameter name="logo" class="java.io.InputStream"/>
+	<parameter name="hospitalname" class="java.lang.String"/>
+	<parameter name="hospitalfulladdress" class="java.lang.String"/>
+	<parameter name="contactline" class="java.lang.String"/>
+	<parameter name="forDate" class="java.lang.String"/>
+	<parameter name="preparedby" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="amount" class="java.math.BigDecimal"/>
+	<field name="description" class="java.lang.String"/>
+	<field name="bank" class="java.lang.String"/>
+	<field name="checkno" class="java.lang.String"/>
+	<variable name="amount1" class="java.math.BigDecimal" calculation="Sum">
+		<variableExpression><![CDATA[$F{amount}]]></variableExpression>
+	</variable>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="137" splitType="Stretch">
+			<textField>
+				<reportElement x="120" y="0" width="374" height="22" uuid="64e9dad1-2e3c-4b6c-bd2a-cbceaa81944e">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Left">
+					<font size="18" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{hospitalname}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="120" y="23" width="374" height="30" uuid="802b984c-df59-41a6-bc63-d2502f99dc08"/>
+				<textFieldExpression><![CDATA[$P{hospitalfulladdress}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="115" y="52" width="379" height="15" uuid="8d53fff8-9ba7-4324-bbf2-9382a8773181">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$P{contactline}]]></textFieldExpression>
+			</textField>
+			<image scaleImage="FillFrame">
+				<reportElement x="40" y="-1" width="70" height="70" uuid="81ae55c5-507c-4592-b041-9e7813876e15"/>
+				<graphicElement fill="Solid"/>
+				<imageExpression><![CDATA[$P{logo}]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="160" y="90" width="280" height="20" uuid="c4a36006-1b4a-4ab9-9a01-b5017d178f5c"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Daily Field Collection Turnover Report]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="160" y="110" width="280" height="20" uuid="2305c0bd-8196-488a-ac55-e56157c261bd"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{forDate}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="27">
+			<staticText>
+				<reportElement x="440" y="3" width="100" height="13" uuid="22269b8a-4980-41fc-b283-27db2db4f2fb">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Right"/>
+				<text><![CDATA[Amount]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="20" y="3" width="140" height="13" uuid="212f6bf9-b189-476c-9d90-bca5aba33885">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Left"/>
+				<text><![CDATA[Description]]></text>
+			</staticText>
+			<line>
+				<reportElement x="20" y="16" width="530" height="4" uuid="7592af25-1637-4962-b622-ff8c821add5d"/>
+			</line>
+			<staticText>
+				<reportElement x="210" y="3" width="110" height="13" uuid="90f814fb-4f7e-4e91-9966-7eb5aec7e474">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Left"/>
+				<text><![CDATA[Bank]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="330" y="3" width="110" height="13" uuid="9e6789fe-0e5e-45e7-ba4b-f3807a4c1f0d">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Left"/>
+				<text><![CDATA[Check #]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<detail>
+		<band height="22" splitType="Stretch">
+			<textField pattern="#,##0.00;-#,##0.00">
+				<reportElement x="442" y="1" width="98" height="13" uuid="38fc90dd-121a-4378-afab-0db79a6a2aba">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA[$F{amount}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="20" y="1" width="190" height="13" uuid="c33b9be1-41e7-46da-b5c1-ce8563cf3b8d">
+					<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{description}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="20" y="21" width="530" height="1" uuid="56efb504-2aac-4d2f-80ca-eca7e87a2728"/>
+				<graphicElement>
+					<pen lineStyle="Dashed"/>
+				</graphicElement>
+			</line>
+			<textField>
+				<reportElement x="210" y="1" width="110" height="13" uuid="cd568810-3ce0-449a-a859-1ec398824bca">
+					<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{bank}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="330" y="1" width="110" height="13" uuid="a9d3783e-fdd1-4f1a-8edc-3dae8d820f35">
+					<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{checkno}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="24" splitType="Stretch">
+			<textField>
+				<reportElement x="459" y="0" width="81" height="20" uuid="880ff8b7-d1c1-4f98-9e13-e4722c0718aa"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField pattern="MMM d, yyyy h:mm:ss a">
+				<reportElement x="280" y="0" width="170" height="20" uuid="f34609ec-5cde-4aad-8596-2fb60f5be4ab"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="123" splitType="Stretch">
+			<staticText>
+				<reportElement x="250" y="0" width="160" height="25" uuid="7120e20c-ba6b-431f-9a20-5b6088ef52d4">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Right">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Total (Php) :]]></text>
+			</staticText>
+			<textField pattern="#,##0.00;-#,##0.00">
+				<reportElement x="420" y="-4" width="120" height="29" uuid="6ce50d61-e56c-46c1-bd75-f2c799bcf1d4"/>
+				<textElement textAlignment="Right">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{amount1}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="40" width="160" height="13" uuid="3314e9e1-ecb1-4e0b-ae4b-45a730ecf9eb">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Left"/>
+				<text><![CDATA[Prepared by:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="-5" y="67" width="210" height="20" uuid="bc4b6bec-b129-4416-a5b0-c079d8ef537c">
+					<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{preparedby}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="-5" y="90" width="221" height="1" uuid="2974b8dc-d1b1-4b12-a8b2-d932f810788c"/>
+			</line>
+			<staticText>
+				<reportElement x="-10" y="100" width="221" height="20" uuid="a9e80ddd-5039-4981-8ef4-150cc170b039">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Center">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Field Collector]]></text>
+			</staticText>
+		</band>
+	</summary>
+</jasperReport>

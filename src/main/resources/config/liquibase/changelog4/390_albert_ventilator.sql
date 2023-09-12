@@ -1,0 +1,2 @@
+UPDATE "ancillary"."services" SET "flag_value" = 'VENTILATOR' WHERE "id" = '457b63f9-766b-47f7-9188-2f1ea3121f38';
+UPDATE "ancillary"."services" SET "flag_value" = 'VENTILATOR' WHERE "id" = '0f87b013-6ce0-4538-bef4-a6f8a68907c6';

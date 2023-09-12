@@ -1,0 +1,112 @@
+apiVersion: v1
+kind: Template
+labels:
+  template: hisd3mk2srv-template
+  group: hisd3mk2srv
+metadata:
+  annotations:
+    iconClass: icon-spring
+    tags: oasisanalytics
+  name: hisd3mk2srv
+message: "Welcome to HISD3MK2 Backend Server Setup Configuration"
+objects:
+
+  - apiVersion: v1
+    kind: BuildConfig
+    metadata:
+      name: hisd3mk2srv-pipeline
+      creationTimestamp: null
+      labels:
+        app: hisd3mk2srv
+    spec:
+      triggers: []
+      runPolicy: Serial
+      source:
+        type: Git
+        git:
+          uri: 'https://gitlab.com/AceTech/hismk2.git'
+          ref: dev
+        sourceSecret:
+          name: "hisd3gitlabsecret"
+      strategy:
+        type: JenkinsPipeline
+        jenkinsPipelineStrategy:
+          jenkinsfilePath: Jenkinsfile
+
+  - apiVersion: v1
+    kind: Service
+    metadata:
+      name: hisd3mk2srv-service
+    spec:
+      type: ClusterIP
+      ports:
+        - name: http
+          port: 80
+          targetPort: 8080
+          protocol: TCP
+      selector:
+        app: hisd3mk2srv-deploy
+
+  - apiVersion: v1
+    kind: DeploymentConfig
+    metadata:
+      name: hisd3mk2srv-deploy
+      labels:
+        app: hisd3mk2srv-deploy
+    spec:
+      replicas: 1
+      selector:
+        app: hisd3mk2srv-deploy
+      triggers:
+        - type: "ConfigChange"
+        - imageChangeParams:
+            automatic: true
+            containerNames:
+              - "hisd3mk2srv-deploy"
+            from:
+              kind: "ImageStreamTag"
+              name: "hisd3mk2srv:latest"
+          type: "ImageChange"
+
+      template:
+        metadata:
+          labels:
+            app: hisd3mk2srv-deploy
+        spec:
+          containers:
+            - name: hisd3mk2srv-deploy
+              image: hisd3mk2srv:latest
+              ports:
+                - containerPort: 8080
+              args:
+                - --spring.profiles.active=prod
+                - --spring.datasource.databaseName=hismk2
+                - --spring.datasource.serverName=172.16.10.11
+                - --spring.datasource.username=postgres
+                - --spring.datasource.password=6fJ1plLmH0kLKkD4LClOd
+                - --redis.deployment=openshift
+                - --redis.host=redis
+                - --redis.port=6379
+              readinessProbe:
+                httpGet:
+                  path: /ping
+                  port: 8080
+                  httpHeaders:
+                    - name: X-Custom-Header
+                      value: Awesome
+                initialDelaySeconds: 15
+                periodSeconds: 15
+                successThreshold: 1
+                timeoutSeconds: 20
+              livenessProbe:
+                httpGet:
+                  path: /ping
+                  port: 8080
+                  httpHeaders:
+                    - name: X-Custom-Header
+                      value: Awesome
+                initialDelaySeconds: 15
+                periodSeconds: 15
+                successThreshold: 1
+                timeoutSeconds: 20
+

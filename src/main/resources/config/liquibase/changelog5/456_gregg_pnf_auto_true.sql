@@ -1,0 +1,1 @@
+update inventory.item set pnf = true where is_medicine = true

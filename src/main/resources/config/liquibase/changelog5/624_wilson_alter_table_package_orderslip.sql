@@ -1,0 +1,1 @@
+ALTER TABLE ancillary.orderslip_item_package_content ADD COLUMN IF NOT EXISTS unit_cost numeric default 0;

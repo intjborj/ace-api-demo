@@ -1,0 +1,123 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nexus-server
+  namespace: nexus
+  labels:
+    app: nexus-server
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: nexus-server
+  template:
+    metadata:
+      labels:
+        app: nexus-server
+    spec:
+      containers:
+        - name:  nexus-server
+          image: sonatype/nexus3:latest
+          ports:
+            - containerPort: 8081
+          volumeMounts:
+            - mountPath: /nexus-data
+              name: nexus-data
+      volumes:
+        - name: nexus-data
+          persistentVolumeClaim:
+            claimName: nexus-data-pv-claim-ebs
+#      nodeName: vmnode.ace-mc-bohol.com
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: nexus-server
+  namespace: nexus
+  labels:
+    app: nexus-server
+spec:
+  type: ClusterIP
+  ports:
+    - protocol: TCP
+      port: 8081
+      name: nexus-server
+  selector:
+    app: nexus-server
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: nexus-server-docker
+  namespace: nexus
+  labels:
+    app: nexus-server
+spec:
+  type: NodePort
+  ports:
+    - protocol: TCP
+      port: 18443
+      name: nexus-server-docker
+      nodePort: 32198
+  selector:
+    app: nexus-server
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: nexus-ingress
+  namespace: nexus
+  annotations:
+    cert-manager.io/cluster-issuer: "letsencrypt-prod"
+    nginx.ingress.kubernetes.io/force-ssl-redirect: "true"
+    nginx.ingress.kubernetes.io/proxy-body-size: "50m"
+    nginx.org/client-max-body-size: "50m"
+    nginx.ingress.kubernetes.io/proxy-connect-timeout: "3600"
+    nginx.ingress.kubernetes.io/proxy-send-timeout: "3600"
+    nginx.ingress.kubernetes.io/proxy-read-timeout: "3600"
+spec:
+  tls:
+    - hosts:
+        - nexus1.ace-mc-bohol.com
+      secretName: nexus-tls-secret
+  rules:
+    - host: nexus1.ace-mc-bohol.com
+      http:
+        paths:
+          - pathType: Prefix
+            path: "/"
+            backend:
+              service:
+                name: nexus-server
+                port:
+                  number: 8081
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: nexus-ingress-docker
+  namespace: nexus
+  annotations:
+    cert-manager.io/cluster-issuer: "letsencrypt-prod"
+    nginx.ingress.kubernetes.io/force-ssl-redirect: "true"
+    nginx.ingress.kubernetes.io/proxy-body-size: "5000m"
+    nginx.org/client-max-body-size: "5000m"
+    nginx.ingress.kubernetes.io/proxy-connect-timeout: "3600"
+    nginx.ingress.kubernetes.io/proxy-send-timeout: "3600"
+    nginx.ingress.kubernetes.io/proxy-read-timeout: "3600"
+spec:
+  tls:
+    - hosts:
+        - docker1.ace-mc-bohol.com
+      secretName: nexus-docker-tls-secret
+  rules:
+    - host: docker1.ace-mc-bohol.com
+      http:
+        paths:
+          - pathType: Prefix
+            path: "/"
+            backend:
+              service:
+                name: nexus-server-docker
+                port:
+                  number: 18443

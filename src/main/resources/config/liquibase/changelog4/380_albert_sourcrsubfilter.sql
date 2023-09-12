@@ -1,0 +1,1 @@
+CREATE TABLE "accounting"."source_subaccount_exclude_mother" ("id" uuid,"source_subaccount" uuid,"mother_account" uuid, PRIMARY KEY ("id"));

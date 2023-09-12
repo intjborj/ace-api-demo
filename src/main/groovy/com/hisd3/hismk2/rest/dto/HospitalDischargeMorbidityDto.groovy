@@ -1,0 +1,45 @@
+package com.hisd3.hismk2.rest.dto
+
+class HospitalDischargeMorbidityDto {
+	String icd10Desc,
+			icd10Code,
+	diagnosisCategory,hfhudcode
+
+	Integer maleUnder1 = 0,
+	femaleUnder1 = 0,
+	male14 = 0,
+	female14 = 0,
+	male59 = 0,
+	female59 = 0,
+	male1014 = 0,
+	female1014 = 0,
+	male1519 = 0,
+	female1519 = 0,
+	male2024 = 0,
+	female2024 = 0,
+	male2529 = 0,
+	female2529 = 0,
+	male3034 = 0,
+	female3034 = 0,
+			male3539 = 0,
+			female3539 = 0,
+	male4044 = 0,
+	female4044 = 0,
+	male4549 = 0,
+	female4549 = 0,
+	male5054 = 0,
+	female5054 = 0,
+	male5559 = 0,
+	female5559 = 0,
+	male6064 = 0,
+	female6064 = 0,
+	male6569 = 0,
+	female6569 = 0,
+	male70Over = 0,
+	female70Over = 0,
+	maleSubtotal = 0,
+	femaleSubtotal = 0,
+	grandTotal = 0,
+	reportingYear = 0
+	
+}

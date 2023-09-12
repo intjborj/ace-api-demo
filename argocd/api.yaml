@@ -1,0 +1,95 @@
+apiVersion: apps/v1
+kind: DaemonSet
+metadata:
+  name: api-server
+  namespace: api
+  labels:
+    app: api-server
+spec:
+  selector:
+    matchLabels:
+      app: api-server
+  template:
+    metadata:
+      labels:
+        app: api-server
+    spec:
+      imagePullSecrets:
+        - name: docker-ace
+      containers:
+        - name:  api-server
+          image: docker1.ace-mc-bohol.com/hismk2_api:3.0.62
+          ports:
+            - containerPort: 8080
+          args:
+            - -Djava.awt.headless=true
+            - --spring.profiles.active=prod
+            - --spring.datasource.databaseName=hismk2-live
+            - --spring.datasource.serverName=172.16.10.11
+            - --spring.datasource.username=postgres
+            - --spring.datasource.password=6fJ1plLmH0kLKkD4LClOd
+            - --redis.deployment=openshift
+            - --redis.host=redis
+            - --redis.port=6379
+            - --server.connection-timeout=10m
+            - --spring.servlet.multipart.max-file-size=50MB
+            - --spring.servlet.multipart.max-request-size=50MB
+            - --spring.servlet.multipart.enabled=true
+            - --spring.http.multipart.max-file-size = 50MB
+            - --spring.http.multipart.max-request-size = 50MB
+            - --mq.host=activemq
+            - -Djava.security.egd=file:/dev/./urandom
+            - --accounting.autopostjournal=true
+            - --doh.url=https://uhmistrn.doh.gov.ph/ahsr/webservice/index.php
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: api-server
+  namespace: api
+  labels:
+    app: api-server
+spec:
+  type: ClusterIP
+  ports:
+    - protocol: TCP
+      port: 8080
+      name: api-server
+  selector:
+    app: api-server
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: lanexbot-api-ingress
+  namespace: api
+  annotations:
+    cert-manager.io/cluster-issuer: "letsencrypt-prod"
+    nginx.ingress.kubernetes.io/force-ssl-redirect: "true"
+    nginx.ingress.kubernetes.io/proxy-body-size: "50m"
+    nginx.org/client-max-body-size: "50m"
+    nginx.ingress.kubernetes.io/proxy-connect-timeout: "3600"
+    nginx.ingress.kubernetes.io/proxy-send-timeout: "3600"
+    nginx.ingress.kubernetes.io/proxy-read-timeout: "3600"
+#    nginx.ingress.kubernetes.io/enable-cors: "true"
+#    nginx.ingress.kubernetes.io/cors-allow-methods: "*"
+#    nginx.ingress.kubernetes.io/cors-allow-headers: "*"
+#    nginx.ingress.kubernetes.io/cors-allow-credentials: "true"
+#    nginx.ingress.kubernetes.io/configuration-snippet: |
+#        more_set_headers "Access-Control-Allow-Origin: $http_origin";
+spec:
+  tls:
+    - hosts:
+        - srv-hismk2.ace-mc-bohol.com
+      secretName: api-server-tls-secret
+  rules:
+    - host: srv-hismk2.ace-mc-bohol.com
+      http:
+        paths:
+          - pathType: Prefix
+            path: "/"
+            backend:
+              service:
+                name: api-server
+                port:
+                  number: 8080

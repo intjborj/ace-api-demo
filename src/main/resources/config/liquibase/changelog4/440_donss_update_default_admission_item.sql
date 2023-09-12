@@ -1,0 +1,3 @@
+ALTER TABLE hospital_configuration.default_admission_items
+ADD COLUMN refused_admission_kit_item BOOLEAN
+;

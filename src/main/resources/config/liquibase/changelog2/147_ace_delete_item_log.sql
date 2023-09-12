@@ -1,0 +1,1 @@
+DROP TABLE pms.doctor_order_item_logs;

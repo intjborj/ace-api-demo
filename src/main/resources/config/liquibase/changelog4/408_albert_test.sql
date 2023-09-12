@@ -1,0 +1,1 @@
+ALTER TABLE "billing"."billing_item" ADD COLUMN "annotation_amount" numeric(15,2);

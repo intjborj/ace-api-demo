@@ -1,0 +1,38 @@
+https://blog.sonatype.com/using-nexus-3-as-your-repository-part-3-docker-images
+
+docker login -u builder -p M6msmXMa docker.ace-mc-bohol.com
+
+docker build  -t  docker.ace-mc-bohol.com/xxx:1.0.28 .
+docker push   docker.ace-mc-bohol.com/xxx:1.0.28
+
+docker pull   docker.ace-mc-bohol.com/hismk2_api:3.0.0
+
+
+hisd3node2: BSu4SzBZ
+172.16.10.8
+kubectl create secret docker-registry docker-ace --docker-server=docker1.ace-mc-bohol.com --docker-username=builder --docker-password=M6msmXMa -n api
+
+
+cat <<EOF > pod.yaml
+apiVersion: v1
+kind: Pod
+metadata:
+  name: foo
+  namespace: awesomeapps
+spec:
+  containers:
+    - name: foo
+      image: janedoe/awesomeapp:v1
+  imagePullSecrets:
+    - name: docker-ace
+EOF
+
+cat <<EOF >> ./kustomization.yaml
+resources:
+- pod.yaml
+EOF
+
+
+
+172.16.10.8
+hisd3node2: BSu4SzBZ

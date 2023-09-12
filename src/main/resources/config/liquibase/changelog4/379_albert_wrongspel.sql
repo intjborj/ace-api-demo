@@ -1,0 +1,1 @@
+UPDATE "accounting"."subaccount_setup" SET "description" = 'EWT ON SUPPLIERS OF SERVICES (2%)' WHERE "id" = '683e5906-242d-491e-9f74-dd13292e5f79';

@@ -1,0 +1,127 @@
+
+
+
+
+
+INSERT INTO "accounting"."chart_of_accounts" ("id", "account_code", "description", "category", "tags", "parent", "deprecated", "created_by", "created_date", "last_modified_by", "last_modified_date", "deleted", "account_type", "fs_type", "normal_side", "is_contra") VALUES
+('2164c7c9-6bd0-4f45-94fb-1a9287bb902b', '500005', 'COST OF SALES', NULL, NULL, NULL, NULL, NULL, '2020-10-20 11:19:48.234', NULL, '2020-10-20 11:19:48.234', NULL, 'COST_OF_SALE', 'INCOME', 'DEBIT', 'f');
+
+
+INSERT INTO "accounting"."subaccount_mother_accounts" ("id", "sub_account", "chart_of_account", "created_by", "created_date", "last_modified_by", "last_modified_date") VALUES
+('112c26d2-b6ae-475d-b21d-6d450db20cc4', 'd5611022-5a7c-411e-959f-a3c83a047e07', '2164c7c9-6bd0-4f45-94fb-1a9287bb902b', 'admin', '2020-12-18 02:11:32.947', 'admin', '2020-12-18 02:11:32.947');
+
+
+INSERT INTO "accounting"."subaccount_mother_accounts" ("id", "sub_account", "chart_of_account", "created_by", "created_date", "last_modified_by", "last_modified_date") VALUES
+('f7082a4a-7a62-47c8-b864-ee72bc9be9b4', 'ebe616ae-d233-439d-8304-3513bf2c0a3a', '2164c7c9-6bd0-4f45-94fb-1a9287bb902b', 'admin', '2020-12-18 02:12:35.632', 'admin', '2020-12-18 02:12:35.632');
+
+
+
+integration to track = 6e0e0c8a-0f49-4fd8-b47d-f99fbffa3ea5  OPD-SUPPLIES
+
+manual delete tong direct direct material una
+INSERT INTO "accounting"."integration_items" ("id", "journal_account", "disabled_property", "disabled_value", "value_property", "integration", "created_by", "created_date", "last_modified_by", "last_modified_date", "deleted", "source_column", "multiple") VALUES
+('2139bf6a-cb44-40d6-b241-1c248beedfe1', '{"code": "500005-####-1020", "subAccount": {"id": "c4eadc6f-187c-4be6-bd5f-3513642c4e2f", "code": "####", "domain": "com.hisd3.hismk2.domain.Department", "normalSide": null, "description": "Department"}, "description": "COST OF SALES-Department-MEDICAL SUPPLIES", "motherAccount": {"id": "f7082a4a-7a62-47c8-b864-ee72bc9be9b4", "code": "500005", "domain": "com.hisd3.hismk2.domain.accounting.MotherAccount", "normalSide": "DEBIT", "description": "COST OF SALES"}, "subSubAccount": {"id": "ebe616ae-d233-439d-8304-3513bf2c0a3a", "code": "1020", "domain": "com.hisd3.hismk2.domain.accounting.SubAccountSetup", "normalSide": null, "description": "MEDICAL SUPPLIES"}, "subAccountName": "MEDICAL SUPPLIES", "subAccountSetupId": "ebe616ae-d233-439d-8304-3513bf2c0a3a"}', NULL, NULL, NULL, '6e0e0c8a-0f49-4fd8-b47d-f99fbffa3ea5', 'admin', '2020-12-18 02:35:19.022', 'admin', '2020-12-18 02:36:09.302', NULL, 'costOfSale', NULL);
+
+
+
+
+integration to track = 2ea5d9af-430e-40ce-af85-b20e2b02274c OPD-MEDS
+
+
+DELETE FROM "accounting"."integration_items" WHERE "id" = '87793d56-0f63-46fa-a761-4ddf717ccef4';
+
+
+INSERT INTO "accounting"."integration_items" ("id", "journal_account", "disabled_property", "disabled_value", "value_property", "integration", "created_by", "created_date", "last_modified_by", "last_modified_date", "deleted", "source_column", "multiple") VALUES
+('71537b18-ae0b-4594-8450-88e7c99d770c', '{"code": "500005-####-1010", "subAccount": {"id": "883d1cf6-f7a3-43f8-891f-e965fca3fc85", "code": "####", "domain": "com.hisd3.hismk2.domain.Department", "normalSide": null, "description": "Department"}, "description": "COST OF SALES-Department-DRUGS AND MEDICINES", "motherAccount": {"id": "112c26d2-b6ae-475d-b21d-6d450db20cc4", "code": "500005", "domain": "com.hisd3.hismk2.domain.accounting.MotherAccount", "normalSide": "DEBIT", "description": "COST OF SALES"}, "subSubAccount": {"id": "d5611022-5a7c-411e-959f-a3c83a047e07", "code": "1010", "domain": "com.hisd3.hismk2.domain.accounting.SubAccountSetup", "normalSide": null, "description": "DRUGS AND MEDICINES"}, "subAccountName": "DRUGS AND MEDICINES", "subAccountSetupId": "d5611022-5a7c-411e-959f-a3c83a047e07"}', NULL, NULL, NULL, '2ea5d9af-430e-40ce-af85-b20e2b02274c', 'admin', '2020-12-18 03:11:10.989', 'admin', '2020-12-18 03:12:21.341', NULL, 'costOfSale', NULL);
+
+
+e5a6405b-d025-49cb-a2cb-800d9aa68848    ER_SUPPLIES
+
+DELETE FROM "accounting"."integration_items" WHERE "id" = '28ce284d-9dff-4a4e-b7e8-38edf53f582c';
+
+INSERT INTO "accounting"."integration_items" ("id", "journal_account", "disabled_property", "disabled_value", "value_property", "integration", "created_by", "created_date", "last_modified_by", "last_modified_date", "deleted", "source_column", "multiple") VALUES
+('10184f4d-cece-4c97-9c0e-1aa6d3b9cda7', '{"code": "500005-####-1020", "subAccount": {"id": "e9b984a3-88fd-4bd8-9fa8-2e6d44cbb367", "code": "####", "domain": "com.hisd3.hismk2.domain.Department", "normalSide": null, "description": "Department"}, "description": "COST OF SALES-Department-MEDICAL SUPPLIES", "motherAccount": {"id": "f7082a4a-7a62-47c8-b864-ee72bc9be9b4", "code": "500005", "domain": "com.hisd3.hismk2.domain.accounting.MotherAccount", "normalSide": "DEBIT", "description": "COST OF SALES"}, "subSubAccount": {"id": "ebe616ae-d233-439d-8304-3513bf2c0a3a", "code": "1020", "domain": "com.hisd3.hismk2.domain.accounting.SubAccountSetup", "normalSide": null, "description": "MEDICAL SUPPLIES"}, "subAccountName": "MEDICAL SUPPLIES", "subAccountSetupId": "ebe616ae-d233-439d-8304-3513bf2c0a3a"}', NULL, NULL, NULL, 'e5a6405b-d025-49cb-a2cb-800d9aa68848', 'admin', '2020-12-18 03:16:41.598', 'admin', '2020-12-18 03:19:05.138', NULL, 'costOfSale', NULL);
+
+
+
+f6eaaad5-f56f-4e15-83f6-a166c0d756dc  ER-MEDS
+
+DELETE FROM "accounting"."integration_items" WHERE "id" = '7fb7c983-4ee7-42b1-be15-62916ad76abe';
+
+
+INSERT INTO "accounting"."integration_items" ("id", "journal_account", "disabled_property", "disabled_value", "value_property", "integration", "created_by", "created_date", "last_modified_by", "last_modified_date", "deleted", "source_column", "multiple") VALUES
+('a91169ef-157f-47bd-a337-043e3efc0c08', '{"code": "500005-####-1010", "subAccount": {"id": "52b39c56-1e0d-4db3-95b2-6031deec3314", "code": "####", "domain": "com.hisd3.hismk2.domain.Department", "normalSide": null, "description": "Department"}, "description": "COST OF SALES-Department-DRUGS AND MEDICINES", "motherAccount": {"id": "112c26d2-b6ae-475d-b21d-6d450db20cc4", "code": "500005", "domain": "com.hisd3.hismk2.domain.accounting.MotherAccount", "normalSide": "DEBIT", "description": "COST OF SALES"}, "subSubAccount": {"id": "d5611022-5a7c-411e-959f-a3c83a047e07", "code": "1010", "domain": "com.hisd3.hismk2.domain.accounting.SubAccountSetup", "normalSide": null, "description": "DRUGS AND MEDICINES"}, "subAccountName": "DRUGS AND MEDICINES", "subAccountSetupId": "d5611022-5a7c-411e-959f-a3c83a047e07"}', NULL, NULL, NULL, 'f6eaaad5-f56f-4e15-83f6-a166c0d756dc', 'admin', '2020-12-18 03:21:33.91', 'admin', '2020-12-18 03:24:25.294', NULL, 'costOfSale', NULL);
+
+
+
+d2c3c526-707c-48ad-b6a5-2e1994afd08a   IP-SUPPLIES
+
+DELETE FROM "accounting"."integration_items" WHERE "id" = '775e0178-3097-4a6c-8f15-60529316d5e6';
+
+INSERT INTO "accounting"."integration_items" ("id", "journal_account", "disabled_property", "disabled_value", "value_property", "integration", "created_by", "created_date", "last_modified_by", "last_modified_date", "deleted", "source_column", "multiple") VALUES
+('ad71b988-25b5-4462-b7fb-7c5c62e32938', '{"code": "500005-####-1020", "subAccount": {"id": "9d8292a4-a1fa-4692-a73a-41f694a7ea9a", "code": "####", "domain": "com.hisd3.hismk2.domain.Department", "normalSide": null, "description": "Department"}, "description": "COST OF SALES-Department-MEDICAL SUPPLIES", "motherAccount": {"id": "f7082a4a-7a62-47c8-b864-ee72bc9be9b4", "code": "500005", "domain": "com.hisd3.hismk2.domain.accounting.MotherAccount", "normalSide": "DEBIT", "description": "COST OF SALES"}, "subSubAccount": {"id": "ebe616ae-d233-439d-8304-3513bf2c0a3a", "code": "1020", "domain": "com.hisd3.hismk2.domain.accounting.SubAccountSetup", "normalSide": null, "description": "MEDICAL SUPPLIES"}, "subAccountName": "MEDICAL SUPPLIES", "subAccountSetupId": "ebe616ae-d233-439d-8304-3513bf2c0a3a"}', NULL, NULL, NULL, 'd2c3c526-707c-48ad-b6a5-2e1994afd08a', 'admin', '2020-12-18 03:30:49.342', 'admin', '2020-12-18 03:31:54.246', NULL, 'costOfSale', NULL);
+
+
+
+
+ee00f992-971f-4b3f-8f18-a4724ccf43db  IP-MEDS
+
+
+DELETE FROM "accounting"."integration_items" WHERE "id" = 'd47d151d-a727-4f24-93c2-0c795af5213d';
+
+
+INSERT INTO "accounting"."integration_items" ("id", "journal_account", "disabled_property", "disabled_value", "value_property", "integration", "created_by", "created_date", "last_modified_by", "last_modified_date", "deleted", "source_column", "multiple") VALUES
+('e998a27c-7253-4d80-b0d0-0e9d4815975b', '{"code": "500005-####-1010", "subAccount": {"id": "ee2bdd00-97d8-4d61-a53d-7d0fbbd15f25", "code": "####", "domain": "com.hisd3.hismk2.domain.Department", "normalSide": null, "description": "Department"}, "description": "COST OF SALES-Department-DRUGS AND MEDICINES", "motherAccount": {"id": "112c26d2-b6ae-475d-b21d-6d450db20cc4", "code": "500005", "domain": "com.hisd3.hismk2.domain.accounting.MotherAccount", "normalSide": "DEBIT", "description": "COST OF SALES"}, "subSubAccount": {"id": "d5611022-5a7c-411e-959f-a3c83a047e07", "code": "1010", "domain": "com.hisd3.hismk2.domain.accounting.SubAccountSetup", "normalSide": null, "description": "DRUGS AND MEDICINES"}, "subAccountName": "DRUGS AND MEDICINES", "subAccountSetupId": "d5611022-5a7c-411e-959f-a3c83a047e07"}', NULL, NULL, NULL, 'ee00f992-971f-4b3f-8f18-a4724ccf43db', 'admin', '2020-12-18 03:41:15.477', 'admin', '2020-12-18 03:45:45.341', NULL, 'costOfSale', NULL);
+
+
+
+d03fb592-9739-4eed-ad14-3e2e2ea5b31f   OTC-MEDS
+
+
+DELETE FROM "accounting"."integration_items" WHERE "id" = 'c897c542-102e-483c-9f01-a745f8695c3b';
+
+INSERT INTO "accounting"."integration_items" ("id", "journal_account", "disabled_property", "disabled_value", "value_property", "integration", "created_by", "created_date", "last_modified_by", "last_modified_date", "deleted", "source_column", "multiple") VALUES
+('d09ff31c-e577-42e7-b4c9-84d959795db2', '{"code": "500005-####-1010", "subAccount": {"id": "c3e16ab1-4564-4d58-98b4-7891feadc49e", "code": "####", "domain": "com.hisd3.hismk2.domain.Department", "normalSide": null, "description": "Department"}, "description": "COST OF SALES-Department-DRUGS AND MEDICINES", "motherAccount": {"id": "112c26d2-b6ae-475d-b21d-6d450db20cc4", "code": "500005", "domain": "com.hisd3.hismk2.domain.accounting.MotherAccount", "normalSide": "DEBIT", "description": "COST OF SALES"}, "subSubAccount": {"id": "d5611022-5a7c-411e-959f-a3c83a047e07", "code": "1010", "domain": "com.hisd3.hismk2.domain.accounting.SubAccountSetup", "normalSide": null, "description": "DRUGS AND MEDICINES"}, "subAccountName": "DRUGS AND MEDICINES", "subAccountSetupId": "d5611022-5a7c-411e-959f-a3c83a047e07"}', NULL, NULL, NULL, 'd03fb592-9739-4eed-ad14-3e2e2ea5b31f', 'admin', '2020-12-18 03:51:30.314', 'admin', '2020-12-18 04:01:42.621', NULL, 'costOfSale', NULL);
+
+
+
+
+68188296-e3de-4ae2-8b32-a61dedbd35f9  OTC-SUPPLIES
+DELETE FROM "accounting"."integration_items" WHERE "id" = '7edaf0d1-316b-410a-af6e-7e860a67f548';
+
+
+INSERT INTO "accounting"."integration_items" ("id", "journal_account", "disabled_property", "disabled_value", "value_property", "integration", "created_by", "created_date", "last_modified_by", "last_modified_date", "deleted", "source_column", "multiple") VALUES
+('361f1e82-8608-40c9-bfa7-62f9b704c9d0', '{"code": "500005-####-1020", "subAccount": {"id": "c3e94b34-355d-45d0-b859-39d84c844ad6", "code": "####", "domain": "com.hisd3.hismk2.domain.Department", "normalSide": null, "description": "Department"}, "description": "COST OF SALES-Department-MEDICAL SUPPLIES", "motherAccount": {"id": "f7082a4a-7a62-47c8-b864-ee72bc9be9b4", "code": "500005", "domain": "com.hisd3.hismk2.domain.accounting.MotherAccount", "normalSide": "DEBIT", "description": "COST OF SALES"}, "subSubAccount": {"id": "ebe616ae-d233-439d-8304-3513bf2c0a3a", "code": "1020", "domain": "com.hisd3.hismk2.domain.accounting.SubAccountSetup", "normalSide": null, "description": "MEDICAL SUPPLIES"}, "subAccountName": "MEDICAL SUPPLIES", "subAccountSetupId": "ebe616ae-d233-439d-8304-3513bf2c0a3a"}', NULL, NULL, NULL, '68188296-e3de-4ae2-8b32-a61dedbd35f9', 'admin', '2020-12-18 04:04:33.467', 'admin', '2020-12-18 04:05:37.44', NULL, 'costOfSale', NULL);
+
+
+
+14bd14dd-756d-441a-ae17-2096e86e1efa  OTC-NONVAT-MEDS
+
+
+DELETE FROM "accounting"."integration_items" WHERE "id" = 'be2a3e64-3097-4719-8991-8fb8788d1ace';
+
+
+INSERT INTO "accounting"."integration_items" ("id", "journal_account", "disabled_property", "disabled_value", "value_property", "integration", "created_by", "created_date", "last_modified_by", "last_modified_date", "deleted", "source_column", "multiple") VALUES
+('164f29d5-cc3e-47ec-b6f0-96aa184d07c5', '{"code": "500005-####-1010", "subAccount": {"id": "2a8667aa-a385-4672-a1f2-63df3b8d9b58", "code": "####", "domain": "com.hisd3.hismk2.domain.Department", "normalSide": null, "description": "Department"}, "description": "COST OF SALES-Department-DRUGS AND MEDICINES", "motherAccount": {"id": "112c26d2-b6ae-475d-b21d-6d450db20cc4", "code": "500005", "domain": "com.hisd3.hismk2.domain.accounting.MotherAccount", "normalSide": "DEBIT", "description": "COST OF SALES"}, "subSubAccount": {"id": "d5611022-5a7c-411e-959f-a3c83a047e07", "code": "1010", "domain": "com.hisd3.hismk2.domain.accounting.SubAccountSetup", "normalSide": null, "description": "DRUGS AND MEDICINES"}, "subAccountName": "DRUGS AND MEDICINES", "subAccountSetupId": "d5611022-5a7c-411e-959f-a3c83a047e07"}', NULL, NULL, NULL, '14bd14dd-756d-441a-ae17-2096e86e1efa', 'admin', '2020-12-18 06:22:28.799', 'admin', '2020-12-18 06:23:50.055', NULL, 'costOfSale', NULL);
+
+
+1fd8a457-897c-4499-8111-276aa31ac773  OTC-NONVAT-SUPPLIES
+
+DELETE FROM "accounting"."integration_items" WHERE "id" = '39170fa0-c7fc-4e99-84de-d6bafe70b0c5';
+
+INSERT INTO "accounting"."integration_items" ("id", "journal_account", "disabled_property", "disabled_value", "value_property", "integration", "created_by", "created_date", "last_modified_by", "last_modified_date", "deleted", "source_column", "multiple") VALUES
+('43b7c43d-1fe9-4d74-bcab-58863ceb7828', '{"code": "500005-####-1020", "subAccount": {"id": "eea1a83f-0b11-4e77-abaf-0632251e12e3", "code": "####", "domain": "com.hisd3.hismk2.domain.Department", "normalSide": null, "description": "Department"}, "description": "COST OF SALES-Department-MEDICAL SUPPLIES", "motherAccount": {"id": "f7082a4a-7a62-47c8-b864-ee72bc9be9b4", "code": "500005", "domain": "com.hisd3.hismk2.domain.accounting.MotherAccount", "normalSide": "DEBIT", "description": "COST OF SALES"}, "subSubAccount": {"id": "ebe616ae-d233-439d-8304-3513bf2c0a3a", "code": "1020", "domain": "com.hisd3.hismk2.domain.accounting.SubAccountSetup", "normalSide": null, "description": "MEDICAL SUPPLIES"}, "subAccountName": "MEDICAL SUPPLIES", "subAccountSetupId": "ebe616ae-d233-439d-8304-3513bf2c0a3a"}', NULL, NULL, NULL, '1fd8a457-897c-4499-8111-276aa31ac773', 'admin', '2020-12-18 06:28:58.818', 'admin', '2020-12-18 06:31:53.004', NULL, 'costOfSale', NULL);
+
+=== Then assign the properties 5 times
+
+    @Transient
+	Department revenueDept
+
+	@Transient
+	Department costDept
+
+	@Transient
+	Department inventoryDept
+
+
+

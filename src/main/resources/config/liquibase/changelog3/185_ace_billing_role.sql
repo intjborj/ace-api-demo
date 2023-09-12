@@ -1,0 +1,23 @@
+INSERT INTO t_authority (name)
+SELECT 'ROLE_ACCOUNTING_ADMIN'
+WHERE NOT EXISTS(
+    SELECT 1 FROM public.t_authority WHERE name = 'ROLE_ACCOUNTING_ADMIN'
+  );
+
+INSERT INTO t_authority (name)
+SELECT 'ROLE_AR_ADMIN'
+WHERE NOT EXISTS(
+    SELECT 1 FROM public.t_authority WHERE name = 'ROLE_AR_ADMIN'
+  );
+
+INSERT INTO t_authority (name)
+SELECT 'ROLE_CASHIER_ADMIN'
+WHERE NOT EXISTS(
+    SELECT 1 FROM public.t_authority WHERE name = 'ROLE_CASHIER_ADMIN'
+  );
+
+INSERT INTO t_authority (name)
+SELECT 'ROLE_BILLING_ADMIN'
+WHERE NOT EXISTS(
+    SELECT 1 FROM public.t_authority WHERE name = 'ROLE_BILLING_ADMIN'
+  );

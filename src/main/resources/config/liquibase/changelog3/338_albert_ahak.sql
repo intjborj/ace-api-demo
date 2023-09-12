@@ -1,0 +1,1 @@
+update billing.price_tier_details set oct_use = true where tier_code in ('STD-2');

@@ -1,0 +1,271 @@
+
+
+enum SALES_INTEGRATION{
+	          IP_MEDS ,
+        	  IP_SUPPLIES,
+        	  IP_SERVICES,
+        	  IP_OXYGEN,
+        	  IP_ROOM,
+
+        	  OPD_MEDS,
+        	  OPD_SUPPLIES,
+        	  OPD_SERVICES,
+        	  OPD_OXYGEN,
+        	  OPD_ROOM,
+
+        	  ER_MEDS,
+        	  ER_SUPPLIES,
+        	  ER_SERVICES,
+        	  ER_ROOM,
+        	  ER_OXYGEN,
+
+        	  OTC_MEDS,
+        	  OTC_SUPPLIES,
+
+        	  OTC_NONVAT_MEDS,
+        	  OTC_NONVAT_SUPPLIES,
+
+}
+
+enum DISCOUNTS_INTEGRATION {
+	DISCOUNTS_DEDUCT = only on Closing of Folio
+}
+
+
+
+enum PAYMENTS_RECOGNITION_PATIENT {
+	HOSPITAL_PAYMENTS_ER,
+	HOSPITAL_PAYMENTS_IP,
+	HOSPITAL_PAYMENTS_OPD,
+	HOSPITAL_PAYMENTS_OTC,
+	PF_PAYMENTS
+}
+
+// Insurance Posting will only happends during recognition of AR.
+
+
+
+// jsereno = ER
+
+jdabadingo
+
+// rbdinorog = IMAGING
+  OCLARIT JIRAIYA, ABRAM
+// rsatup = NURSE
+
+jescabusa = BILLING
+
+==== Example Testing =====
+
+//=== Notes====
+
+ OXYGEN dept.. is based on the last room he is in
+  - No direct cost kay walay stock card
+   OPD-IP
+
+ VENTILATOR
+  - OPD-IPD from registryType
+
+Add input Tax asset in subaccount
+========================= Billing Charges =======================
+
+Proposed Format
+1000 = OPD
+2000 = ER
+3000 = INPATIENT
+4000 = OTC
+5000 = OTC-NONVAT
+
+6000 = PAYMENTS
+7000 DISCOUNTS_DEDUCT
+Order
+  SERVICE
+  SUPPLIES
+  MEDS
+  ROOM
+  OXYGEN
+  VENTILATOR
+
+
+
+   OPD > IP  (Kris Aquino)
+
+      SERVICES     OPD  IP
+      MEDS         OPD  IP
+      SUPPLIES     OPD  IP
+      ROOM         OPD  IP
+      OXYGEN       OPD  IP
+      VENTILATOR   OPD  IP
+
+
+   ER > IP    (Rodrigo Duterte)
+
+       SERVICES - ER
+       MEDS     - ER
+       SUPPLIES - ER
+       ROOM     - ER
+       OXYGEN   - ER
+       VENTILATOR
+
+
+
+   OTC
+     MEDS
+     SUPPLIES
+
+
+
+curl --user "scheduler:password"   -X POST http://localhost:8080/api/testIntegrationBillingItem
+
+
+
+========================= Demo ===================
+
+[IC1310] **ALPRAZOLAM (XANOR) 500MCG TABLET
+[IC233] ATORVASTATIN (AVATOR) 10 MG TABLET
+
+
+1.) OTC VAT AND NON VAT
+  -  PWD and Senior only net of VAT
+  -  Employee Discount - including vat...
+
+
+2.) ER to IP - Senior No PF   Payment
+
+3.) ER to IP - With PF  -> Senior -> PHIC -> Payment
+
+4.) OPD to IP - Progress Payment Twice -> PF -> Senior->PHIC -> Cancel 1 item ->Payment (Show Reapply)
+5.) ER to IP - Advance Deposit ->  PF -> Senior-> PHIC -> Apply Advance Deposit
+
+
+
+Advance Payment Show in Folio folio details === ok
+Bug in Reapplication  == ok
+Transaction Journal is Per References
+1000000055
+Receipts - Shift No, show shift no.
+
+
+Cash Overage
+Locking of Books
+AP- Clearing = ok
+
+
+For Testing
+ Payment Reapplication with Discount or no Discount
+   - well test on Castrodes with discount / muhammad no discount
+
+///  ========= Update Since Meeting =====
+
+
+ - Transaction Journal Revamp
+ - Allow Edit Before Posting To Ledger
+ - Reverse Entry
+ - Show All functionality
+ - Download CSV
+ - Allow Access to Transaction Journal from General Ledger
+
+
+ - About Fiscal
+   - Auto Detect Fiscal depending on Transaction Date
+    - Fiscal Options  on General Ledger and Financial Reports
+      -- Transaction Journals dont need to inside a fiscal because it is just date range and its a a journal
+      -- Locking Months
+
+ - OR Showing ShiftNo
+ - Collection Deposit with Overage/Shortage
+ - Actual Deposit
+
+
+ - Credit Card Clearing
+ - Check Clearing
+ - Discount Including VAT
+ - Disable Edit Entries when approved
+ - Download Transactiom
+
+
+
+=== For Demo ====
+
+ - Download CSV Transaction Journal
+ - Printing All Vouchers Changes
+ - Faster Transaction Journal
+
+
+ === WIP ===
+ - Financial Statement
+ - Check Deposit not Strict/ Select check deposited
+ - Sa Cashiering nga part bitaw Sir, pwede ta maka specialized ug Receipt Voucher kanang per shift
+ - Revamp Sales Report
+
+========================== Report Structure ================
+
+
+
+Report Structure
+
+     Name
+	 Title of Report
+	 Type  - basehan sa available source unja   Balance / Income  Real /Nominal
+	 Compare to Prev. Month
+
+	     - Line Type
+		       Caption -
+			   Parent LineType  = if parent cannot use Source
+
+			   Type =  From Source / From Other Line Type SubTotal / Fixed Value/ Orphan MotherAccount
+			   Order
+
+			   Show Mother Account
+			   Show by Department... will only available is Source Subaccounts have department on Second ... will be validated
+			   Show Subsub
+
+
+
+			   Source[SubAccounts] -
+
+						  ValueType = Normal Side/ Contra / Balance
+			              subAccounts      - SubAccountType
+
+			   Source LineType
+			            Line Type Members
+					    operation
+
+               Source MotherAccounts
+			            Line Type Members
+					    operation
+
+			  Total Balance - Calculated ni Cxa
+
+
+
+
+
+
+
+Bdo
+Corazon Lacosta Benablo
+Savings: 00010188975
+
+mscastrodes = accounting
+jescabusa  = billing
+rpelias = cashier
+
+jmfelias = laboratory
+pambiansy = admission
+jdabadingo = pharma
+rbdinorog = xray
+
+rtambagan = XRAY
+shsacay = PULMO
+moavenido = 5A
+dacentinales = Operating Nurse
+ACAIN, ANGEL JANET BALIO
+
+For Demonstration
+
+MASCARIÑAS, MAXIMINA HIBALAY
+
+
+CALACAT, RUPERTO BALBIN
+

@@ -1,0 +1,2 @@
+INSERT INTO "accounting"."chart_of_accounts" ("id", "account_code", "description", "category", "tags", "parent", "deprecated", "created_by", "created_date", "last_modified_by", "last_modified_date", "deleted", "account_type", "fs_type", "normal_side", "is_contra") VALUES
+('0014528f-43cb-4481-b7d3-7ba3f985a0d4', '100370', 'OFFICE SUPPLIES', NULL, NULL, NULL, NULL, NULL, '2020-10-20 11:19:48.234', NULL, '2020-10-20 11:19:48.234', NULL, 'ASSET', 'BALANCE_SHEET', 'CREDIT', 't');

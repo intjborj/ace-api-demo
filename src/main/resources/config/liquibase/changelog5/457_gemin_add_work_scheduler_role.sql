@@ -1,0 +1,1 @@
+insert into t_authority(name) values ('WORK_SCHEDULER');

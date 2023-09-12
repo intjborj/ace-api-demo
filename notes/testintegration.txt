@@ -1,0 +1,64 @@
+
+
+
+curl -v --user "scheduler:YE%@&j-\eB\fv*2Y"  -X POST -d 'recno=762407'  http://localhost:8080/api/testIntegrationBillingItem
+curl -v --user "whinacay:vAoNeMx2"  -X POST -d 'recno=762407'  http://localhost:8080/api/testIntegrationBillingItem
+curl -v --user "edsagaral:vAoNeMx2"  -X POST -d 'recno=762407'  http://localhost:8080/api/testIntegrationBillingItem
+
+
+// From Json Example
+
+mutation{
+  testFromJsonGenerateAutoEntries(fields:{
+          flagValue: "JSONSRC",
+          value_a: 100.00,
+          value_b:100.00,
+          value_c : 10.0,
+          dept_a :{
+                id: "048b7fa3-25a3-48ac-91fb-969682c18485" # 0031 is the code of this department
+          } ,
+           sub_a: {
+                id:"41f4e0b4-87c0-4a4e-9160-f5c36b223fc2" # BNK-000001
+          }
+        }
+  ){
+
+    ledger {
+
+         journalAccount {
+            code
+        }
+
+      debit
+      credit
+    }
+
+}
+}
+
+
+// From Integration Template in Code
+
+	def header = integrationServices.generateAutoEntries(new IntegrationTemplate()){
+
+			it.flagValue = "JSONSRC"
+
+			it.value_a = 100.0
+			it.value_b = 100.0
+			it.value_c = 10.0
+			it.dept_a = departmentRepository.findById(UUID.fromString("048b7fa3-25a3-48ac-91fb-969682c18485")).get()
+			it.sub_a =   bankRepository.findById(UUID.fromString("41f4e0b4-87c0-4a4e-9160-f5c36b223fc2")).get().with {
+				new SubAccountHolder(it)
+			}
+
+  }
+
+
+
+
+
+List of Transactions That Needs Auto integration
+
+1.) Charges -> BillingItem
+2.) Payments -> BillingItem/ PayTracker
+3.) Inventory Movements

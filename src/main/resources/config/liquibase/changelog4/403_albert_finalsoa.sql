@@ -1,0 +1,1 @@
+ALTER TABLE "billing"."billing" ADD COLUMN "final_soa" varchar;

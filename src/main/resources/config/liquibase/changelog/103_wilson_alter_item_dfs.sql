@@ -1,0 +1,1 @@
+ALTER TABLE "inventory"."item" ALTER COLUMN item_dfs TYPE varchar;

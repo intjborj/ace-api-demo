@@ -1,0 +1,5 @@
+
+
+
+ALTER TABLE hrm.employee_other_deductions DROP CONSTRAINT fk_employee_other_deductions_employee;
+ALTER TABLE hrm.employee_other_deductions DROP CONSTRAINT fk_employee_other_deductions_other_deduction;

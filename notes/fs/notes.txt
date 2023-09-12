@@ -1,0 +1,73 @@
+Missing From our Chart of Accounts
+Dec. 6, 2020
+
+
+Asset ->  Input VAT
+        - From Purchases
+
+Asset -> Advances To Employees
+
+Asset -> Accrued Receivable
+      -  missing but this is similar to Unearned Revenue
+      -  accrued receivable is no longer applied as per sir neil and mam elise
+
+Asset -> ENGINEERING TOOLS AND SUPPLIES
+Asset -> Food Supplies -Inventory -> FND Dietary
+Asset -> Food Supplies -Inventory -> FND Dining
+
+Asset -> GENERAL HOSPITAL MAINTENANCE SUPPLIES - Curtains
+Asset -> GENERAL HOSPITAL MAINTENANCE SUPPLIES - Linens
+
+Asset -> KITCHENWARES, TABLEWARES, AND OTHER UTENSILS - Dietary
+                                                        Dining
+                                                        Others
+
+
+====Disable====
+CREDITABLE WITHHOLDING TAX
+CREDITABLE WITHHOLDING TAX-INPUT TAX
+DUE TO DOCTORS-RECEIVED FROM PATIENTS
+====Disable====
+
+Asset -> Other Current Assets -> Unused Office Supplies
+         Other Current Assets -> Unused Supplies
+         Other Current Assets -> Creditable Witholding Tax
+
+
+Asset  -> OTHER RECEIVABLES
+               ->SSS Maternity Benefits
+         PREPAID INSURANCE-EQUIPMENT
+                -> VEHICLE
+         PREPAID TAXES -> Income Tax
+
+         Allowance For Credit Loss
+
+
+===========================================
+
+
+ Liability
+    INTEREST PAYABLE-BANK LOAN-EQUIPMENT ->Working Capital
+   ====   yaw na i add ADVANCES FROM PATIENT  - > UNEARNED no need =====
+
+     SALES TAX
+
+    Accounts Payable -> Founder
+
+
+
+
+    Advances From Shareholders  -> Advances From Non-Founders
+                                 -> Due To Founders
+     NOTES PAYABLE - NON CURRENT- WORKING CAPITAL
+
+===========================================
+
+
+
+ADDDITIONAL PAID IN CAPITAL
+RETAINED EARNINGS (DEFICIT)
+CURRENT YEAR EARNINGS
+
+Balance Sheets
+========== OK NA ======

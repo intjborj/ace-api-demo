@@ -1,0 +1,2 @@
+update inventory.inventory_ledger set document_types = 'c71a1f34-4358-4d6d-b504-488f1fcd4c31'
+where document_types = '27d236bb-c023-44dc-beac-18ddfe1daf79' and ledger_qty_out > 0 and ledger_qty_in = 0;

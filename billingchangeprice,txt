@@ -1,0 +1,213 @@
+
+// Guide for change pricing to HMO
+// pls adjust to your situation
+
+================ Services Charges NON Reversal Only ===================
+update billing.billingitem parentbi set origprice = (
+
+    select lookup.outpatient_hmo_price  from billing.billingitem bi
+      left join (
+
+     		 select bi.id, serviceref.serviceid,
+				servicefees.price,
+				servicefees.stat_price,
+				servicefees.outpatient_cash_price,
+				servicefees.outpatient_hmo_price from billing.billingitem bi
+			   left join (
+			        select id ,field_name,field_value as serviceid from billing.billingitem_details bd  where field_name ='SERVICEFEE_ID'
+			      ) serviceref on serviceref.id = bi.id
+
+			      left join (
+			         select s.id,s.price, s.stat_price ,s.outpatient_cash_price , s.outpatient_hmo_price from revenuecenters.servicefees s
+			      ) servicefees on servicefees.id = serviceref.serviceid ::uuid
+			      where serviceref.serviceid is not null
+      ) lookup on lookup.id = bi.id
+
+			where bi.billing ='0000000-0000-0000-0000-00000000000' and
+			lookup.outpatient_hmo_price > 0
+			and bi.origprice  > 0
+			and bi.id = parentbi.id
+  ),
+  phic_price = origprice
+
+where parentbi.id in
+(select bi.id  from billing.billingitem bi
+      left join (
+
+     		 select bi.id, serviceref.serviceid,
+				servicefees.price,
+				servicefees.stat_price,
+				servicefees.outpatient_cash_price,
+				servicefees.outpatient_hmo_price from billing.billingitem bi
+			   left join (
+			        select id ,field_name,field_value as serviceid from billing.billingitem_details bd  where field_name ='SERVICEFEE_ID'
+			      ) serviceref on serviceref.id = bi.id
+
+			      left join (
+			         select s.id,s.price, s.stat_price ,s.outpatient_cash_price , s.outpatient_hmo_price from revenuecenters.servicefees s
+			      ) servicefees on servicefees.id = serviceref.serviceid ::uuid
+			      where serviceref.serviceid is not null
+      ) lookup on lookup.id = bi.id
+
+where bi.billing ='0000000-0000-0000-0000-00000000000' and
+lookup.outpatient_hmo_price > 0
+and bi.origprice  > 0
+)
+
+and parentbi.billing ='0000000-0000-0000-0000-00000000000'
+
+================ Services Charges NON Reversal Only ===================
+
+
+================= Supplies charging Only =============
+
+ update billing.billingitem parentbi set origprice = (
+
+     select  lookup.hmo_price from billing.billingitem bi
+           left join (
+
+              select master.id,
+              master.inpatient_price ,
+                 master.outpatient_price ,
+                 master.hmo_price
+                from public.inv_item_master master
+           ) lookup on lookup.id = bi.source
+
+     where bi.billing ='0000000-0000-0000-0000-00000000000'
+     and lookup.hmo_price > 0
+     and bi.origprice  > 0
+     and bi.source is not null
+ 	and bi.id = parentbi.id
+   ),
+   phic_price = origprice
+
+ where parentbi.id in
+ (
+         select bi.id from billing.billingitem bi
+               left join (
+
+                  select master.id,
+                  master.inpatient_price ,
+                     master.outpatient_price ,
+                     master.hmo_price
+                    from public.inv_item_master master
+               ) lookup on lookup.id = bi.source
+
+         where bi.billing ='0000000-0000-0000-0000-00000000000'
+         and lookup.hmo_price > 0
+         and bi.origprice  > 0
+         and bi.source is not null
+
+         order by bi.recordno
+
+ )
+
+ and parentbi.billing ='0000000-0000-0000-0000-00000000000'
+
+
+
+//================ Medicine ====================
+
+
+update billing.billingitem parentbi set origprice = (
+
+					  select  lookup.hmo_price from billing.billingitem bi
+
+					left join (
+								 select bii.id, medicines.id as medsid,
+								 				medicines.hmo_price from billing.billingitem bii
+								 			   left join (
+								 			        select bd.id ,field_name,field_value as medsid from billing.billingitem_details bd  where field_name ='ITEM_ID'
+								 			      ) serviceref on serviceref.id = bii.id
+
+								 			      left join (
+								 			         select s.id,s.hmo_price , s.outpatient_price ,s.or_dr_price , s.customprice ,s.inpatient_price from   public.inv_item_master s
+								 			      ) medicines on medicines.id = serviceref.medsid ::uuid
+								 			      where serviceref.medsid is not null
+					      ) lookup on lookup.id = bi.id
+					where bi.billing ='0000000-0000-0000-0000-00000000000' and
+					lookup.hmo_price > 0
+					and bi.origprice  > 0
+	      		   and bi.id = parentbi.id
+  ),
+  phic_price = origprice
+
+where parentbi.id in
+(select bi.id from billing.billingitem bi
+
+left join (
+			 select bii.id, medicines.id as medsid,
+			 				medicines.hmo_price from billing.billingitem bii
+			 			   left join (
+			 			        select bd.id ,field_name,field_value as medsid from billing.billingitem_details bd  where field_name ='ITEM_ID'
+			 			      ) serviceref on serviceref.id = bii.id
+
+			 			      left join (
+			 			         select s.id,s.hmo_price , s.outpatient_price ,s.or_dr_price , s.customprice ,s.inpatient_price from   public.inv_item_master s
+			 			      ) medicines on medicines.id = serviceref.medsid ::uuid
+			 			      where serviceref.medsid is not null
+      ) lookup on lookup.id = bi.id
+where bi.billing ='0000000-0000-0000-0000-00000000000' and
+lookup.hmo_price > 0
+and bi.origprice  > 0
+)
+
+and parentbi.billing ='0000000-0000-0000-0000-00000000000'
+
+
+
+
+
+
+//================ Medicine ===================
+
+
+
+
+//================== YaWA =======================
+
+
+
+
+
+//============== Reference ni================
+select bi.id, bi.recordno ,bi.description ,bi.origprice,lookup.hmo_price, bi.source from billing.billingitem bi
+      left join (
+
+         select master.id,
+         master.inpatient_price ,
+            master.outpatient_price ,
+            master.hmo_price
+           from public.inv_item_master master
+      ) lookup on lookup.id = bi.source
+
+where bi.billing ='0000000-0000-0000-0000-00000000000'
+and lookup.hmo_price > 0
+and bi.origprice  > 0
+and bi.source is not null
+
+order by bi.recordno
+
+
+
+select bi.id, bi.description , bi.origprice , lookup.hmo_price from billing.billingitem bi
+
+left join (
+			 select bii.id, medicines.id as medsid,
+			 				medicines.hmo_price from billing.billingitem bii
+			 			   left join (
+			 			        select bd.id ,field_name,field_value as medsid from billing.billingitem_details bd  where field_name ='ITEM_ID'
+			 			      ) serviceref on serviceref.id = bii.id
+
+			 			      left join (
+			 			         select s.id,s.hmo_price , s.outpatient_price ,s.or_dr_price , s.customprice ,s.inpatient_price from   public.inv_item_master s
+			 			      ) medicines on medicines.id = serviceref.medsid ::uuid
+			 			      where serviceref.medsid is not null
+      ) lookup on lookup.id = bi.id
+where bi.billing ='0000000-0000-0000-0000-00000000000' and
+lookup.hmo_price > 0
+and bi.origprice  > 0
+
+
+
+

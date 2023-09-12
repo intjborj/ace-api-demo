@@ -1,0 +1,14 @@
+https://srv-hismk2.ace-mc-bohol.com/api/testnotification?message=Sending%20from%20test%20trigger
+http://localhost:8080/api/testnotification?message=Sending%20with%20Async
+
+curl --user "admin:i5BkE26J"  --request GET "https://srv-hismk2.ace-mc-bohol.com/api/testnotification?message=SampleOnly"
+curl --user "scheduler:YE%@&j-\eB\fv*2Y"  -X POST "https://srv-hismk2.ace-mc-bohol.com/api/testnotification?message=testnotification"
+
+
+curl --user "scheduler:YE%@&j-\eB\fv*2Y"  -X POST https://srv-hismk2.ace-mc-bohol.com/api/autochargeRooms
+
+curl --user "admin:i5BkE26J"  -X POST http://localhost:8080/api/autochargeRooms
+
+curl --user "scheduler:YE%@&j-\eB\fv*2Y"   -X POST http://localhost:8080/api/autoCloseOPD
+
+curl --user "scheduler:YE%@&j-\eB\fv*2Y"   -X POST http://localhost:8080/api/autochargeRooms

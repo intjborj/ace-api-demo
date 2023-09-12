@@ -1,0 +1,1 @@
+ALTER TABLE accounting.bankaccounts ADD acquiring_bank boolean NULL;

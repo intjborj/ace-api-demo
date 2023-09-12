@@ -1,0 +1,1 @@
+ALTER TABLE "billing"."billing" ADD COLUMN "override_progress_payment" boolean;

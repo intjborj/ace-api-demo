@@ -1,0 +1,1 @@
+CREATE INDEX IF NOT EXISTS physical_logs_count_physical_count_idx ON inventory.physical_logs_count USING btree (physical_count);

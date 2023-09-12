@@ -1,0 +1,16 @@
+==== BE CAREFUL===
+
+If you have custom Subaccount setup it will delete ... please backup
+============ Pls backup your table first if u have custom subaccount setup======
+1.) chart_of_accounts_202011191013.sql
+2.) subaccount-setup.sql
+3.) subaccount_mother_accounts_202011191018.sql
+
+======= Safe for adding all are inserts =====
+
+4.) integration_202011191020.sql
+5.) integration_items_202011191022.sql
+6.) integration_items_details_202011191023.sql
+
+
+

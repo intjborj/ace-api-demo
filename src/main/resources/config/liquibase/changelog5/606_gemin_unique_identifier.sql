@@ -1,0 +1,1 @@
+ALTER TABLE hrm.other_deductions ADD CONSTRAINT other_deduction_identifier_unique UNIQUE (identifier);

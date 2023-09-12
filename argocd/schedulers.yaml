@@ -1,0 +1,74 @@
+apiVersion: batch/v1beta1
+kind: CronJob
+metadata:
+  name: hisd3mk2-roomchargingcron
+  namespace: api
+spec:
+  schedule: "0 7 * * ?"
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          containers:
+            - name: hisd3mk2-roomchargingcron
+              image: albertoclarit/hisd3base:1.0.3
+              imagePullPolicy: IfNotPresent
+              command:
+                - curl
+                - -v
+                - --user
+                - "scheduler:YE%@&j-\\eB\\fv*2Y"
+                - -X
+                - POST
+                - https://srv-hismk2.ace-mc-bohol.com/api/autochargeRooms
+          restartPolicy: OnFailure
+---
+apiVersion: batch/v1beta1
+kind: CronJob
+metadata:
+  name: hisd3mk2-closingopdcron
+  namespace: api
+spec:
+  schedule: "0 14 * * ?"
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          containers:
+            - name: hisd3mk2-closingopdcron
+              image: albertoclarit/hisd3base:1.0.3
+              imagePullPolicy: IfNotPresent
+              command:
+                - curl
+                - -v
+                - --user
+                - "scheduler:YE%@&j-\\eB\\fv*2Y"
+                - -X
+                - POST
+                - https://srv-hismk2.ace-mc-bohol.com/api/autoCloseOPD
+          restartPolicy: OnFailure
+---
+apiVersion: batch/v1beta1
+kind: CronJob
+metadata:
+  name: hisd3mk2-cleannotification
+  namespace: api
+spec:
+  schedule: "0 14 * * ?"
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          containers:
+            - name: hisd3mk2-cleannotification
+              image: albertoclarit/hisd3base:1.0.3
+              imagePullPolicy: IfNotPresent
+              command:
+                - curl
+                - -v
+                - --user
+                - "scheduler:YE%@&j-\\eB\\fv*2Y"
+                - -X
+                - POST
+                - https://srv-hismk2.ace-mc-bohol.com/api/cleanNotifications
+          restartPolicy: OnFailure

@@ -1,0 +1,6 @@
+INSERT INTO t_authority (name)
+SELECT 'ROLE_USER_ACCESS_MANAGER'
+WHERE NOT EXISTS(
+    SELECT 1 FROM public.t_authority WHERE name = 'ROLE_USER_ACCESS_MANAGER'
+  );
+

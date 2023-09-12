@@ -1,0 +1,227 @@
+# TAGS REFERENCE
+#
+# com.acemc.hisd3.service.financials.AccountingTags
+#
+#
+---
+items:
+  - code       : '101'
+    description: Cash and Cash Equivalents
+    tags       : [Bank]
+  - code: '102-00000'
+    description: Advances to Employees
+    tags: [ Current Asset ]
+  - code: '102-01000'
+    description: Advances to Suppliers
+    tags: [ Current Asset ]
+  - code: '102-02000'
+    description: Advances to Contractors
+    tags: [ Current Asset ]
+  - code: '103-00000'
+    description: Accrued Receivable - In Patient
+  - code: '103'
+    description: Accounts Receivable
+  - code: '104'
+    description: Other Receivables
+  - code: '105'
+    description: Notes Receivables
+  - code: '106'
+    description: Subscription Receivable
+  - code: '107'
+    description: Accrued Interest Receivable
+  - code: '108'
+    description: Allowance for Doubtful Accounts
+  - code: '109 '
+    description: Inventory
+  - code: '110'
+    description: Other Current Assets
+  - code: '111'
+    description: Loans Receivables
+  - code: '112'
+    description: Property, Plant and Equipment
+  - code: '113'
+    description: Intangible Asset
+  - code: '114'
+    description: Accumulated Depreciation
+  - code: '115'
+    description: Accumulated Amortization Expenses
+  - code: '116'
+    description: Construction in Progress
+  - code: '117'
+    description: Other Noncurrent Assets
+  - code: '118'
+    description: Deferred Tax Asset
+  - code: '201'
+    description: Accounts Payable
+  - code: '202'
+    description: Due to Doctors
+  - code: '203'
+    description: Notes Payable (Current portion)
+  - code: '204'
+    description: Interest Payable
+  - code: '205'
+    description: Retention Payable
+  - code: '206'
+    description: Compensation Related
+  - code: '208'
+    description: Taxes Payable
+  - code: '209'
+    description: Permits and Licenses Payable
+  - code: '210'
+    description: Other Current Payables
+  - code: '211'
+    description: Other Payable
+  - code: '212'
+    description: Notes Payable (Noncurrent portion)
+  - code: '212'
+    description: Advances from Shareholders
+  - code: '213'
+    description: Rent Payable
+  - code: '214'
+    description: Rebates Payable
+  - code: '301'
+    description: Share Capital
+  - code: '302'
+    description: Additional Paid-In Capital
+  - code: '303'
+    description: Retained Earnings
+  - code: '304'
+    description: Deficit
+  - code: '401'
+    description: Hospital Revenue
+  - code: '402'
+    description: Other Income
+  - code: '403'
+    description: Miscellaneous Income
+  - code: '404'
+    description: Hospital Discounts and Allowances
+  - code: '405'
+    description: Sales Returns and Allowances
+  - code: '501'
+    description: Direct Materials
+  - code: '502'
+    description: Direct Labor
+  - code: '503'
+    description: Service Overhead
+  - code: '504'
+    description: Service Overhead Used
+  - code: '505'
+    description: Service Overhead FND
+  - code: '601-01000'
+    description: Salaries and Wages - OPEX
+  - code: '601-02000'
+    description: SSS Contribution Expense
+  - code: '601-03000'
+    description: PHIC Contribution Expense
+  - code: '601-04000'
+    description: HDMF Contribution Expense
+  - code: '601-05000'
+    description: 13th Month Pay (Accrued)
+  - code: '601-06000'
+    description: De Minimis
+  - code: '601-07000'
+    description: Incentives,Bonuses and Other Benefits
+  - code: '601-08000'
+    description: Other Employee Benefits
+  - code: '601-09000'
+    description: Retirement Pay and Separation Pay
+  - code: '601-10000'
+    description: Training Allowance
+  - code: '601-11000'
+    description: Employees Hazard Pay
+  - code: '602'
+    description: Uniforms
+  - code: '603'
+    description: Depreciation Expenses
+  - code: '604'
+    description: Amortization Expenses-Software
+  - code: '605'
+    description: Taxes and Licenses
+  - code: '606'
+    description: Board Meeting and Travel Allowances
+  - code: '607'
+    description: Security Services (Accrued)
+  - code: '608'
+    description: Training and Development
+  - code: '609'
+    description: Electricity - Hospital Building
+  - code: '609-01000'
+    description: Electricity-Pumphouse
+  - code: '609-02000'
+    description: Drinking Water Supplies Expense
+  - code: '609-03000'
+    description: Employee Food and Meals
+  - code: '610'
+    description: Telephone and Communication
+  - code: '611'
+    description: Used Office Supplies
+  - code: '612'
+    description: Other Nonmedical and Nonsurgical Supplies
+  - code: '613'
+    description: Used FND Supplies
+  - code: '614-01000'
+    description: Insurance Expense
+  - code: '615-01000'
+    description: Outside Services
+  - code: '616-01000'
+    description: Audit, Legal, Retainers, Consultancy and Management Fees
+  - code: '617-01000'
+    description: Waste Disposal Services
+  - code: '617-0200'
+    description: Cleaning Supplies Expense
+  - code: '617-03000'
+    description: Cleaning and Sanitation
+  - code: '617-04000'
+    description: Repairs and Maintenance
+  - code: '618'
+    description: Doubtful Expense
+  - code: '619'
+    description: Transportation and Travel
+  - code: '620'
+    description: Fuel and Gasoline
+  - code: '621'
+    description: Representation and Entertainment
+  - code: '622'
+    description: Advertising/Promotion/Marketing Expenses
+  - code: '623'
+    description: Handling Fees
+  - code: '624'
+    description: Mailing/Postage/Courier
+  - code: '625'
+    description: Rentals
+  - code: '626'
+    description: Bank Service Charge
+  - code: '627'
+    description: Fines and Penalties
+  - code: '628 '
+    description: Miscellaneous Expense
+  - code: '629 '
+    description: Interest Expense
+  - code: '630'
+    description: Interest Withheld
+  - code: '631'
+    description: Minor Tools and Equipment
+  - code: '632'
+    description: Other Expenses-Bed and Mattress
+  - code: '633'
+    description: Income Tax Expense
+  - code: '634'
+    description: Deficiency Tax
+  - code: '635'
+    description: Functions and Events
+  - code: '636'
+    description: Subscriptions
+
+#    - code       : '09'
+#      description: OTHER EXPENSES
+#      tags       : [OTHER_EXPENSES]
+
+
+
+
+
+
+### =============END==========================
+
+
+

@@ -1,0 +1,1 @@
+CREATE VIEW "inventory"."inventory" AS SELECT *, COALESCE((SELECT inventory.onhand(department, item)),0) as onhand FROM inventory.department_item

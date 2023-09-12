@@ -1,0 +1,204 @@
+
+==Types of Journal Books  during entries ( shown in reverse order)
+     General Journal
+     Disbursements
+     Cash Receipts
+     Payable/Purchases
+     Sales
+
+
+
+
+==Chart of Account - Mother Account
+
+Max of Levels for Accounts so far is 3 accounts
+
+ - Account Type
+    Asset
+    Liability
+    Equity
+    Revenue
+    Expense
+
+ - Financial Statement Type
+    Balance Sheet
+    Income
+
+
+ -  Normal Side
+    Debit/Credit
+
+
+
+Notes of SubAccounts (Subaccount Categories Type)
+
+ -  Sub account will choose from a parent or not
+ -  if Sub Account has no parent. It can become a parent before the created sub-account
+ -  sub-Accounts can be created from a Referencial table. Entity Should implement AccountingSubCategory interface
+ -  Sub-Accounts can have department or not
+    if has depertment became automatic parents of the subaccounts
+
+
+
+Types of SubAccount ... this will be the basis of creation of a subaccount
+
+   - A/R Income Transaction Types
+       Debit Side - Debit Side Normal
+       Attributes of a Sub-account
+           -  Beginning Balance
+           -  For Credit Memo Adjustments
+           -  For Accrual of Income
+           -  For Non-Trade Cash Receipts
+           -  Include of Posting of Accrued Income for Multiple Customer
+           -  Vatable
+           -  Inactive
+
+       Select Mother Account
+
+   - AP Expense Transaction Types
+      Credit Side - Credit Side Normal
+      Attributes of a Sub-account Expense
+           -  Beginning Balance
+           -  Expense Account
+              - Can be Query at AP
+           -  For Debit Memo Adustment
+           -  For Accrual of Expense
+           -  Inactive
+      Select Mother Account
+
+   - Debit and Credit Adjustments
+      Select All Mother Account
+      Attributes
+          Debit/Credit Category
+            Credit
+            Debit
+      i.e. Price Adjustment
+
+
+   - Revenue Items
+      Can select   Mother Account
+         - of Revenue
+         - of AR
+
+
+
+
+   - Other Payment Types
+      Select All Mother Account
+      Inactive
+      i.e. Witholding Tax at Source
+
+   - Petty Cash Transaction Types
+     Select All Mother Account
+     Active
+
+   - Quantity Adjustment Types
+     Select All Mother Account
+         Active
+      i.e. Inventory Loss
+
+
+   - Asset Class  (use for recognizing depreciation)
+     Debit Journal Account (Expense)
+     Credit Journal Account (Accumulated Depreciation) - Contra
+
+
+   - Other Entities To be used as Parents in above
+     - Convert Entities into SubAccount
+
+          - Note:
+            Create a SubAccount with no Parent
+                This can be a parent to someone above
+            Create an Subaccount from a convert
+
+
+
+//===========================================================================================
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+=========================================================
+
+
+
+
+============ Structure of an Entry
+
+
+  1.
+     Mother Account
+          Department (of user)
+               SubAccount
+
+
+  2. Mother Account
+          Department of Source Transaction
+               Subaccount Name
+
+
+  3.) Mother Account Only
+
+=======================For Discussion Tomorrow==================================
+Random Notes
+
+ For Creatiion
+ PPEs Module
+
+1.) Type of SubAccount
+
+    a.) From an existing domain with Subaccountable interface
+
+
+========== Designing JournalEntries Generator
+
+1.) Will Select a target  Entity to be saved
+2.) A certain condition  to enable this auto entry = [String column] = value
+3.) Will Select Subaccount
+    will consider normal side of the account.
+    positive is at normal side
+    negative is at the opposite side of its normal side
+
+
+    ex. scenarious
+
+     Service Entry
+
+      AR - Patient - Inpatient
+                    specific
+
+                    Sales Revenue -> Department ->  Diagnostics
+
+                                     Department will be detected as a parameter
+
+                                     Diagnostic is a a SubaccountSetup
+
+
+
+
+     id
+     domainClass
+     flagValue
+     ignored_condition
+         jounalAccount
+                 -  If parameterized stored in the map
+                     parameters
+
+
+
+
+
+
+
+

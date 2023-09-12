@@ -1,0 +1,14 @@
+
+
+http://uhmistrn.doh.gov.ph/ahsr/webservice
+username: NEHEHRSV201900114
+pass: Mahiraphulaan1
+
+
+http://uhmistrn.doh.gov.ph/ahsr/webservice/index.php?wsdl
+
+xjc  -d "/Users/albertoclarit/Downloads/yawa/out" -p com.hisd3.hismk2.phic.wsdl -dtd  -wsdl  -verbose "http://uhmistrn.doh.gov.ph/ahsr/webservice/index.php?wsdl"
+
+xjc  -d "/Users/albertoclarit/Downloads/yawa/out" -p com.hisd3.hismk2.phic.wsdl -wsdl  -verbose "http://wsf.cdyne.com/WeatherWS/Weather.asmx?wsdl"
+
+gradle -q dependencies

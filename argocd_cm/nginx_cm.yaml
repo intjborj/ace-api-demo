@@ -1,0 +1,69 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-deployment
+  namespace: cm
+  labels:
+    app: nginx
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: cm-server
+  template:
+    metadata:
+      labels:
+        app: cm-server
+    spec:
+      containers:
+        - name:  cm-server
+          image: nginx
+          ports:
+            - containerPort: 80
+          volumeMounts:
+            - mountPath: /usr/share/nginx/html
+              name: nginx-data
+      volumes:
+        - name: nginx-data
+          persistentVolumeClaim:
+            claimName: nginx-data-pv-claim
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: cm-server
+  namespace: cm
+  labels:
+    app: cm-server
+spec:
+  type: ClusterIP
+  ports:
+    - protocol: TCP
+      port: 80
+      name: cm-server
+  selector:
+    app: cm-server
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: cm-ingress
+  namespace: cm
+  annotations:
+    nginx.ingress.kubernetes.io/proxy-body-size: "50m"
+    nginx.org/client-max-body-size: "50m"
+    nginx.ingress.kubernetes.io/proxy-connect-timeout: "3600"
+    nginx.ingress.kubernetes.io/proxy-send-timeout: "3600"
+    nginx.ingress.kubernetes.io/proxy-read-timeout: "3600"
+spec:
+  rules:
+    - host: cm.ace-mc-bohol.com
+      http:
+        paths:
+          - pathType: Prefix
+            path: "/"
+            backend:
+              service:
+                name: cm-server
+                port:
+                  number: 80

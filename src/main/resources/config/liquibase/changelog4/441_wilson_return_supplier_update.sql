@@ -1,0 +1,1 @@
+ALTER TABLE inventory.return_supplier add column ref_srr varchar default null;

@@ -1,0 +1,60 @@
+import com.hisd3.hismk2.domain.IntegrationTemplate
+import com.hisd3.hismk2.domain.SubAccountHolder
+import com.hisd3.hismk2.domain.accounting.Bank
+import com.hisd3.hismk2.domain.billing.BillingItem
+import com.hisd3.hismk2.domain.billing.BillingItemType
+import com.hisd3.hismk2.domain.cashiering.CashierTerminal
+import com.hisd3.hismk2.graphqlservices.accounting.IntegrationServices
+import com.hisd3.hismk2.graphqlservices.accounting.LedgerServices
+import com.hisd3.hismk2.graphqlservices.billing.SALES_INTEGRATION
+import org.springframework.beans.factory.annotation.Autowired
+
+class Scratch{
+    @Autowired
+    IntegrationServices integrationServices
+
+    @Autowired
+    LedgerServices ledgerServices
+
+
+    void test(){
+
+
+
+
+         Bank bank = new Bank()
+
+        CashierTerminal cashierTerminal = new CashierTerminal()
+
+
+
+
+        integrationServices.generateAutoEntries(new IntegrationTemplate()) {
+
+            it.flagValue = "JSON"
+
+            it.value_a = -100
+            it.value_b = 100
+
+            it.sub_b =  bank.with {
+                   new SubAccountHolder(it)
+            }
+
+            it.sub_a =  cashierTerminal.with {
+                new SubAccountHolder(it)
+            }
+
+
+
+        }
+
+
+    }
+}
+
+
+
+
+
+
+

@@ -1,0 +1,22 @@
+Deployment Notes for HISD3Mk2
+
+
+1.) Create Openshift Project
+2.) Manually create Jenkins Non Ephemeral
+
+ pls bind these folder for docker-slaves to use
+   dockerslavesmk2   /tmp/workspace
+   mavenslavesmk2  /home/jenkins/.m2/
+   gradleslavesmk2  /home/jenkins/.gradle/
+
+Install docker slaves
+
+3.) Manually Install Redis Ephemeral
+4.)  oc create secret generic  hisd3gitlabsecret --from-literal=username=albertoclarit --from-literal=password=h_9dgxhyNc-GsW9zq-Nr --type=kubernetes.io/basic-auth
+
+oc create secret generic  acegithub --from-literal=username=hisd3tech --from-literal=password=6c68e4b37434635daa35d8d374493426c3450a9d --type=kubernetes.io/basic-auth
+
+5.) Install Client Apps
+
+
+oc process -f https://raw.githubusercontent.com/albertoclarit/openshift-jenkins-docker-slave/master/slave.yaml | oc create -f -

@@ -1,0 +1,1 @@
+ALTER TABLE accounting.billing_schedule ADD COLUMN due_date date;

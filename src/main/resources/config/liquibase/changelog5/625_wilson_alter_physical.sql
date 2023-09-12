@@ -1,0 +1,1 @@
+ALTER TABLE inventory.physical_count ADD COLUMN IF NOT EXISTS ref_ledger_id uuid default null;

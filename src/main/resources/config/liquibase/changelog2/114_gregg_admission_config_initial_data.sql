@@ -1,0 +1,1 @@
+insert into "hospital_configuration"."admission_configuration" ( "id", "wristband_printer_location") values ( '690c07d6-6a5c-4fba-b1ce-a873fca0a720', 'http://172.16.12.21:4567/printondefault') RETURNING *;

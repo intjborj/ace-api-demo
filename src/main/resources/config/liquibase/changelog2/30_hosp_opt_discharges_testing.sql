@@ -1,0 +1,15 @@
+CREATE TABLE "hospital_configuration"."hosp_opt_discharges_testing" (
+  "id" uuid NOT NULL,
+  "testinggroup" varchar(19),
+  "testing" varchar(250),
+  "number" int4,
+  "reportingyear" int4,
+
+
+  "created_by" varchar(50) COLLATE "pg_catalog"."default",
+  "created_date" timestamp(6) DEFAULT now(),
+  "last_modified_by" varchar(50) COLLATE "pg_catalog"."default",
+  "last_modified_date" timestamp(6) DEFAULT now(),
+  "deleted" bool,
+  PRIMARY KEY ("id")
+);

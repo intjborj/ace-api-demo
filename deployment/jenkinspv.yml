@@ -1,0 +1,71 @@
+cat <<EOF | oc apply -f -
+  apiVersion: v1
+  kind: PersistentVolume
+  metadata:
+    name: jenkins2
+  spec:
+    capacity:
+      storage: 100Gi
+    accessModes:
+      - ReadWriteOnce
+    nfs:
+      path: /var/nfsshare/jenkins2
+      server: 172.16.10.6
+    persistentVolumeReclaimPolicy: Retain
+
+EOF
+
+
+cat <<EOF | oc apply -f -
+  apiVersion: v1
+  kind: PersistentVolume
+  metadata:
+    name: dockerslavesmk2
+  spec:
+    capacity:
+      storage: 100Gi
+    accessModes:
+      - ReadWriteOnce
+    nfs:
+      path: /var/nfsshare/dockerslavesmk2
+      server: 172.16.10.6
+    persistentVolumeReclaimPolicy: Retain
+
+EOF
+
+cat <<EOF | oc apply -f -
+  apiVersion: v1
+  kind: PersistentVolume
+  metadata:
+    name: mavenslavesmk2
+  spec:
+    capacity:
+      storage: 100Gi
+    accessModes:
+      - ReadWriteOnce
+    nfs:
+      path: /var/nfsshare/mavenslavesmk2
+      server: 172.16.10.6
+    persistentVolumeReclaimPolicy: Retain
+
+EOF
+
+
+cat <<EOF | oc apply -f -
+  apiVersion: v1
+  kind: PersistentVolume
+  metadata:
+    name: gradleslavesmk2
+  spec:
+    capacity:
+      storage: 100Gi
+    accessModes:
+      - ReadWriteOnce
+    nfs:
+      path: /var/nfsshare/gradleslavesmk2
+      server: 172.16.10.6
+    persistentVolumeReclaimPolicy: Retain
+
+EOF
+
+

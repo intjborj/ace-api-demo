@@ -1,0 +1,1 @@
+alter table pms.medications alter column remarks type varchar (500);

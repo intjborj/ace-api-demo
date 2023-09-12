@@ -1,0 +1,17 @@
+TRUNCATE "pms"."flowrate";
+insert into "pms"."flowrate" ( "id", "liter_per_minute", "price_per_hour", "description") values ( 'a59e47ea-10d6-4734-96a3-51e1f6b9f30c', '0.5', '12', '1/2 Liter/Minute') RETURNING *;
+insert into "pms"."flowrate" ( "id", "liter_per_minute", "price_per_hour", "description") values ( '630205dc-a8ec-4bd3-915b-fcf56087646d', '1', '25', '1 Liter/Minute') RETURNING *;
+insert into "pms"."flowrate" ( "id", "liter_per_minute", "price_per_hour", "description") values ( '30712a94-c44e-44b9-8346-fe4cd54c6749', '2', '49', '2 Liter/Minute') RETURNING *;
+insert into "pms"."flowrate" ( "id", "liter_per_minute", "price_per_hour", "description") values ( '5d6d1d8b-f08a-4b1d-840e-189b1cac4930', '3', '74', '3 Liter/Minute') RETURNING *;
+insert into "pms"."flowrate" ( "id", "liter_per_minute", "price_per_hour", "description") values ( 'e62bd7a4-2211-462b-9c0e-f90335b7d606', '4', '98', '4 Liter/Minute') RETURNING *;
+insert into "pms"."flowrate" ( "id", "liter_per_minute", "price_per_hour", "description") values ( '5fe3fca2-9b0e-4844-a22a-b2518aa25cef', '5', '123', '5 Liter/Minute') RETURNING *;
+insert into "pms"."flowrate" ( "id", "liter_per_minute", "price_per_hour", "description") values ( '081a5701-c5a1-40bb-99ea-a0d22f8fe960', '6', '147', '6 Liter/Minute') RETURNING *;
+insert into "pms"."flowrate" ( "id", "liter_per_minute", "price_per_hour", "description") values ( 'cd9f61ab-f6d0-4fc4-a12c-6fe0fe1ba215', '7', '172', '7 Liter/Minute') RETURNING *;
+insert into "pms"."flowrate" ( "id", "liter_per_minute", "price_per_hour", "description") values ( '51498972-e800-414b-a7aa-e9e51cd4b92d', '8', '196', '8 Liter/Minute') RETURNING *;
+insert into "pms"."flowrate" ( "id", "liter_per_minute", "price_per_hour", "description") values ( '721236b8-6151-4d4d-8969-3577492036b3', '9', '221', '9 Liter/Minute') RETURNING *;
+insert into "pms"."flowrate" ( "id", "liter_per_minute", "price_per_hour", "description") values ( 'a5e92774-1064-4624-852c-15ca20119494', '10', '245', '10 Liter/Minute') RETURNING *;
+insert into "pms"."flowrate" ( "id", "liter_per_minute", "price_per_hour", "description") values ( '9a291057-f3af-4ffa-bdf5-c4d5bb5e06a0', '11', '270', '11 Liter/Minute') RETURNING *;
+insert into "pms"."flowrate" ( "id", "liter_per_minute", "price_per_hour", "description") values ( '725ea0fb-d7dd-4b09-896a-9c3065bd6ab3', '12', '294', '12 Liter/Minute') RETURNING *;
+insert into "pms"."flowrate" ( "id", "liter_per_minute", "price_per_hour", "description") values ( '7b348793-d658-481c-ae59-a29450c66abc', '13', '319', '13 Liter/Minute') RETURNING *;
+insert into "pms"."flowrate" ( "id", "liter_per_minute", "price_per_hour", "description") values ( 'c6f1f07c-6616-4ba6-a8c3-1d9d97ef9244', '14', '343', '14 Liter/Minute') RETURNING *;
+insert into "pms"."flowrate" ( "id", "liter_per_minute", "price_per_hour", "description") values ( '91b9c390-7c2c-4c03-8eea-14e7c2266d80', '15', '368', '15 Liter/Minute') RETURNING *;

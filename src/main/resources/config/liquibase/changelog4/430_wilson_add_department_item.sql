@@ -1,0 +1,1 @@
+ALTER TABLE inventory.department_item ADD COLUMN is_assign bool default true;

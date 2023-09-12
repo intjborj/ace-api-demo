@@ -1,0 +1,2 @@
+UPDATE "accounting"."integration_items" SET "multiple" = 't' WHERE "id" = 'da04a48f-545a-4482-840c-fc51dc8080a7';
+UPDATE "accounting"."integration_items" SET "multiple" = 't' WHERE "id" = 'fc16529b-c4a7-4401-b2e1-62518d58dd29';

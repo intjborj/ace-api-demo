@@ -1,0 +1,2 @@
+drop view if exists "inventory"."inventory";
+CREATE VIEW "inventory"."inventory" AS SELECT *, COALESCE((SELECT inventory.onhand(department, item)),0) as onhand, COALESCE((SELECT inventory.last_unit_price(item)),0) as last_unit_cost FROM inventory.department_item

@@ -1,0 +1,1 @@
+CREATE INDEX "header_idx" ON "accounting"."ledger" USING BTREE ("header");

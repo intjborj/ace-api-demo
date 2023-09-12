@@ -1,0 +1,2 @@
+https://docs.openshift.com/container-platform/3.6/admin_guide/pruning_resources.html#pruning-builds
+https://docs.openshift.com/container-platform/3.6/dev_guide/builds/advanced_build_operations.html#build-pruning

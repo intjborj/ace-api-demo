@@ -1,0 +1,6 @@
+ALTER TABLE dietary.diets
+    ADD CONSTRAINT fk_case_diet FOREIGN KEY (id)
+    REFERENCES pms.cases (diet) MATCH SIMPLE
+    ON UPDATE NO ACTION
+    ON DELETE RESTRICT
+    NOT VALID;

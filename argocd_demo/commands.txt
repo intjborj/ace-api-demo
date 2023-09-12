@@ -1,0 +1,44 @@
+
+./gradlew  -Pprofile=prod build
+
+docker build  -t 172.16.10.8:32000/hismk2demo_api:latest .
+docker push  172.16.10.8:32000/hismk2demo_api:latest
+
+
+docker login -u builder -p M6msmXMa docker.ace-mc-bohol.com
+
+docker build  -t docker.ace-mc-bohol.com/hismk2demo_api:latest .
+docker push  docker.ace-mc-bohol.com/hismk2demo_api:latest
+
+
+docker run -it 172.16.10.8:32000/hismk2demo_api:2.0.0
+
+
+=== temporary
+scp hismk2-0.0.1-SNAPSHOT.jar  hisd3node2@:172.16.10.8/root/sources/hisd3-api/build/libs
+
+
+============================
+
+kubectl run hisd3mk2-roomchargingcron --image=albertoclarit/hisd3base:1.0.3 --schedule='0 7 * * ?' \
+--restart=OnFailure --labels parent="hisd3mk2_schedulers" \
+--command -- curl -v --user "scheduler:YE%@&j-\eB\fv*2Y"  -X POST https://srv-hismk2.ace-mc-bohol.com/api/autochargeRooms
+
+
+
+https://www.craftypenguins.net/how-to-trigger-a-kubernetes-cronjob-manually/
+
+
+ curl -v --user "scheduler:YE%@&j-\eB\fv*2Y"  -X POST https://srv-hismk2.ace-mc-bohol.com/public/remoteIp
+
+sudo  microk8s kubectl get cronjob
+hisd3mk2-closingopdcron
+ sudo  microk8s kubectl create job --from=cronjob/hisd3mk2-closingopdcron closingopdcron-manual-001 -n api
+ sudo  microk8s kubectl logs closingopdcron-manual-001 -n api
+
+
+https://srv-hismk2.ace-mc-bohol.com/api/autoCloseOPD
+https://srv-hismk2.ace-mc-bohol.com/public/remoteIp
+
+
+https://github.com/kubernetes-csi/csi-driver-smb

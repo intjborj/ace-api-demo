@@ -1,0 +1,59 @@
+Install Kubernetes Cleanup Operator
+https://github.com/lwolf/kube-cleanup-operator
+
+
+oc  create -f rbac.yaml
+
+# create deployment
+oc create -f deployment.yaml
+
+
+oc logs -f $(oc get pods --namespace hisd3mk2 -l "run=cleanup-operator" -o jsonpath="{.items[0].metadata.name}")
+
+# Use simple job to test it
+oc create -f https://k8s.io/examples/controllers/job.yaml
+
+
+// Cron Job for autocharging Room Charge
+// https://en.wikipedia.org/wiki/Cron
+//https://crontab.guru/
+
+
+// every 3 pm everyday      on UTC  i forgot the page where i access it pls test
+// https://www.tigera.io/blog/kubernetes-cron-jobs/
+
+
+//===========================
+oc run hisd3mk2-roomchargingcron --image=albertoclarit/hisd3base:1.0.3 --schedule='0 7 * * ?' \
+--restart=OnFailure --labels parent="hisd3mk2_schedulers" \
+--command -- curl -v --user "scheduler:YE%@&j-\eB\fv*2Y"  -X POST https://srv-hismk2.ace-mc-bohol.com/api/autochargeRooms
+
+oc run hisd3mk2-closingopdcron --image=albertoclarit/hisd3base:1.0.3 --schedule='0 14 * * ?' \
+--restart=OnFailure --labels parent="hisd3mk2_schedulers" \
+--command -- curl -v --user "scheduler:YE%@&j-\eB\fv*2Y"  -X POST https://srv-hismk2.ace-mc-bohol.com/api/autoCloseOPD
+
+
+oc run hisd3mk2-cleannotification --image=albertoclarit/hisd3base:1.0.3 --schedule='0 16 * * ?' \
+--restart=OnFailure --labels parent="hisd3mk2_schedulers" \
+--command -- curl -v --user "scheduler:YE%@&j-\eB\fv*2Y"  -X POST https://srv-hismk2.ace-mc-bohol.com/api/cleanNotifications
+
+
+//===========================
+
+// ====== Testing Only
+oc run hisd3mk2-roomchargingcron --image=albertoclarit/hisd3base:1.0.3 --schedule='8 9 * * ?' \
+--restart=OnFailure --labels parent="hisd3mk2_schedulers" \
+--command -- curl -v --user "scheduler:YE%@&j-\eB\fv*2Y"  -X POST https://srv-hismk2.ace-mc-bohol.com/api/autochargeRooms
+
+oc describe cronjob hisd3mk2-roomchargingcron
+oc get cronjob
+oc delete cronjob hisd3mk2-roomchargingcron
+
+oc delete jobs -l hisd3mk2-roomchargingcron
+oc delete jobs -l parent=hisd3mk2_schedulers
+
+
+//====recomp
+curl -v --user "scheduler:YE%@&j-\eB\fv*2Y"  -X POST https://srv-hismk2.ace-mc-bohol.com/api/recompClosedFolio
+
+curl -v --user "scheduler:YE%@&j-\eB\fv*2Y"  -X POST http://localhost:8080/api/recompClosedFolio

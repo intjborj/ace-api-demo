@@ -1,0 +1,22 @@
+ALTER TABLE "public"."tablename"
+ADD COLUMN "created_by" varchar NULL COLLATE "default",
+ADD COLUMN	"created_date" timestamp  NULL DEFAULT current_timestamp,
+ADD COLUMN	"last_modified_by" varchar COLLATE "default",
+ADD COLUMN	"last_modified_date" timestamp NULL DEFAULT current_timestamp;
+
+
+To add deleted columns
+
+ALTER TABLE "public"."staff_table" ADD COLUMN "deleted" bool;
+CREATE INDEX  "staff_table_deleted" ON "public"."staff_table" USING btree(deleted);
+
+
+
+
+UUID column
+ @Id
+    @GeneratedValue(generator = "system-uuid")
+    @GenericGenerator(name = "system-uuid", strategy = "uuid2")
+    @Column(name = "pk_stafftable", columnDefinition = "uuid")
+    @Type(type="pg-uuid")
+    private UUID id;

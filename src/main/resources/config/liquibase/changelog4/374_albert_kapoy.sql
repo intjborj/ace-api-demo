@@ -1,0 +1,1 @@
+CREATE INDEX "journal_type_idx" ON "accounting"."header_ledger" USING BTREE ("journal_type");

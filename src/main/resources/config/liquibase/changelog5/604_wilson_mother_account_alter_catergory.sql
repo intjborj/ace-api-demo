@@ -1,0 +1,1 @@
+ALTER TABLE inventory.accounting_categories ADD COLUMN mother_accounts varchar default null;

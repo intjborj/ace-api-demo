@@ -1,0 +1,1 @@
+ALTER TABLE hrm.allowance_template_items ADD PRIMARY KEY (template, allowance)

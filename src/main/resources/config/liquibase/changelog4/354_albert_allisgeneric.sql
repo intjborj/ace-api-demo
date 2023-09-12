@@ -1,0 +1,1 @@
+update ancillary.services set generic_service = true;

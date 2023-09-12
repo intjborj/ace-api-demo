@@ -1,0 +1,1 @@
+ALTER TABLE hospital_configuration.default_settings RENAME allow_do_wo_pn TO require_progress_notes;

@@ -1,0 +1,166 @@
+INSERT INTO "accounting"."subaccount_setup" ("id", "description", "subaccount_code", "subaccount_parent", "subaccount_type", "include_department", "attr_beginning_balance", "attr_credit_memo_adj", "attr_accrual_of_income", "attr_non_trade_cash_receipts", "attr_include_posting_accrued_income_multiple_customer", "attr_vatable", "attr_inactive", "attr_expense_account", "attr_debit_memo_adjustment", "attr_accrual_expense", "source_domain", "created_by", "created_date", "last_modified_by", "last_modified_date", "journal_placement", "category", "require_remarks", "attached_value") VALUES
+('7b72c7df-d446-454a-adf6-69ffaddaba9b', 'FND-DIETARY', '1040', NULL, 'REVENUEITEMS', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'admin', '2020-12-23 05:53:59.333', 'admin', '2020-12-23 05:53:59.333', NULL, NULL, NULL, NULL);
+
+INSERT INTO "accounting"."subaccount_mother_accounts" ("id", "sub_account", "chart_of_account", "created_by", "created_date", "last_modified_by", "last_modified_date") VALUES
+('d7310833-30fc-4eaf-9c7f-7122c9998dc1', '7b72c7df-d446-454a-adf6-69ffaddaba9b', '819d7ef1-499c-440d-a6cd-74297b2a743f', 'admin', '2020-12-23 05:53:59.396', 'admin', '2020-12-23 05:53:59.396');
+
+INSERT INTO "accounting"."subaccount_setup" ("id", "description", "subaccount_code", "subaccount_parent", "subaccount_type", "include_department", "attr_beginning_balance", "attr_credit_memo_adj", "attr_accrual_of_income", "attr_non_trade_cash_receipts", "attr_include_posting_accrued_income_multiple_customer", "attr_vatable", "attr_inactive", "attr_expense_account", "attr_debit_memo_adjustment", "attr_accrual_expense", "source_domain", "created_by", "created_date", "last_modified_by", "last_modified_date", "journal_placement", "category", "require_remarks", "attached_value") VALUES
+('a7680823-d4b8-40fe-ad2e-cefc63880106', 'BAYVIEW', '1010', NULL, 'EXPENSE', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'admin', '2020-12-23 06:34:48.915', 'admin', '2020-12-23 06:34:48.915', NULL, NULL, NULL, NULL);
+
+
+
+INSERT INTO "accounting"."subaccount_mother_accounts" ("id", "sub_account", "chart_of_account", "created_by", "created_date", "last_modified_by", "last_modified_date") VALUES
+('25970bbe-6604-45b7-99ba-18d608a2d3a1', 'a7680823-d4b8-40fe-ad2e-cefc63880106', 'd7a632d2-ac33-4baa-8ed4-17975eb0524f', 'admin', '2020-12-23 06:34:48.925', 'admin', '2020-12-23 06:34:48.925');
+
+INSERT INTO "accounting"."subaccount_setup" ("id", "description", "subaccount_code", "subaccount_parent", "subaccount_type", "include_department", "attr_beginning_balance", "attr_credit_memo_adj", "attr_accrual_of_income", "attr_non_trade_cash_receipts", "attr_include_posting_accrued_income_multiple_customer", "attr_vatable", "attr_inactive", "attr_expense_account", "attr_debit_memo_adjustment", "attr_accrual_expense", "source_domain", "created_by", "created_date", "last_modified_by", "last_modified_date", "journal_placement", "category", "require_remarks", "attached_value") VALUES
+('fafa4f09-12e3-4a3b-845c-3a4d275eb71a', 'DIETARY', '1020', NULL, 'EXPENSE', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'admin', '2020-12-23 06:35:20.542', 'admin', '2020-12-23 06:35:20.542', NULL, NULL, NULL, NULL);
+
+INSERT INTO "accounting"."subaccount_mother_accounts" ("id", "sub_account", "chart_of_account", "created_by", "created_date", "last_modified_by", "last_modified_date") VALUES
+('7778c663-93ac-4c4f-803b-e7d192a69604', 'fafa4f09-12e3-4a3b-845c-3a4d275eb71a', 'd7a632d2-ac33-4baa-8ed4-17975eb0524f', 'admin', '2020-12-23 06:35:20.546', 'admin', '2020-12-23 06:35:20.546');
+
+INSERT INTO "accounting"."chart_of_accounts" ("id", "account_code", "description", "category", "tags", "parent", "deprecated", "created_by", "created_date", "last_modified_by", "last_modified_date", "deleted", "account_type", "fs_type", "normal_side", "is_contra") VALUES
+('e6d0ff0e-aa96-44ce-8661-07ba6ce7c7a1', '600450', 'MEALS', NULL, NULL, NULL, NULL, NULL, '2020-10-20 14:47:28.474', NULL, '2020-10-20 14:47:28.474', NULL, 'EXPENSE', 'INCOME', 'DEBIT', 'f');
+
+
+INSERT INTO "accounting"."subaccount_setup" ("id", "description", "subaccount_code", "subaccount_parent", "subaccount_type", "include_department", "attr_beginning_balance", "attr_credit_memo_adj", "attr_accrual_of_income", "attr_non_trade_cash_receipts", "attr_include_posting_accrued_income_multiple_customer", "attr_vatable", "attr_inactive", "attr_expense_account", "attr_debit_memo_adjustment", "attr_accrual_expense", "source_domain", "created_by", "created_date", "last_modified_by", "last_modified_date", "journal_placement", "category", "require_remarks", "attached_value") VALUES
+('ebf1e5be-7bfe-4fe2-ab82-b11b010d193b', 'NURSE', '1010', NULL, 'EXPENSE', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'admin', '2020-12-23 13:29:08.371', 'admin', '2020-12-23 13:29:08.371', NULL, NULL, NULL, NULL);
+
+
+INSERT INTO "accounting"."subaccount_mother_accounts" ("id", "sub_account", "chart_of_account", "created_by", "created_date", "last_modified_by", "last_modified_date") VALUES
+('1efbd29e-b289-44ae-8280-ab75f5ad9a72', 'ebf1e5be-7bfe-4fe2-ab82-b11b010d193b', 'e6d0ff0e-aa96-44ce-8661-07ba6ce7c7a1', 'admin', '2020-12-23 13:29:08.39', 'admin', '2020-12-23 13:29:08.39');
+
+
+
+
+
+
+
+
+
+
+UPDATE "accounting"."chart_of_accounts" SET "description" = 'ELECTRICITY' WHERE "id" = '19008eea-3988-4126-b195-a92bf5b08519';
+
+INSERT INTO "accounting"."subaccount_setup" ("id", "description", "subaccount_code", "subaccount_parent", "subaccount_type", "include_department", "attr_beginning_balance", "attr_credit_memo_adj", "attr_accrual_of_income", "attr_non_trade_cash_receipts", "attr_include_posting_accrued_income_multiple_customer", "attr_vatable", "attr_inactive", "attr_expense_account", "attr_debit_memo_adjustment", "attr_accrual_expense", "source_domain", "created_by", "created_date", "last_modified_by", "last_modified_date", "journal_placement", "category", "require_remarks", "attached_value") VALUES
+('506d216b-3f41-4a94-8fd9-6bb005d96382', 'HOSPITAL', '1010', NULL, 'EXPENSE', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'admin', '2020-12-26 12:28:54.782', 'admin', '2020-12-26 12:28:54.782', NULL, NULL, NULL, NULL);
+
+INSERT INTO "accounting"."subaccount_mother_accounts" ("id", "sub_account", "chart_of_account", "created_by", "created_date", "last_modified_by", "last_modified_date") VALUES
+('33f804a7-c79e-4f40-86f5-5deb710978c3', '506d216b-3f41-4a94-8fd9-6bb005d96382', '19008eea-3988-4126-b195-a92bf5b08519', 'admin', '2020-12-26 12:28:54.791', 'admin', '2020-12-26 12:28:54.791');
+
+INSERT INTO "accounting"."subaccount_setup" ("id", "description", "subaccount_code", "subaccount_parent", "subaccount_type", "include_department", "attr_beginning_balance", "attr_credit_memo_adj", "attr_accrual_of_income", "attr_non_trade_cash_receipts", "attr_include_posting_accrued_income_multiple_customer", "attr_vatable", "attr_inactive", "attr_expense_account", "attr_debit_memo_adjustment", "attr_accrual_expense", "source_domain", "created_by", "created_date", "last_modified_by", "last_modified_date", "journal_placement", "category", "require_remarks", "attached_value") VALUES
+('d251c3df-5a65-4951-95f0-b15d7a70a15c', 'PUMPHOUSE', '1020', NULL, 'EXPENSE', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'admin', '2020-12-26 12:29:20.053', 'admin', '2020-12-26 12:29:20.053', NULL, NULL, NULL, NULL);
+
+
+
+
+INSERT INTO "accounting"."chart_of_accounts" ("id", "account_code", "description", "category", "tags", "parent", "deprecated", "created_by", "created_date", "last_modified_by", "last_modified_date", "deleted", "account_type", "fs_type", "normal_side", "is_contra") VALUES
+('298f7328-c08e-4ecb-a9e0-7a9e63c8d81a', '600161', 'WATER', NULL, NULL, NULL, NULL, NULL, '2020-10-20 14:47:28.474', NULL, '2020-10-20 14:47:28.474', NULL, 'EXPENSE', 'INCOME', 'DEBIT', 'f');
+
+
+INSERT INTO "accounting"."chart_of_accounts" ("id", "account_code", "description", "category", "tags", "parent", "deprecated", "created_by", "created_date", "last_modified_by", "last_modified_date", "deleted", "account_type", "fs_type", "normal_side", "is_contra") VALUES
+('051bf85f-2dcf-49bd-a4a7-de6d36d32444', '600460', 'REFUNDS TO PATIENTS', NULL, NULL, NULL, NULL, NULL, '2020-10-20 14:47:28.474', NULL, '2020-10-20 14:47:28.474', NULL, 'EXPENSE', 'INCOME', 'DEBIT', 'f');
+
+------
+
+INSERT INTO "accounting"."subaccount_setup" ("id", "description", "subaccount_code", "subaccount_parent", "subaccount_type", "include_department", "attr_beginning_balance", "attr_credit_memo_adj", "attr_accrual_of_income", "attr_non_trade_cash_receipts", "attr_include_posting_accrued_income_multiple_customer", "attr_vatable", "attr_inactive", "attr_expense_account", "attr_debit_memo_adjustment", "attr_accrual_expense", "source_domain", "created_by", "created_date", "last_modified_by", "last_modified_date", "journal_placement", "category", "require_remarks", "attached_value") VALUES
+('83aeb2d7-0802-453a-b310-84bd0219ac00', 'FUEL AND GASOLINE', '1010', NULL, 'EXPENSE', 't', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'admin', '2020-12-28 06:17:30.724', 'admin', '2020-12-28 06:17:30.724', NULL, NULL, NULL, NULL);
+
+INSERT INTO "accounting"."subaccount_mother_accounts" ("id", "sub_account", "chart_of_account", "created_by", "created_date", "last_modified_by", "last_modified_date") VALUES
+('96b21e62-0017-4232-a1aa-7ae1e256c74f', '83aeb2d7-0802-453a-b310-84bd0219ac00', '7b8040f7-4340-4a16-99f0-b9430979ff03', 'admin', '2020-12-28 06:17:30.737', 'admin', '2020-12-28 06:17:30.737');
+
+INSERT INTO "accounting"."chart_of_accounts" ("id", "account_code", "description", "category", "tags", "parent", "deprecated", "created_by", "created_date", "last_modified_by", "last_modified_date", "deleted", "account_type", "fs_type", "normal_side", "is_contra") VALUES
+('cdf2dab3-7385-4e9c-8ef6-f3b53084593d', '600470', 'PROFESSIONAL FEES - ACCOUNTING SERVICES', NULL, NULL, NULL, NULL, NULL, '2020-10-20 14:47:28.474', NULL, '2020-10-20 14:47:28.474', NULL, 'EXPENSE', 'INCOME', 'DEBIT', 'f');
+
+INSERT INTO "accounting"."chart_of_accounts" ("id", "account_code", "description", "category", "tags", "parent", "deprecated", "created_by", "created_date", "last_modified_by", "last_modified_date", "deleted", "account_type", "fs_type", "normal_side", "is_contra") VALUES
+('551d79a8-759a-49b8-a80e-383cbea26a14', '600480', 'CONSULTANCY AND ASSISTANCE', NULL, NULL, NULL, NULL, NULL, '2020-10-20 14:47:28.474', NULL, '2020-10-20 14:47:28.474', NULL, 'EXPENSE', 'INCOME', 'DEBIT', 'f');
+
+INSERT INTO "accounting"."subaccount_setup" ("id", "description", "subaccount_code", "subaccount_parent", "subaccount_type", "include_department", "attr_beginning_balance", "attr_credit_memo_adj", "attr_accrual_of_income", "attr_non_trade_cash_receipts", "attr_include_posting_accrued_income_multiple_customer", "attr_vatable", "attr_inactive", "attr_expense_account", "attr_debit_memo_adjustment", "attr_accrual_expense", "source_domain", "created_by", "created_date", "last_modified_by", "last_modified_date", "journal_placement", "category", "require_remarks", "attached_value") VALUES
+('651ea9b3-4631-442f-b1da-4d61982d48b2', 'OTHERS', '1020', NULL, 'EXPENSE', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'admin', '2020-12-28 07:21:32.475', 'admin', '2020-12-28 07:21:32.475', NULL, NULL, NULL, NULL);
+
+INSERT INTO "accounting"."subaccount_mother_accounts" ("id", "sub_account", "chart_of_account", "created_by", "created_date", "last_modified_by", "last_modified_date") VALUES
+('068bd685-3138-4c88-b7b0-092cc4189a72', '651ea9b3-4631-442f-b1da-4d61982d48b2', 'd95385e2-c46e-4f46-b27d-a91ad331619d', 'admin', '2020-12-28 07:21:32.486', 'admin', '2020-12-28 07:21:32.486');
+
+---
+
+INSERT INTO "accounting"."chart_of_accounts" ("id", "account_code", "description", "category", "tags", "parent", "deprecated", "created_by", "created_date", "last_modified_by", "last_modified_date", "deleted", "account_type", "fs_type", "normal_side", "is_contra") VALUES
+('cca0b2e2-e248-4337-a4e2-dbbbfbbd163d', '600490', 'LPG', NULL, NULL, NULL, NULL, NULL, '2020-10-20 14:47:28.474', NULL, '2020-10-20 14:47:28.474', NULL, 'EXPENSE', 'INCOME', 'DEBIT', 'f');
+
+INSERT INTO "accounting"."chart_of_accounts" ("id", "account_code", "description", "category", "tags", "parent", "deprecated", "created_by", "created_date", "last_modified_by", "last_modified_date", "deleted", "account_type", "fs_type", "normal_side", "is_contra") VALUES
+('43620078-7158-4b90-94a3-fc9b5b335f97', '600500', 'EMPLOYEE BENEFITS', NULL, NULL, NULL, NULL, NULL, '2020-10-20 14:47:28.474', NULL, '2020-10-20 14:47:28.474', NULL, 'EXPENSE', 'INCOME', 'DEBIT', 'f');
+
+
+INSERT INTO "accounting"."chart_of_accounts" ("id", "account_code", "description", "category", "tags", "parent", "deprecated", "created_by", "created_date", "last_modified_by", "last_modified_date", "deleted", "account_type", "fs_type", "normal_side", "is_contra") VALUES
+('938dc67f-791f-4f8c-8f23-8de9d62c07af', '600510', 'SEND-OUTS', NULL, NULL, NULL, NULL, NULL, '2020-10-20 14:47:28.474', NULL, '2020-10-20 14:47:28.474', NULL, 'EXPENSE', 'INCOME', 'DEBIT', 'f');
+
+
+INSERT INTO "accounting"."subaccount_setup" ("id", "description", "subaccount_code", "subaccount_parent", "subaccount_type", "include_department", "attr_beginning_balance", "attr_credit_memo_adj", "attr_accrual_of_income", "attr_non_trade_cash_receipts", "attr_include_posting_accrued_income_multiple_customer", "attr_vatable", "attr_inactive", "attr_expense_account", "attr_debit_memo_adjustment", "attr_accrual_expense", "source_domain", "created_by", "created_date", "last_modified_by", "last_modified_date", "journal_placement", "category", "require_remarks", "attached_value") VALUES
+('e45b8e79-c039-4ce0-ab63-2f1adce29f57', 'OTHERS', '1010', NULL, 'EXPENSE', 't', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'admin', '2020-12-28 09:18:51.259', 'admin', '2020-12-28 09:18:51.259', NULL, NULL, NULL, NULL);
+
+
+INSERT INTO "accounting"."subaccount_mother_accounts" ("id", "sub_account", "chart_of_account", "created_by", "created_date", "last_modified_by", "last_modified_date") VALUES
+('8308abd3-1ca8-4457-a730-e78cea74d486', 'e45b8e79-c039-4ce0-ab63-2f1adce29f57', '938dc67f-791f-4f8c-8f23-8de9d62c07af', 'admin', '2020-12-28 09:18:51.279', 'admin', '2020-12-28 09:18:51.279');
+
+INSERT INTO "accounting"."subaccount_setup" ("id", "description", "subaccount_code", "subaccount_parent", "subaccount_type", "include_department", "attr_beginning_balance", "attr_credit_memo_adj", "attr_accrual_of_income", "attr_non_trade_cash_receipts", "attr_include_posting_accrued_income_multiple_customer", "attr_vatable", "attr_inactive", "attr_expense_account", "attr_debit_memo_adjustment", "attr_accrual_expense", "source_domain", "created_by", "created_date", "last_modified_by", "last_modified_date", "journal_placement", "category", "require_remarks", "attached_value") VALUES
+('c95f971b-cd94-499c-956e-7f4be7761219', 'GENERATOR', '1020', NULL, 'EXPENSE', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'admin', '2020-12-28 09:52:58.791', 'admin', '2020-12-28 09:52:58.791', NULL, NULL, NULL, NULL);
+
+INSERT INTO "accounting"."subaccount_mother_accounts" ("id", "sub_account", "chart_of_account", "created_by", "created_date", "last_modified_by", "last_modified_date") VALUES
+('5e920e0b-3e78-44f9-b452-13dcd53e6184', 'c95f971b-cd94-499c-956e-7f4be7761219', '7b8040f7-4340-4a16-99f0-b9430979ff03', 'admin', '2020-12-28 09:52:58.806', 'admin', '2020-12-28 09:52:58.806');
+
+
+
+----
+
+INSERT INTO "accounting"."chart_of_accounts" ("id", "account_code", "description", "category", "tags", "parent", "deprecated", "created_by", "created_date", "last_modified_by", "last_modified_date", "deleted", "account_type", "fs_type", "normal_side", "is_contra") VALUES
+('fdddbbd4-86e8-426d-a15f-a5ae9f107546', '600520', 'ALCOHOL & SANITIZER', NULL, NULL, NULL, NULL, NULL, '2020-10-20 14:47:28.474', NULL, '2020-10-20 14:47:28.474', NULL, 'EXPENSE', 'INCOME', 'DEBIT', 'f');
+
+INSERT INTO "accounting"."chart_of_accounts" ("id", "account_code", "description", "category", "tags", "parent", "deprecated", "created_by", "created_date", "last_modified_by", "last_modified_date", "deleted", "account_type", "fs_type", "normal_side", "is_contra") VALUES
+('93e8cfbc-0640-4c5c-9a85-220ae99c5a54', '600530', 'HOUSEKEEPING SUPPLIES', NULL, NULL, NULL, NULL, NULL, '2020-10-20 14:47:28.474', NULL, '2020-10-20 14:47:28.474', NULL, 'EXPENSE', 'INCOME', 'DEBIT', 'f');
+
+INSERT INTO "accounting"."chart_of_accounts" ("id", "account_code", "description", "category", "tags", "parent", "deprecated", "created_by", "created_date", "last_modified_by", "last_modified_date", "deleted", "account_type", "fs_type", "normal_side", "is_contra") VALUES
+('ca833e16-5170-4bf3-ab93-41fa766d2e9e', '600540', 'LINEN & LAUNDRY SUPPLY', NULL, NULL, NULL, NULL, NULL, '2020-10-20 14:47:28.474', NULL, '2020-10-20 14:47:28.474', NULL, 'EXPENSE', 'INCOME', 'DEBIT', 'f');
+
+INSERT INTO "accounting"."chart_of_accounts" ("id", "account_code", "description", "category", "tags", "parent", "deprecated", "created_by", "created_date", "last_modified_by", "last_modified_date", "deleted", "account_type", "fs_type", "normal_side", "is_contra") VALUES
+('1ce7ee4d-ee87-41d7-9d32-4182e3e43ddc', '600550', 'MEDICAL/BASIC SUPPLIES', NULL, NULL, NULL, NULL, NULL, '2020-10-20 14:47:28.474', NULL, '2020-10-20 14:47:28.474', NULL, 'EXPENSE', 'INCOME', 'DEBIT', 'f');
+
+INSERT INTO "accounting"."chart_of_accounts" ("id", "account_code", "description", "category", "tags", "parent", "deprecated", "created_by", "created_date", "last_modified_by", "last_modified_date", "deleted", "account_type", "fs_type", "normal_side", "is_contra") VALUES
+('76da9a8d-6c61-43d5-99c1-c9bdccdbe793', '600560', 'OTHER SUPPLIES', NULL, NULL, NULL, NULL, NULL, '2020-10-20 14:47:28.474', NULL, '2020-10-20 14:47:28.474', NULL, 'EXPENSE', 'INCOME', 'DEBIT', 'f');
+
+
+INSERT INTO "accounting"."chart_of_accounts" ("id", "account_code", "description", "category", "tags", "parent", "deprecated", "created_by", "created_date", "last_modified_by", "last_modified_date", "deleted", "account_type", "fs_type", "normal_side", "is_contra") VALUES
+('41cdf72b-cb37-4828-96f4-9537f95dbb7a', '600570', 'MINOR TOOLS AND EQUIPMENTS', NULL, NULL, NULL, NULL, NULL, '2020-10-20 14:47:28.474', NULL, '2020-10-20 14:47:28.474', NULL, 'EXPENSE', 'INCOME', 'DEBIT', 'f');
+
+INSERT INTO "accounting"."chart_of_accounts" ("id", "account_code", "description", "category", "tags", "parent", "deprecated", "created_by", "created_date", "last_modified_by", "last_modified_date", "deleted", "account_type", "fs_type", "normal_side", "is_contra") VALUES
+('84d34773-1313-46b4-a546-6dd775eefad3', '600580', 'ENGINEERING SUPPLIES', NULL, NULL, NULL, NULL, NULL, '2020-10-20 14:47:28.474', NULL, '2020-10-20 14:47:28.474', NULL, 'EXPENSE', 'INCOME', 'DEBIT', 'f');
+
+INSERT INTO "accounting"."chart_of_accounts" ("id", "account_code", "description", "category", "tags", "parent", "deprecated", "created_by", "created_date", "last_modified_by", "last_modified_date", "deleted", "account_type", "fs_type", "normal_side", "is_contra") VALUES
+('66741f46-f8a0-4343-911e-5d4726461420', '600590', 'ACCRUED INTEREST EXPENSE', NULL, NULL, NULL, NULL, NULL, '2020-10-20 14:47:28.474', NULL, '2020-10-20 14:47:28.474', NULL, 'EXPENSE', 'INCOME', 'DEBIT', 'f');
+
+
+UPDATE "accounting"."chart_of_accounts" SET "deprecated" = 't' WHERE "id" = 'bffb2c28-f550-4a1a-b453-95bffac16ded';
+
+
+
+UPDATE "accounting"."chart_of_accounts" SET "deprecated" = 't' WHERE "id" = 'b12dea14-e885-4f7f-85db-aeecf290632b';
+==========================================================================================================
+--- excluded
+---UPDATE "public"."departments" SET "hide_accounting" = 't' WHERE "id" = 'dbf4d776-405a-40cc-99d8-41194393524b';
+==========================================================================================================
+
+UPDATE "accounting"."chart_of_accounts" SET "deprecated" = 't' WHERE "id" = '66741f46-f8a0-4343-911e-5d4726461420';
+
+INSERT INTO "accounting"."subaccount_setup" ("id", "description", "subaccount_code", "subaccount_parent", "subaccount_type", "include_department", "attr_beginning_balance", "attr_credit_memo_adj", "attr_accrual_of_income", "attr_non_trade_cash_receipts", "attr_include_posting_accrued_income_multiple_customer", "attr_vatable", "attr_inactive", "attr_expense_account", "attr_debit_memo_adjustment", "attr_accrual_expense", "source_domain", "created_by", "created_date", "last_modified_by", "last_modified_date", "journal_placement", "category", "require_remarks", "attached_value") VALUES
+('ea7ada07-c4ef-4595-8f40-6b3902522ab1', 'FOUNDERS', '1010', NULL, 'EXPENSE', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'admin', '2020-12-29 09:39:57.999', 'admin', '2020-12-29 09:39:57.999', NULL, NULL, NULL, NULL);
+
+
+INSERT INTO "accounting"."subaccount_mother_accounts" ("id", "sub_account", "chart_of_account", "created_by", "created_date", "last_modified_by", "last_modified_date") VALUES
+('6dcd2cf8-d7c8-4dba-9442-31f41894208e', 'ea7ada07-c4ef-4595-8f40-6b3902522ab1', '2f2bf822-e221-445b-ba74-3d7afe2be91c', 'admin', '2020-12-29 09:39:58.011', 'admin', '2020-12-29 09:39:58.011');
+
+
+
+INSERT INTO "accounting"."subaccount_setup" ("id", "description", "subaccount_code", "subaccount_parent", "subaccount_type", "include_department", "attr_beginning_balance", "attr_credit_memo_adj", "attr_accrual_of_income", "attr_non_trade_cash_receipts", "attr_include_posting_accrued_income_multiple_customer", "attr_vatable", "attr_inactive", "attr_expense_account", "attr_debit_memo_adjustment", "attr_accrual_expense", "source_domain", "created_by", "created_date", "last_modified_by", "last_modified_date", "journal_placement", "category", "require_remarks", "attached_value") VALUES
+('50d88c9b-21cd-4188-bbba-36b1ee1b7a66', 'OTHERS', '1020', NULL, 'EXPENSE', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'admin', '2020-12-31 10:36:42.463', 'admin', '2020-12-31 10:36:42.463', NULL, NULL, NULL, NULL);
+
+
+INSERT INTO "accounting"."subaccount_mother_accounts" ("id", "sub_account", "chart_of_account", "created_by", "created_date", "last_modified_by", "last_modified_date") VALUES
+('b411c3c2-9848-43fe-a9e0-3e227dad385c', '50d88c9b-21cd-4188-bbba-36b1ee1b7a66', '2f2bf822-e221-445b-ba74-3d7afe2be91c', 'admin', '2020-12-31 10:36:42.476', 'admin', '2020-12-31 10:36:42.476');
+
+

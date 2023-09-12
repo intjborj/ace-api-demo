@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.6.0.final using JasperReports Library version 6.6.0  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="dischargeSlip" pageWidth="612" pageHeight="792" whenNoDataType="AllSectionsNoDetail" columnWidth="586" leftMargin="6" rightMargin="20" topMargin="7" bottomMargin="20" uuid="f2bc184e-a198-405d-96dc-37d3c03dc629">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<property name="com.jaspersoft.studio.unit." value="inch"/>
+	<property name="com.jaspersoft.studio.unit.pageHeight" value="inch"/>
+	<property name="com.jaspersoft.studio.unit.pageWidth" value="inch"/>
+	<property name="com.jaspersoft.studio.unit.topMargin" value="inch"/>
+	<property name="com.jaspersoft.studio.unit.bottomMargin" value="inch"/>
+	<property name="com.jaspersoft.studio.unit.leftMargin" value="inch"/>
+	<property name="com.jaspersoft.studio.unit.rightMargin" value="inch"/>
+	<property name="com.jaspersoft.studio.unit.columnWidth" value="inch"/>
+	<property name="com.jaspersoft.studio.unit.columnSpacing" value="inch"/>
+	<parameter name="patientname" class="java.lang.String"/>
+	<parameter name="datetime" class="java.lang.String"/>
+	<parameter name="roomNo" class="java.lang.String"/>
+	<parameter name="cashier" class="java.lang.String"/>
+	<parameter name="dischargeNo" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<title>
+		<band height="751" splitType="Stretch">
+			<frame>
+				<reportElement x="0" y="0" width="251" height="355" uuid="08abf0f5-9287-453b-9862-46b7142c1807"/>
+				<box>
+					<pen lineWidth="1.0"/>
+				</box>
+				<staticText>
+					<reportElement x="32" y="1" width="187" height="15" uuid="d4b47447-5042-4ef1-8c7d-9c353e1adf67"/>
+					<textElement textAlignment="Center">
+						<font size="12" isBold="true"/>
+					</textElement>
+					<text><![CDATA[DISCHARGE  CLEARANCE  SLIP]]></text>
+				</staticText>
+				<line>
+					<reportElement x="1" y="70" width="250" height="2" uuid="0cc4a2aa-cd07-4e63-83fc-febe8ab2e2d0"/>
+				</line>
+				<staticText>
+					<reportElement x="8" y="20" width="202" height="10" uuid="cd64ff21-d741-4b91-bb8a-25db0d754aa5"/>
+					<textElement>
+						<font size="8" isBold="true"/>
+					</textElement>
+					<text><![CDATA[To  the  Floor  Nurse /  Front  Desk  Concierge]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="6" y="33" width="234" height="37" uuid="c39690d9-2fb3-4ead-92f1-683a8f4aa6c9"/>
+					<text><![CDATA[Clearance for discharge is hereby given and final  arrangements have been made for the  account of  :]]></text>
+				</staticText>
+				<line>
+					<reportElement x="1" y="101" width="249" height="1" uuid="70979a6b-2648-4ef9-a007-db798a80fce6"/>
+				</line>
+				<line>
+					<reportElement x="1" y="131" width="249" height="1" uuid="b49c48c9-acaf-4819-903a-1713fe7fa817"/>
+				</line>
+				<line>
+					<reportElement x="183" y="73" width="1" height="28" uuid="e82fcc32-d495-4788-9ac0-19bed3fdfdc2"/>
+				</line>
+				<line>
+					<reportElement x="121" y="101" width="1" height="30" uuid="3ab3879f-e70c-4a11-a9c6-6f2656c07430"/>
+				</line>
+				<staticText>
+					<reportElement x="3" y="73" width="57" height="10" uuid="c91e671d-bd27-4af3-b8ae-25c3a97aac0e"/>
+					<textElement>
+						<font size="8"/>
+					</textElement>
+					<text><![CDATA[Patient Name]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="184" y="74" width="57" height="10" uuid="e769757d-45e0-48e8-824c-e19e8e38ae08"/>
+					<textElement>
+						<font size="8"/>
+					</textElement>
+					<text><![CDATA[Room No:]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="2" y="85" width="178" height="14" uuid="921a3d17-201d-46d6-84d5-42040fd1fe19"/>
+					<textElement>
+						<font size="8"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$P{patientname}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="183" y="85" width="68" height="14" uuid="35c71c41-3ea3-4d30-bc4b-eec6d83ec337"/>
+					<textFieldExpression><![CDATA[$P{roomNo}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="124" y="101" width="57" height="10" uuid="75fcb092-d31b-4f14-a2b7-5ccb746a3012"/>
+					<textElement>
+						<font size="8"/>
+					</textElement>
+					<text><![CDATA[Date/Time]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="4" y="103" width="106" height="10" uuid="20043a43-031f-4f84-863e-8407ecb893b9"/>
+					<textElement>
+						<font size="8"/>
+					</textElement>
+					<text><![CDATA[Cashier/Business Officer]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="4" y="114" width="117" height="17" uuid="79d132a3-39b1-4fd9-ab82-dad1d6b49971"/>
+					<textElement>
+						<font size="8"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$P{cashier}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="125" y="114" width="126" height="17" uuid="622805e3-331f-4aff-b0e3-a97c00f174ba"/>
+					<textElement>
+						<font size="8"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$P{datetime}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="1" y="131" width="218" height="129" uuid="6928618e-272a-4606-b1ac-7a5e031d7542"/>
+					<textElement textAlignment="Justified">
+						<font size="7"/>
+					</textElement>
+					<text><![CDATA[To the  Person responsible for the patient :
+       The  patient is given one hour from the time  of  issuance of this clearance to prepare his/her personal belongings .  An additional day shall be charged for room and board if the patient opts to stay beyond the  grace  period.
+       Please  present this discharge clearance slip to the Floor  Charge Nurse for  the  Discharge  Instructions.  After the  discharge instructions  are given ,  the  Floor  Charge  Nurse will  then summon the orderlies to safely  and  comfortably conduct the patient  to the  patient  exit  area  ,  lastly  present the clearance slip  to the  Front  Desk Concierge  who will  escort the patient  to the  conducting exit  vehicle.  
+       Thank you .  we  are  glad to be of  service .  
+]]></text>
+				</staticText>
+				<line>
+					<reportElement x="1" y="261" width="249" height="1" uuid="d05146d4-a048-4122-9da1-810bd03400b4"/>
+				</line>
+				<line>
+					<reportElement x="1" y="290" width="249" height="1" uuid="354840fe-f329-4826-a6b2-28cf15f87783"/>
+				</line>
+				<line>
+					<reportElement x="1" y="324" width="249" height="1" uuid="b9445f62-5b47-4325-8677-ad8edaaf02a1"/>
+				</line>
+				<line>
+					<reportElement x="130" y="262" width="1" height="92" uuid="6834fcec-4aaf-4a8a-af7a-87ded2e4fcb8"/>
+				</line>
+				<line>
+					<reportElement x="191" y="262" width="1" height="92" uuid="b32a121e-e7da-4dfb-b363-3572bb9227b9"/>
+				</line>
+				<staticText>
+					<reportElement x="132" y="263" width="57" height="10" uuid="72f46534-2065-409c-abe8-0b58242956ee"/>
+					<textElement>
+						<font size="8"/>
+					</textElement>
+					<text><![CDATA[Date]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="192" y="263" width="57" height="10" uuid="c6f30da4-ce54-4955-ab50-eaa763aff090"/>
+					<textElement>
+						<font size="8"/>
+					</textElement>
+					<text><![CDATA[Time]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="133" y="291" width="57" height="10" uuid="0b742b84-da37-463c-9f75-a476ded530f9"/>
+					<textElement>
+						<font size="8"/>
+					</textElement>
+					<text><![CDATA[Date]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="133" y="326" width="57" height="10" uuid="42f74baa-56e7-4e45-bb25-135ad86ebf23"/>
+					<textElement>
+						<font size="8"/>
+					</textElement>
+					<text><![CDATA[Date]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="193" y="292" width="57" height="10" uuid="c6ce7832-7d7d-423a-a482-b8edb43f091b"/>
+					<textElement>
+						<font size="8"/>
+					</textElement>
+					<text><![CDATA[Time]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="194" y="327" width="57" height="10" uuid="727c9536-fd72-44a9-b796-5c71bd7d732f"/>
+					<textElement>
+						<font size="8"/>
+					</textElement>
+					<text><![CDATA[Time]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="5" y="264" width="120" height="17" uuid="42b19af2-c61a-4774-8d48-3a62d864d5a9"/>
+					<textElement>
+						<font size="7"/>
+					</textElement>
+					<text><![CDATA[Discharge  Instructions  given by  Floor  Charge  Nurse]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="3" y="293" width="120" height="17" uuid="703698a6-7a46-4e11-8532-755fa5e12e79"/>
+					<textElement>
+						<font size="7"/>
+					</textElement>
+					<text><![CDATA[Conducted  to  Concierge by  Orderly 
+
+]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="3" y="325" width="120" height="17" uuid="0556a3fe-498f-406d-9f23-f9c816c9471a"/>
+					<textElement>
+						<font size="7"/>
+					</textElement>
+					<text><![CDATA[Escorted  by Exit  Concierge]]></text>
+				</staticText>
+			</frame>
+		</band>
+	</title>
+</jasperReport>

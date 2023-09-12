@@ -1,0 +1,3 @@
+INSERT INTO accounting.chart_of_accounts (id,account_code,description,category,tags,parent,deprecated,created_by,created_date,last_modified_by,last_modified_date,deleted,account_type,fs_type,normal_side,is_contra) VALUES
+('86153553-e3a2-411d-89b5-848a4f4033b1','200150','UNEAREND REVENUE',NULL,NULL,NULL,NULL,NULL,'2020-09-16 17:06:52.333',NULL,'2020-09-16 17:06:52.333',NULL,'LIABILITY','BALANCE_SHEET','CREDIT',false)
+;

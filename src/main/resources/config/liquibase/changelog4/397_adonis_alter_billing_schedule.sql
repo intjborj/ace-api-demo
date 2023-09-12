@@ -1,0 +1,1 @@
+ALTER TABLE accounting.billing_schedule_items ADD COLUMN approval_code varchar;

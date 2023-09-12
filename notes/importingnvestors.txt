@@ -1,0 +1,11 @@
+
+
+=== When exporting from Source investors table... please ignore the ff.
+
+    discount_philhealth bool NULL,
+	discount_senior bool NULL,
+	discount_hmo bool NULL,
+	discount_employer bool NULL,
+	discount_ace_employee bool NULL,
+
+

@@ -1,0 +1,56 @@
+https://www.digitalocean.com/community/cheatsheets/how-to-use-ansible-cheat-sheet-guide
+https://docs.openshift.com/container-platform/3.11/install_config/redeploying_certificates.html
+
+ansible-playbook -v -i /root/installcentos/inventory.ini  \
+/root/installcentos/openshift-ansible/playbooks/openshift-checks/certificate_expiry/easy-mode.yaml
+
+/== Tried it but i think this is not needed.... if you only decide to change a new CA
+// also this did not proceed because of an expiring error
+ansible-playbook -v -i /root/installcentos/inventory.ini  \
+/root/installcentos/openshift-ansible/playbooks/openshift-master/redeploy-openshift-ca.yml
+
+
+// This is working
+ansible-playbook   --ask-pass -v -i /root/installcentos/inventory.ini  \
+/root/installcentos/openshift-ansible/playbooks/openshift-master/redeploy-certificates.yml
+
+
+-- oct 20, 2020  webconsole got 502
+https://github.com/openshift/origin/issues/20005
+oc delete secret webconsole-serving-cert
+oc delete pods webconsole=true
+
+openshift will recreate console but master sa scheduling disabled..
+see  oc get events
+oc adm manage-node master.ace-mc-bohol.com  --schedulable=true
+oc adm manage-node master.ace-mc-bohol.com  --schedulable=false
+
+// registry-console is broken
+
+https://github.com/cockpit-project/cockpit/issues/13654
+https://github.com/openshift/openshift-ansible/issues/12115
+
+-- restart docker registry and registry-console
+
+in registry deployment config in console
+replace
+ docker.io/cockpit/kubernetes:latest
+which is deprecoated
+to
+docker.io/timbordemann/cockpit-kubernetes:latest
+
+ -- docker registry cert has expired
+
+ansible-playbook --ask-pass -v -i /root/installcentos/inventory.ini  \
+/root/installcentos/openshift-ansible/playbooks/openshift-hosted/redeploy-registry-certificates.yml
+
+//Very important
+Please check all outstanding CSR
+oc get csr
+oc adm certificate approve <csr_name>  - approve by name
+oc get csr -o go-template='{{range .items}}{{if not .status}}{{.metadata.name}}{{"\n"}}{{end}}{{end}}' | xargs oc adm certificate approve   - approve all
+
+https://access.redhat.com/containers/?tab=images&get-method=unauthenticated#/registry.access.redhat.com/openshift3/registry-console
+
+
+

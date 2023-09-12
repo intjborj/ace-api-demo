@@ -1,0 +1,1 @@
+ALTER TABLE "billing"."price_tier_details" ADD COLUMN "room_types" text;

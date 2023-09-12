@@ -1,0 +1,33 @@
+find / -name pg_dump -type f 2>/dev/null
+
+sudo ln -s /usr/pgsql-10/bin/pg_dump  /usr/bin/pg_dump --force
+chown postgres:root /var/pgbackup/
+
+
+======== start here ====
+
+su postgres
+cd /var/pgbackup/
+
+pg_dump -f hisd3mk2aug28202011am.backup -F t     hismk2-live
+
+
+tar cvzf jun62019410pm.backup.tar.gz jun62019410pm.backup
+ls -all --block-size=m
+
+====== copy local
+
+scp root@172.16.10.6:/var/pgbackup/jun62019410pm.backup.tar.gz  jun62019410pm.backup.tar.gz
+
+scp root@172.16.10.6:/var/pgbackup/july192019450pm.backup.tar.gz  july192019450pm.backup.tar.gz
+
+
+========================
+
+cd  pgbackup
+pg_dump -f hisd3mk2jul720209pm.backup -F t hismk2-live
+scp postgres@172.16.10.11:/home/postgres/pgbackup/hisd3mk2aug28202011am.backup hisd3mk2aug28202011am.backup
+
+
+pg_dump -f hisd3mk2nov252020.backup -F t hismk2-live
+scp postgres@172.16.10.11:/home/postgres/pgbackup/hisd3mk2nov252020.backup hisd3mk2nov252020.backup

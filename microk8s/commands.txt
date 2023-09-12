@@ -1,0 +1,12 @@
+
+
+argocd-server-859b4b5578-kq5m2
+
+
+kubectl -n argocd patch secret argocd-secret \
+  -p '{"stringData": {
+    "admin.password": "$2a$10$eoinnYwS43E0fuMVFwdk8up8dsGsrNvOHsUP7kx1ZWpK3GWdrzXWm",
+    "admin.passwordMtime": "'$(date +%FT%T%Z)'"
+  }}'
+
+

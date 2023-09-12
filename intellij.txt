@@ -1,0 +1,9 @@
+--spring.datasource.databaseName=hismk2-live-6
+--accounting.autopostjournal=true
+--accounting.enable_costing=true
+--graphql.compressed=false
+
+
+-Xverify:none
+-noverify
+-XX:TieredStopAtLevel=1

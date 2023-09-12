@@ -1,0 +1,1 @@
+ALTER TABLE payroll.accumulated_logs ALTER COLUMN department DROP NOT NULL;

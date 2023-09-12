@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.11.0.final using JasperReports Library version 6.11.0-0c4056ccaa4d25a5a8c45672d2f764ea3498bebb  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="printcheck" pageWidth="612" pageHeight="792" whenNoDataType="AllSectionsNoDetail" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="b447b5a4-3488-4c89-bc42-b7ca5a281195">
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="payee" class="java.lang.String"/>
+	<field name="amountWords" class="java.lang.String"/>
+	<field name="amount" class="java.lang.String"/>
+	<field name="date" class="java.lang.String"/>
+	<title>
+		<band height="153" splitType="Stretch">
+			<textField>
+				<reportElement x="79" y="36" width="330" height="20" uuid="2db35533-6806-43de-9e75-1ac850337736"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{payee}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="58" y="57" width="510" height="20" uuid="3a905746-cdec-4658-a6c7-73962d19ab42"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{amountWords}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="411" y="35" width="157" height="20" uuid="cc0a12bd-ff3c-43f7-8b27-849804ad14da"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{amount}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="422" y="12" width="156" height="20" uuid="878bcf5e-e583-45ac-a66f-0e20cabb3336"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{date}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+</jasperReport>
