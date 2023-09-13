@@ -41,7 +41,7 @@ on:
   pull_request:
     types:
       - closed
-    branches: ['main']
+    branches: [ main ]
     paths:
       - 'api/**'
     
@@ -94,7 +94,7 @@ jobs:
       with:
         context: ./api 
         push: true
-        tags: acemcbmis/ace_api_demo:${{ steps.version_getter.outputs.version }}
+        tags: intjborj/api-demo-his:${{ steps.version_getter.outputs.version }}
         build-args: PROJ_VERSION=${{ steps.version_getter.outputs.version }}
   
 
