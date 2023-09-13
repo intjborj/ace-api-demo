@@ -73,7 +73,7 @@ jobs:
       uses: gradle/gradle-build-action@v2
       with:
         arguments: -Pprofile=prod build --no-daemon
-        build-root-directory: api
+        build-root-directory: ./
         gradle-version: 6.8
     - name: Get Version from Gradle build.gradle
       id: version_getter  
@@ -95,7 +95,7 @@ jobs:
     - name: Build and push
       uses: docker/build-push-action@v2
       with:
-        context: ./api 
+        context: ./
         push: true
         tags: intjborj/api-demo-his:${{ steps.version_getter.outputs.version }}
         build-args: PROJ_VERSION=${{ steps.version_getter.outputs.version }}
